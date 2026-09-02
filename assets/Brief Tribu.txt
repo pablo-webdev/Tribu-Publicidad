@@ -1,0 +1,99 @@
+1 - Datos Clave: 
+
+1.1 - Nombre del cliente: Jesús Rafael Toledo - Nombre De La Empresa: Tribu Publicidad.
+
+1.2 - Identidad Visual: Colores: 
+
+Turquesa Muted + Verde Limón (Ecológica, Salud o Consultoría)
+Utiliza una versión sofisticada del verde limón para que no se vea chillón ni informal.
+
+Azul / Gris Plomo (60% - Dominante): #0F172A (Estructura y tipografía).
+
+Turquesa Oscuro / Petrolero (25% - Identidad): #0E7490 (Encabezados de sección, banners).
+
+Blanco Puro (10% - Espacio en blanco): #FFFFFF.
+
+Verde Limón Muted (5% - Acento): #84CC16 o #A3E635 (Solo para destacar métricas, badges o botones específicos).
+
+1.3 - Estilo Visual Deseado: 
+
+Minimalismo Dinámico y De Gran Impacto (High-Contrast Outdoor & Print)
+
+Concepto general: Un diseño limpio, moderno y corporativo, pero cargado de contraste visual. Refleja la naturaleza de la agencia: visibilidad en calle, tecnología (pantallas LED) y precisión física (impresión técnica).
+
+Aplicación de la paleta (Turquesa Muted + Verde Limón):
+
+Estructura y Formalidad: El Azul Petrolero / Turquesa Muted (#0E7490) y el tono plomo (#0F172A) funcionan como la base seria y corporativa de la marca.
+
+Impacto y Tecnología: El Verde Limón (#84CC16 / #A3E635) actúa como el "encendido LED" de la web: un color vivo reservado únicamente para botones principales, llamadas a la acción y detalles clave que simulan luz e impacto exterior.
+
+Estructura y Composición: Layout minimalista con abundante espacio en blanco para que el portafolio de impresiones y pantallas destaque sin saturar.
+
+Línea Gráfica: Bloques sólidos de color, tipografías sans-serif audaces de fácil lectura y tarjetas con esquinas ligeramente suavizadas que recuerdan a las pantallas publicitarias digitales.
+
+1.4. - Contenido (Servicios Principales, Estructuras/Secciones Planteadas Y Datos De Contacto): 
+
+# ESPECIFICACIONES DE CONTENIDO Y ARQUITECTURA WEB
+
+## 1. Mapa de Sitio (Navegación Principal)
+El sitio web estará estructurado en 4 páginas principales con un enfoque minimalista y corporativo:
+
+1. Inicio (Home)
+2. Servicios (Medios & Producción)
+3. Nosotros (Agencia & Infraestructura)
+4. Contacto (Cotizaciones)
+
+---
+
+## 2. Estructura y Secciones por Página
+
+### A. Página: INICIO (HOME)
+* **Hero Section:**
+  * Titular de alto impacto sobre el alcance y visibilidad de la agencia.
+  * Subtitular enfocado en soluciones de publicidad exterior e impresión.
+  * Botón principal (CTA): "Solicitar Cotización" / "Ver Cobertura".
+* **Métricas de Impacto:**
+  * Indicadores clave (ej. impactos diarios, ubicaciones estratégicas, m² impresos).
+* **Bloque de Soluciones Principales:**
+  * Tarjeta 1: Medios Out-Of-Home (OOH / DOOH).
+  * Tarjeta 2: Producción Gráfica & Gran Formato.
+* **Portafolio / Muestra de Trabajo:**
+  * Galería visual de instalaciones (pantallas LED activas, paradas de autobús rotuladas, lonas/viniles montados).
+* **Llamado a la Acción (CTA de Cierre):**
+  * Bloque de conversión directo al formulario de contacto.
+
+---
+
+### B. Página: SERVICIOS
+Estructurada en dos divisiones técnicas principales:
+
+#### División 1: Medios Out-Of-Home (OOH & DOOH)
+* **Pantallas LED Digitales (DOOH):** Espacios publicitarios dinámicos de alta resolución y alta visibilidad vehicular/peatonal.
+* **Mobiliario Urbano / Paradas de Autobús:** Mupis y paradas estratégicas ubicadas en rutas de alto tráfico para cobertura a nivel de calle.
+* **Espectaculares & Vallas:** Estructuras fijas de gran formato para posicionamiento de marca masivo.
+
+#### División 2: Producción Gráfica & Gran Formato
+* **Lonas Publicitarias:** Impresión en alta resolución (Frontlight / Backlight) para interiores y exteriores.
+* **Viniles Comerciales:** Rotulación de superficies, muros y acabados gráficos de alta durabilidad.
+* **Microperforados:** Aplicación especializada para cristales, escaparates y fachadas acristaladas sin perder visibilidad interior.
+
+---
+
+### C. Página: NOSOTROS
+* **Propuesta de Valor:** Experiencia en estrategia de medios exteriores y calidad de producción gráfica.
+* **Infraestructura & Tecnología:** Equipamiento de impresión y red de pantallas publicitarias.
+* **Diferenciadores:** Ubicaciones estratégicas, tiempos de entrega y precisión en la instalación.
+
+---
+
+### D. Página: CONTACTO Y COTIZACIONES
+* **Formulario Estratégico:**
+  * Nombre y Empresa.
+  * Correo electrónico y Teléfono/WhatsApp.
+  * Tipo de Servicio de Interés (Selección: Medios OOH / Producción Gráfica / Ambos).
+  * Detalle de campaña o especificaciones de proyecto.
+* **Datos Directos:**
+  * Número de teléfono y enlace directo a WhatsApp.
+  * Dirección física / Mapa interactivo.
+  * Enlaces a Redes Sociales oficiales.
+  * Horarios de atención.
