@@ -524,8 +524,10 @@ PALETA DE COLORES ORIGINAL
 }
 
 .sim-results {
-  gap: 30px;
+  gap: 40px;
   display: flex;
+  flex-direction: column;
+  text-align: center;
   justify-content: space-between;
   margin-top: 1.5rem;
   padding-top: 1rem;
