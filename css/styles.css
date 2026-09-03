@@ -29,7 +29,7 @@ body {
   --primary-petrol: #673ab7; /* Variante del morado base para el simulador y tarjetas de impacto */
   --lime-btn: #ccff00; /* Amarillo/Lima neón de alto contraste para botones y acentos */
   --lime-hover: #b3e600; /* Tono lima ajustado para los estados hover */
-  --dark-bg: #321C59; /* EL MORADO BASE OFICIAL para Header, Hero, Footer y bloques principales */
+  --dark-bg: #321c59; /* EL MORADO BASE OFICIAL para Header, Hero, Footer y bloques principales */
   --gray-pearl: #f4f0fa; /* Blanco perla con matiz violeta sutil para fondos claros */
   --white: #ffffff; /* Blanco puro para tipografía y legibilidad limpia */
   --transition: all 0.3s ease;
@@ -524,9 +524,7 @@ PALETA DE COLORES ORIGINAL
 }
 
 .sim-results {
-  gap: 40px;
   display: flex;
-  flex-direction: column;
   text-align: center;
   justify-content: space-between;
   margin-top: 1.5rem;
@@ -713,6 +711,18 @@ PALETA DE COLORES ORIGINAL
     padding: 2rem;
     align-items: flex-start;
     gap: 1.25rem;
+  }
+
+  /*SIMULADOR   */
+  .sim-results {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .footer__grid {
