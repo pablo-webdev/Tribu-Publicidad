@@ -1,245 +1,146 @@
-/**
- * main.js - Interactividad Limpia (Menú móvil, Sombra en header, Partículas en canvas & Contadores)
- */
-
+/* ==========================================================================
+   01. INICIALIZACIÓN Y MENÚ MÓVIL RESPONSIVE - INICIO
+   ========================================================================== */
 document.addEventListener("DOMContentLoaded", () => {
-  initMobileMenu();
-  initHeaderScroll();
-  initHeroParticles();
-  initTrustCounters();
-  initContactForm();
-});
-
-/* ==========================================================================
-   1. Menú Móvil Responsive
-   ========================================================================== */
-function initMobileMenu() {
-  const headerContainer = document.querySelector(".header__container");
-  const nav = document.querySelector(".nav");
-
-  if (!headerContainer || !nav) return;
-
-  let menuToggle = document.querySelector(".menu-toggle");
-  if (!menuToggle) {
-    menuToggle = document.createElement("button");
-    menuToggle.className = "menu-toggle";
-    menuToggle.type = "button";
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Abrir menú de navegación");
-    menuToggle.innerHTML = `
-            <span class="menu-toggle__bar"></span>
-            <span class="menu-toggle__bar"></span>
-            <span class="menu-toggle__bar"></span>
-        `;
-    headerContainer.appendChild(menuToggle);
+  // Inicializar iconos de Lucide de forma segura
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
   }
 
-  const toggleMenu = (shouldOpen) => {
-    const isOpen =
-      shouldOpen !== undefined
-        ? shouldOpen
-        : !nav.classList.contains("nav--open");
-    nav.classList.toggle("nav--open", isOpen);
-    menuToggle.classList.toggle("menu-toggle--active", isOpen);
-    menuToggle.setAttribute("aria-expanded", isOpen.toString());
-    document.body.style.overflow = isOpen ? "hidden" : "";
-  };
+  // Toggle de menú móvil responsive con sincronización de animación hamburguesa
+  const menuToggle = document.getElementById("menu-toggle");
+  const mainNav = document.getElementById("main-nav");
 
-  menuToggle.addEventListener("click", () => toggleMenu());
-
-  const navLinks = nav.querySelectorAll(".nav__link");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (nav.classList.contains("nav--open")) toggleMenu(false);
-    });
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && nav.classList.contains("nav--open"))
-      toggleMenu(false);
-  });
-}
-
-/* ==========================================================================
-   2. Sombra en Header al Hacer Scroll
-   ========================================================================== */
-function initHeaderScroll() {
-  const header = document.querySelector(".header");
-  if (!header) return;
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 40) {
-      header.classList.add("header--scrolled");
-    } else {
-      header.classList.remove("header--scrolled");
-    }
-  });
-}
-
-/* ==========================================================================
-   3. Canvas de Partículas Fluidas Optimizadas en Hero
-   ========================================================================== */
-function initHeroParticles() {
-  const canvas = document.getElementById("particles-canvas");
-  if (!canvas) return;
-
-  const heroSection = canvas.closest(".hero");
-  const ctx = canvas.getContext("2d");
-
-  let width = (canvas.width = canvas.parentElement.offsetWidth);
-  let height = (canvas.height = canvas.offsetHeight);
-
-  let particles = [];
-  const particleCount = Math.floor(width / 35);
-
-  const mouse = {
-    x: null,
-    y: null,
-    radius: 120,
-  };
-
-  if (heroSection) {
-    heroSection.addEventListener("mousemove", (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("active"); // <--- Esto le da la animación de "X" al botón
+      mainNav.classList.toggle("active"); // <--- Esto despliega el menú
+      document.body.style.overflow = mainNav.classList.contains("active")
+        ? "hidden"
+        : "";
     });
 
-    heroSection.addEventListener("mouseleave", () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
-  }
-
-  class Particle {
-    constructor() {
-      this.reset(true);
-    }
-
-    reset(initial = false) {
-      this.x = Math.random() * width;
-      this.y = initial ? Math.random() * height : height + Math.random() * 20;
-      this.baseVy = -(Math.random() * 0.4 + 0.1);
-      this.vy = this.baseVy;
-      this.vx = (Math.random() - 0.5) * 0.2;
-      this.radius = Math.random() * 2 + 1;
-      this.alpha = Math.random() * 0.4 + 0.2;
-    }
-
-    update() {
-      if (mouse.x !== null && mouse.y !== null) {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < mouse.radius) {
-          const force = (mouse.radius - distance) / mouse.radius;
-          const angle = Math.atan2(dy, dx);
-          this.x -= Math.cos(angle) * force * 1.5;
-          this.y -= Math.sin(angle) * force * 1.5;
-        }
-      }
-
-      this.y += this.vy;
-      this.x += this.vx;
-
-      if (this.y < -10 || this.x < 0 || this.x > width) {
-        this.reset(false);
-      }
-    }
-
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(132, 204, 22, ${this.alpha})`;
-      ctx.fill();
-    }
-  }
-
-  function createParticles() {
-    particles = [];
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
-
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-    }
-    requestAnimationFrame(animate);
-  }
-
-  window.addEventListener("resize", () => {
-    if (!canvas.parentElement) return;
-    width = canvas.width = canvas.parentElement.offsetWidth;
-    height = canvas.height = canvas.offsetHeight;
-    createParticles();
-  });
-
-  createParticles();
-  animate();
-}
-
-/* ==========================================================================
-   4. Animación de Contadores Numéricos (Trust Bar)
-   ========================================================================== */
-function initTrustCounters() {
-  const counters = document.querySelectorAll(".trust-card__number");
-  if (counters.length === 0) return;
-
-  const speed = 60;
-
-  const animateCounter = (counter) => {
-    const target = +counter.getAttribute("data-target");
-    let count = 0;
-
-    const updateCount = () => {
-      const increment = target / speed;
-      count += increment;
-
-      if (count < target) {
-        counter.innerText = Math.ceil(count).toLocaleString();
-        setTimeout(updateCount, 25);
-      } else {
-        counter.innerText = target.toLocaleString();
-      }
-    };
-
-    updateCount();
-  };
-
-  const observer = new IntersectionObserver(
-    (entries, observerInstance) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const counter = entry.target;
-          animateCounter(counter);
-          observerInstance.unobserve(counter);
-        }
+    const navLinks = mainNav.querySelectorAll(".nav__link");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("active");
+        menuToggle.classList.remove("active"); // <--- Esto regresa la "X" a hamburguesa al hacer clic en un enlace
+        document.body.style.overflow = "";
       });
-    },
-    { threshold: 0.5 },
-  );
-
-  counters.forEach((counter) => observer.observe(counter));
-}
-
-/* ==========================================================================
-   5. Validación o Manejo del Formulario de Contacto
+    });
+  }
+  /* ==========================================================================
+   01. INICIALIZACIÓN Y MENÚ MÓVIL RESPONSIVE - FIN
    ========================================================================== */
-function initContactForm() {
-  const form = document.getElementById("contact-form");
-  if (!form) return;
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alert(
-      "¡Solicitud enviada con éxito! Un especialista de Tribu Publicidad se pondrá en contacto contigo en breve.",
-    );
-    form.reset();
-  });
-}
+  /* ==========================================================================
+   02. SISTEMA DE PARTÍCULAS ADAPTABLE EN CANVAS - INICIO
+   ========================================================================== */
+  const canvas = document.getElementById("particles-canvas");
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    let width = (canvas.width = canvas.offsetWidth);
+    let height = (canvas.height = canvas.offsetHeight);
+
+    window.addEventListener("resize", () => {
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+    });
+
+    const particles = [];
+    const particleCount = window.innerWidth < 768 ? 15 : 30;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 2 + 1,
+        color:
+          Math.random() > 0.5
+            ? "rgba(132, 204, 22, 0.6)"
+            : "rgba(255, 255, 255, 0.4)",
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4 - 0.2,
+      });
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  }
+  /* ==========================================================================
+   02. SISTEMA DE PARTÍCULAS ADAPTABLE EN CANVAS - FIN
+   ========================================================================== */
+
+  /* ==========================================================================
+   03. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - INICIO
+   ========================================================================== */
+  const simService = document.getElementById("sim-service");
+  const simMonths = document.getElementById("sim-months");
+  const simUnits = document.getElementById("sim-units");
+
+  const lblServiceVal = document.getElementById("lbl-service-val");
+  const lblMonthsVal = document.getElementById("lbl-months-val");
+  const lblUnitsVal = document.getElementById("lbl-units-val");
+
+  const resImpacts = document.getElementById("res-impacts");
+  const resFreq = document.getElementById("res-freq");
+
+  function updateSimulator() {
+    if (!simService || !simMonths || !simUnits) return;
+
+    const serviceType = simService.value;
+    const months = parseInt(simMonths.value);
+    const units = parseInt(simUnits.value);
+    const days = months * 30; // Mínimo 2 meses = 60 días
+
+    let serviceName = "Paradas de Combi (Eje Vial 1)";
+    // Flujo conservador y ultra-realista de 400 impactos diarios por parabús/unidad (Población SCLC: 215,874 habitantes)
+    let dailyImpactsPerUnit = 400;
+
+    if (serviceType === "dooh") {
+      serviceName = "Pantallas LED DOOH";
+      dailyImpactsPerUnit = 600;
+    } else if (serviceType === "granformato") {
+      serviceName = "Gran Formato / Espectaculares";
+      dailyImpactsPerUnit = 800;
+    }
+
+    lblServiceVal.textContent = serviceName;
+    lblMonthsVal.textContent = `${months} meses (${days} días)`;
+    lblUnitsVal.textContent = `${units} ${units === 1 ? "soporte" : "soportes"}`;
+
+    // Cálculo matemático conservador y aterrizado (Ej: 2 meses x 60 días * 2 soportes * 400 impactos = 48,000 impactos)
+    const totalImpacts = days * units * dailyImpactsPerUnit;
+    const frequency = (1.2 + units * 0.05).toFixed(1);
+
+    resImpacts.textContent = totalImpacts.toLocaleString("es-MX");
+    resFreq.textContent = `${frequency}x`;
+  }
+
+  if (simService && simMonths && simUnits) {
+    simService.addEventListener("change", updateSimulator);
+    simMonths.addEventListener("input", updateSimulator);
+    simUnits.addEventListener("input", updateSimulator);
+    updateSimulator();
+  }
+});
+/* ==========================================================================
+   03. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - FIN
+   ========================================================================== */

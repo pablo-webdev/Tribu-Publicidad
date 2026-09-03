@@ -1,184 +1,206 @@
+<!-- ==========================================================================
+   01. HEADER Y NAVEGACIÓN (SERVICIOS) - INICIO
+   ========================================================================== -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Catálogo de servicios OOH - Pantallas LED DOOH, espectaculares fijos, rutas móviles y gran formato ecológico en Tribu Publicidad.">
-    <title>Servicios | Tribu Publicidad</title>
+    <title>Servicios OOH | Tribu Publicidad San Cristóbal de las Casas</title>
 
-    <!-- Font Awesome 6 CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+        rel="stylesheet">
 
-    <!-- Hoja de Estilos Corporativa -->
+    <!-- FontAwesome para iconos (WhatsApp) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Estilos CSS Externos -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <!-- Header Unificado con Navegación Completa -->
     <header class="header">
         <div class="container header__container">
-            <a href="index.html" class="header__logo" aria-label="Tribu Publicidad - Volver al inicio">
-                <span class="header__logo-text">TRIBU <span class="header__logo-accent">PUBLICIDAD</span></span>
-            </a>
-            <nav class="nav" aria-label="Navegación principal">
+            <a href="index.html" class="header__logo">TRIBU <span>PUBLICIDAD</span></a>
+            <nav class="nav" id="main-nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
-                    <li class="nav__item"><a href="servicios.html" class="nav__link nav__link--active"
-                            aria-current="page">Servicios</a></li>
-                    <li class="nav__item"><a href="nosotros.html" class="nav__link">Nosotros</a></li>
-                    <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+                    <li><a href="index.html" class="nav__link">Inicio</a></li>
+                    <li><a href="servicios.html" class="nav__link nav__link--active">Servicios</a></li>
+                    <li><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav__link">Contacto</a></li>
                 </ul>
             </nav>
-            <div class="header__cta">
-                <a href="contacto.html" class="btn btn--lime">Cotizar</a>
-            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+    <!-- ==========================================================================
+   01. HEADER Y NAVEGACIÓN (SERVICIOS) - FIN
+   ========================================================================== -->
 
-    <main id="main-content">
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
-                <span class="badge"
-                    style="background-color: rgba(132, 204, 22, 0.15); color: var(--lime-green); border-color: rgba(132, 204, 22, 0.3);">Catálogo
-                    Profesional</span>
-                <h1 class="page-header__title">Soluciones OOH de Alta Gama</h1>
-                <p class="page-header__subtitle">Medios de comunicación exterior diseñados bajo estándares
-                    arquitectónicos globales para garantizar elegancia, visibilidad y sostenibilidad.</p>
+    <main>
+        <!-- ==========================================================================
+           02. HERO DE SERVICIOS - INICIO
+           ========================================================================== -->
+        <section class="hero">
+            <div class="hero__overlay"></div>
+            <div class="container hero__container">
+                <span class="badge"><i data-lucide="layers" style="width: 16px; height: 16px;"></i> Catálogo OOH
+                    2026</span>
+                <h1 class="hero__title">Soluciones de Publicidad Exterior de Alto Impacto</h1>
+                <p class="hero__subtitle">Infraestructura urbana estratégica diseñada para posicionar tu marca en los
+                    puntos de mayor tránsito y visibilidad de San Cristóbal de las Casas.</p>
             </div>
+            <canvas id="particles-canvas"></canvas>
         </section>
+        <!-- ==========================================================================
+           02. HERO DE SERVICIOS - FIN
+           ========================================================================== -->
 
-        <!-- Catálogo Detallado -->
-        <section class="section-padding">
+        <!-- ==========================================================================
+           03. DETALLE DE SERVICIOS OOH - INICIO
+           ========================================================================== -->
+        <section class="services-section">
             <div class="container">
-                <div class="grid-services">
-                    <!-- Solución 1 -->
-                    <article class="card-service">
-                        <div class="card-service__image">
-                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80"
-                                alt="Pantallas LED DOOH">
-                        </div>
-                        <div class="card-service__body">
-                            <h3 class="card-service__title">Pantallas LED DOOH Programáticas</h3>
-                            <p class="card-service__description">Circuitos digitales de ultra alta definición con brillo
-                                inteligente y activación por variables de clima, tráfico o eventos en tiempo real.</p>
-                            <a href="contacto.html" class="btn btn--outline-dark">Cotizar Pantallas LED</a>
-                        </div>
-                    </article>
-
-                    <!-- Solución 2 -->
-                    <article class="card-service">
-                        <div class="card-service__image">
-                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
-                                alt="Espectaculares Fijos Monumentales">
-                        </div>
-                        <div class="card-service__body">
-                            <h3 class="card-service__title">Espectaculares Fijos Monumentales</h3>
-                            <p class="card-service__description">Torres estratégicas en accesos carreteros y principales
-                                cruces metropolitanos con iluminación frontal de alta eficiencia energética.</p>
-                            <a href="contacto.html" class="btn btn--outline-dark">Consultar Ubicaciones</a>
-                        </div>
-                    </article>
-
-                    <!-- Solución 3 -->
-                    <article class="card-service">
-                        <div class="card-service__image">
-                            <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80"
-                                alt="Rutas Móviles de Alta Frecuencia">
-                        </div>
-                        <div class="card-service__body">
-                            <h3 class="card-service__title">Rutas Móviles de Alta Frecuencia</h3>
-                            <p class="card-service__description">Flotas vehiculares equipadas con telemetría GPS que
-                                recorren los corredores con mayor concentración demográfica del país.</p>
-                            <a href="contacto.html" class="btn btn--outline-dark">Diseñar Ruta</a>
-                        </div>
-                    </article>
-
-                    <!-- Solución 4 -->
-                    <article class="card-service">
-                        <div class="card-service__image">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
-                                alt="Gran Formato Ecológico">
-                        </div>
-                        <div class="card-service__body">
-                            <h3 class="card-service__title">Gran Formato Ecológico</h3>
-                            <p class="card-service__description">Impresión masiva sobre soportes biodegradables con
-                                tintas látex libres de emisiones contaminantes y reciclaje garantizado.</p>
-                            <a href="contacto.html" class="btn btn--outline-dark">Conocer Sostenibilidad</a>
-                        </div>
-                    </article>
+                <div class="section-header">
+                    <span class="badge badge--light"><i data-lucide="grid" style="width: 16px; height: 16px;"></i>
+                        Nuestros Formatos</span>
+                    <h2>Estructuras y Redes de Exposición</h2>
+                    <p>Conoce a detalle cada uno de nuestros soportes publicitarios orientados a maximizar el retorno de
+                        inversión de tu empresa.</p>
                 </div>
-            </div>
-        </section>
 
-        <!-- CTA Banner Final -->
-        <section class="section-padding bg-alt">
-            <div class="container">
-                <div class="cta-banner">
-                    <h2 class="cta-banner__title">¿Necesitas una Estrategia a la Medida?</h2>
-                    <p class="cta-banner__subtitle">Combinamos múltiples soportes para crear campañas integrales
-                        omnicanal de alto impacto.</p>
-                    <div class="cta-banner__actions">
-                        <a href="contacto.html" class="btn btn--lime">
-                            <i class="fa-solid fa-headset"></i> Contactar a un Asesor
-                        </a>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=600&q=80"
+                            alt="Pantallas LED DOOH" class="service-card__img">
+                        <div class="service-card__body">
+                            <h3>Pantallas LED DOOH</h3>
+                            <p>Red digital programática de gran formato. Permite rotación dinámica de spots,
+                                actualización en tiempo real y segmentación por horarios comerciales estratégicos en la
+                                ciudad.</p>
+                            <div class="commercial-note" style="margin: 0.75rem 0; font-size: 0.8rem;">
+                                <strong>Especificación:</strong> Duración de spot: 10s / Frecuencia garantizada: 120
+                                exposiciones diarias por pantalla.
+                            </div>
+                            <a href="contacto.html" class="btn btn--lime" style="margin-top: 1rem; width: 100%;">Cotizar
+                                DOOH</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80"
+                            alt="Paradas de Colectivos Eje Vial 1" class="service-card__img">
+                        <div class="service-card__body">
+                            <h3>Paradas de Colectivos (Eje Vial 1)</h3>
+                            <p>Nuestro producto estrella. Parabuses y paradas estratégicas ubicadas sobre la arteria
+                                principal, ofreciendo exposición frontal continua ante peatones y pasajeros de
+                                transporte colectivo.</p>
+                            <div class="commercial-note" style="margin: 0.75rem 0; font-size: 0.8rem;">
+                                <strong>Condición clave:</strong> Mínimo de contratación de 2 meses (60 días) para
+                                asegurar mantenimiento e impresión.
+                            </div>
+                            <a href="contacto.html" class="btn btn--lime" style="margin-top: 1rem; width: 100%;">Cotizar
+                                Eje Vial 1</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80"
+                            alt="Espectaculares y Gran Formato" class="service-card__img">
+                        <div class="service-card__body">
+                            <h3>Espectaculares y Gran Formato</h3>
+                            <p>Estructuras monumentales instaladas en accesos carreteros y bulevares principales con
+                                visibilidad de largo alcance. Ideal para campañas de posicionamiento masivo de marca.
+                            </p>
+                            <div class="commercial-note" style="margin: 0.75rem 0; font-size: 0.8rem;">
+                                <strong>Especificación:</strong> Alta resistencia estructural y lonas frontlight de
+                                máxima durabilidad ante clima local.
+                            </div>
+                            <a href="contacto.html" class="btn btn--lime" style="margin-top: 1rem; width: 100%;">Cotizar
+                                Gran Formato</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- ==========================================================================
+           03. DETALLE DE SERVICIOS OOH - FIN
+           ========================================================================== -->
     </main>
 
-    <!-- Footer Corporativo de 4 Columnas -->
+    <!-- ==========================================================================
+           04. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - INICIO
+           ========================================================================== -->
     <footer class="footer">
-        <div class="container footer__grid">
-            <div class="footer__brand">
-                <span class="header__logo-text" style="color: #FFFFFF;">TRIBU <span
-                        class="header__logo-accent">PUBLICIDAD</span></span>
-                <p class="footer__description">Plataforma OOH de categoría mundial inspirada en los estándares más altos
-                    de la industria publicitaria global y la vanguardia ecológica.</p>
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="index.html" class="header__logo" style="color: var(--white);">TRIBU <span
+                            style="color: var(--lime-btn);">PUBLICIDAD</span></a>
+                    <p>Plataforma OOH de categoría mundial enfocada en la efectividad publicitaria y el desarrollo de
+                        infraestructura urbana en SCLC.</p>
+                </div>
+                <div>
+                    <h4 class="footer__heading">Navegación</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html" class="footer__link">Inicio</a></li>
+                        <li><a href="servicios.html" class="footer__link">Servicios</a></li>
+                        <li><a href="nosotros.html" class="footer__link">Nosotros</a></li>
+                        <li><a href="contacto.html" class="footer__link">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__heading">Soluciones</h4>
+                    <ul class="footer__list">
+                        <li><a href="servicios.html" class="footer__link">Pantallas LED DOOH</a></li>
+                        <li><a href="servicios.html" class="footer__link">Mobiliario Urbano</a></li>
+                        <li><a href="servicios.html" class="footer__link">Espectaculares Fijos</a></li>
+                        <li><a href="servicios.html" class="footer__link">Rutas Eje Vial 1</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__heading">Contacto Directo</h4>
+                    <p class="footer__info">Atención Ejecutiva OOH<br>Lunes a Viernes - 9:00 a 18:00 hrs</p>
+                    <a href="https://wa.me/529671378393?text=Hola,%20me%20interesa%20cotizar%20publicidad%20en%20el%20Eje%20Vial%201"
+                        class="footer__link"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; color: var(--lime-btn); font-weight: 600;"
+                        target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp" style="font-size: 18px;"></i> WhatsApp Directo
+                    </a>
+                </div>
             </div>
-            <div class="footer__nav">
-                <h4 class="footer__heading">Navegación</h4>
-                <ul class="footer__list">
-                    <li><a href="index.html" class="footer__link">Inicio</a></li>
-                    <li><a href="servicios.html" class="footer__link">Servicios</a></li>
-                    <li><a href="nosotros.html" class="footer__link">Nosotros</a></li>
-                    <li><a href="contacto.html" class="footer__link">Contacto</a></li>
-                </ul>
-            </div>
-            <div class="footer__services">
-                <h4 class="footer__heading">Soluciones</h4>
-                <ul class="footer__list">
-                    <li><a href="servicios.html" class="footer__link">Pantallas LED DOOH</a></li>
-                    <li><a href="servicios.html" class="footer__link">Espectaculares Fijos</a></li>
-                    <li><a href="servicios.html" class="footer__link">Rutas Móviles</a></li>
-                    <li><a href="servicios.html" class="footer__link">Gran Formato</a></li>
-                </ul>
-            </div>
-            <div class="footer__contact">
-                <h4 class="footer__heading">Contacto Directo</h4>
-                <p class="footer__info">Atención Ejecutiva OOH<br>Lunes a Viernes - 9:00 a 18:00 hrs</p>
-                <a href="https://wa.me/529671378393" class="footer__whatsapp-link" target="_blank"
-                    rel="noopener noreferrer">
-                    <i class="fa-brands fa-whatsapp"></i> Canal Directo WhatsApp
-                </a>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <div class="container footer__bottom-container">
+
+            <div class="footer__bottom">
                 <p>&copy; 2026 Tribu Publicidad. Todos los derechos reservados.</p>
-                <p class="footer__credits">
-                    Desarrollado por <a href="https://krakendev.site" target="_blank" rel="noopener noreferrer"
-                        class="footer__credits-link">KRAKEN DEV</a>
-                </p>
+                <p>Desarrollado por <a href="https://krakendev.site" target="_blank" rel="noopener noreferrer"
+                        class="footer__credits-link">KRAKEN DEV</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- Script Principal -->
+    <!-- Botón flotante de WhatsApp requerido y blindado -->
+    <a href="https://wa.me/529671378393?text=Hola,%20me%20interesa%20cotizar%20publicidad%20en%20el%20Eje%20Vial%201"
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacto de WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- ==========================================================================
+           04. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - FIN
+           ========================================================================== -->
+
+    <!-- Script JS Externo -->
     <script src="js/main.js"></script>
 </body>
 
