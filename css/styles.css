@@ -26,6 +26,18 @@ body {
 }
 
 :root {
+  --primary-petrol: #5e25b0; /* Variante del morado base para el simulador y tarjetas de impacto */
+  --lime-btn: #ccff00; /* Amarillo/Lima neón de alto contraste para botones y acentos */
+  --lime-hover: #b3e600; /* Tono lima ajustado para los estados hover */
+  --dark-bg: #673ab7; /* EL MORADO BASE OFICIAL para Header, Hero, Footer y bloques principales */
+  --gray-pearl: #f4f0fa; /* Blanco perla con matiz violeta sutil para fondos claros */
+  --white: #ffffff; /* Blanco puro para tipografía y legibilidad limpia */
+  --transition: all 0.3s ease;
+}
+
+/* 
+PALETA DE COLORES ORIGINAL
+:root {
   --primary-petrol: #0e7490;
   --lime-btn: #84cc16;
   --lime-hover: #65a30d;
@@ -33,7 +45,7 @@ body {
   --gray-pearl: #f8fafc;
   --white: #ffffff;
   --transition: all 0.3s ease;
-}
+} */
 
 .container {
   width: 100%;
@@ -498,17 +510,38 @@ body {
   transition: var(--transition);
 }
 
+.sim-group input[type="range"] {
+  accent-color: var(--lime-btn);
+  background: transparent;
+  padding: 1rem 0;
+  border: none;
+  cursor: pointer;
+}
+
 .sim-group select:focus,
 .sim-group input:focus {
   border-color: var(--lime-btn);
 }
 
-.sim-result {
-  background: rgba(9, 13, 22, 0.6);
-  padding: 1.25rem;
-  border-radius: 8px;
+.sim-results {
+  display: flex;
+  justify-content: space-between;
   margin-top: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sim-metric-val {
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--lime-btn);
+}
+
+.sim-metric-lbl {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .sim-result__price {
@@ -572,7 +605,7 @@ body {
 }
 
 .footer__brand p {
-  color: #94a3b8;
+  color: #fff;
   font-size: 0.9rem;
   margin-top: 1rem;
   line-height: 1.6;
@@ -594,7 +627,7 @@ body {
 }
 
 .footer__link {
-  color: #94a3b8;
+  color: #fff;
   text-decoration: none;
   font-size: 0.9rem;
   transition: var(--transition);
@@ -605,7 +638,7 @@ body {
 }
 
 .footer__info {
-  color: #94a3b8;
+  color: #fff;
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -617,7 +650,7 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: #f2f2f2;
 }
 
 .footer__credits-link {
@@ -771,4 +804,3 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-
