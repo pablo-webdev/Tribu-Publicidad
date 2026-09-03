@@ -89,7 +89,28 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================================== */
 
   /* ==========================================================================
-   03. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - INICIO
+   03. HEDAER TRANSPARENTE A SÓLIDO CON SCROLL - INICIO
+   ========================================================================== */
+
+  // Efecto Header Transparente a Sólido con Scroll
+  const header = document.querySelector(".header");
+
+  if (header) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 30) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  }
+
+  /* ==========================================================================
+   03. HEDAER TRANSPARENTE A SÓLIDO CON SCROLL - FIN
+   ========================================================================== */
+
+  /* ==========================================================================
+   04. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - INICIO
    ========================================================================== */
   const simService = document.getElementById("sim-service");
   const simMonths = document.getElementById("sim-months");
@@ -142,5 +163,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 /* ==========================================================================
-   03. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - FIN
+   04. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - FIN
    ========================================================================== */
