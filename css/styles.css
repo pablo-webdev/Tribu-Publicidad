@@ -29,7 +29,7 @@ body {
   --primary-petrol: #673ab7; /* Variante del morado base para el simulador y tarjetas de impacto */
   --lime-btn: #ccff00; /* Amarillo/Lima neón de alto contraste para botones y acentos */
   --lime-hover: #b3e600; /* Tono lima ajustado para los estados hover */
-  --dark-bg: #5e25b0; /* EL MORADO BASE OFICIAL para Header, Hero, Footer y bloques principales */
+  --dark-bg: #321C59; /* EL MORADO BASE OFICIAL para Header, Hero, Footer y bloques principales */
   --gray-pearl: #f4f0fa; /* Blanco perla con matiz violeta sutil para fondos claros */
   --white: #ffffff; /* Blanco puro para tipografía y legibilidad limpia */
   --transition: all 0.3s ease;
