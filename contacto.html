@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto y Cotizaciones | Tribu Publicidad San Cristóbal de las Casas</title>
+    <title>Contacto | Tribu Publicidad San Cristóbal</title>
 
     <!-- Google Fonts: Plus Jakarta Sans e Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
 
 <body>
 
-    <header class="header">
+    <header class="header" id="main-header">
         <div class="container header__container">
             <a href="index.html" class="header__logo">TRIBU <span>PUBLICIDAD</span></a>
             <nav class="nav" id="main-nav">
@@ -52,108 +52,98 @@
 
     <main>
         <!-- ==========================================================================
-           02. HERO DE CONTACTO - INICIO
-           ========================================================================== -->
-        <section class="hero">
-            <div class="hero__overlay"></div>
+   02. HERO INTERNO (CONTACTO) - INICIO
+   ========================================================================== -->
+        <section class="hero-internal"
+            style="background-image: linear-gradient(180deg, rgba(50, 28, 89, 0.85) 0%, rgba(50, 28, 89, 0.95) 100%), url('https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=1200&auto=format&fit=crop');">
             <div class="container hero__container">
-                <span class="badge"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> Comunicación
-                    Directa</span>
-                <h1 class="hero__title">Cotiza Tu Campaña OOH Hoy Mismo</h1>
-                <p class="hero__subtitle">Estamos listos para impulsar tu negocio en San Cristóbal de las Casas. Ponte
-                    en contacto con nuestro equipo comercial o envíanos tus requerimientos.</p>
+                <span class="badge"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> Canal Directo</span>
+                <h1 class="hero__title">Inicia Tu Campaña Publicitaria</h1>
+                <p class="hero__subtitle">Cotizaciones a la medida y asesoría técnica para potenciar tu presencia
+                    urbana.</p>
+                <div class="hero__buttons">
+                    <a href="https://wa.me/529671378393?text=Hola,%20me%20interesa%20cotizar%20una%20campaña%20publicitaria"
+                        class="btn btn--lime" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i> Hablar por WhatsApp
+                    </a>
+                </div>
             </div>
-            <canvas id="particles-canvas"></canvas>
         </section>
         <!-- ==========================================================================
-           02. HERO DE CONTACTO - FIN
-           ========================================================================== -->
+   02. HERO INTERNO (CONTACTO) - FIN
+   ========================================================================== -->
 
         <!-- ==========================================================================
-           03. SECCIÓN DE FORMULARIO E INFORMACIÓN EN SCLC - INICIO
-           ========================================================================== -->
+   03. SECCIÓN DE INFORMACIÓN Y FORMULARIO DE CONTACTO - INICIO
+   ========================================================================== -->
         <section class="route-section">
             <div class="container route-grid">
-                <!-- Información y Horarios -->
                 <div class="route-content">
-                    <span class="badge badge--light"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i>
-                        Ubicación & Horarios</span>
-                    <h2>Atención Ejecutiva en SCLC</h2>
-                    <p>Nuestras oficinas y centros de operaciones están ubicados estratégicamente para dar cobertura
-                        inmediata a toda la red urbana y vial de San Cristóbal de las Casas, Chiapas.</p>
+                    <span class="badge badge--light"><i data-lucide="headphones" style="width: 16px; height: 16px;"></i>
+                        Atención Ejecutiva</span>
+                    <h2>Estamos Listos Para Atenderte</h2>
+                    <p>Ponte en contacto con nuestro equipo comercial para recibir una propuesta personalizada acorde a
+                        los objetivos y presupuesto de tu marca en San Cristóbal de las Casas.</p>
 
                     <div class="route-features">
+                        <div class="route-feature-item">
+                            <i data-lucide="map-pin" style="width: 22px; height: 22px;"></i>
+                            <div>
+                                <h4>Ubicación Oficina</h4>
+                                <p>San Cristóbal de las Casas, Chiapas, México.</p>
+                            </div>
+                        </div>
                         <div class="route-feature-item">
                             <i data-lucide="clock" style="width: 22px; height: 22px;"></i>
                             <div>
                                 <h4>Horarios de Atención</h4>
-                                <p>Lunes a Viernes de 9:00 a 18:00 hrs.<br>Sábados de 9:00 a 14:00 hrs.</p>
-                            </div>
-                        </div>
-                        <div class="route-feature-item">
-                            <i data-lucide="phone-call" style="width: 22px; height: 22px;"></i>
-                            <div>
-                                <h4>Contacto Telefónico / WhatsApp</h4>
-                                <p>+52 (967) 137 8393<br>contacto@tribupublicidad.site</p>
+                                <p>Lunes a Viernes de 9:00 a 18:00 hrs.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Formulario Interactivo de Cotización -->
-                <div class="simulator-box" style="background-color: var(--primary-petrol);">
-                    <h3 style="margin-bottom: 1rem;"><i data-lucide="calculator"
-                            style="width: 20px; height: 20px; vertical-align: middle;"></i> Formulario de Cotización
-                    </h3>
-                    <form id="contact-form" style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div class="sim-group" style="margin-bottom: 0;">
-                            <label for="contact-name">Nombre Completo o Empresa</label>
-                            <input type="text" id="contact-name" placeholder="Ej. Comercializadora SCLC" required
-                                style="width: 100%; padding: 0.65rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(9,13,22,0.4); color: var(--white); outline: none;">
+                <div class="simulator-box">
+                    <h3>Formulario de Cotización</h3>
+                    <form
+                        onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo a la brevedad.');">
+                        <div class="sim-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" required placeholder="Tu nombre o empresa">
                         </div>
-                        <div class="sim-group" style="margin-bottom: 0;">
-                            <label for="contact-phone">Teléfono / WhatsApp</label>
-                            <input type="tel" id="contact-phone" placeholder="Ej. 967 000 0000" required
-                                style="width: 100%; padding: 0.65rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(9,13,22,0.4); color: var(--white); outline: none;">
+                        <div class="sim-group">
+                            <label for="telefono">Teléfono / WhatsApp</label>
+                            <input type="tel" id="telefono" required placeholder="967 000 0000">
                         </div>
-                        <div class="sim-group" style="margin-bottom: 0;">
-                            <label for="contact-service">Servicio de Interés</label>
-                            <select id="contact-service"
-                                style="width: 100%; padding: 0.65rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(9,13,22,0.4); color: var(--white); outline: none;">
-                                <option value="ejevial1">Paradas de Combi (Eje Vial 1)</option>
+                        <div class="sim-group">
+                            <label for="servicio-interes">Servicio de Interés</label>
+                            <select id="servicio-interes">
+                                <option value="ejevial">Red de Paradas (Eje Vial 1)</option>
                                 <option value="dooh">Pantallas LED DOOH</option>
-                                <option value="granformato">Gran Formato / Espectaculares</option>
+                                <option value="granformato">Espectaculares / Gran Formato</option>
                             </select>
                         </div>
-                        <div class="sim-group" style="margin-bottom: 0;">
-                            <label for="contact-msg">Detalles de la Campaña</label>
-                            <textarea id="contact-msg" rows="3"
-                                placeholder="Indique duración estimada o requerimientos específicos..."
-                                style="width: 100%; padding: 0.65rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(9,13,22,0.4); color: var(--white); outline: none; font-family: 'Inter', sans-serif;"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn--lime"
-                            style="width: 100%; margin-top: 0.5rem; border: none; cursor: pointer;">Enviar
+                        <button type="submit" class="btn btn--lime" style="width: 100%; margin-top: 1rem;">Enviar
                             Solicitud</button>
                     </form>
                 </div>
             </div>
         </section>
         <!-- ==========================================================================
-           03. SECCIÓN DE FORMULARIO E INFORMACIÓN EN SCLC - FIN
-           ========================================================================== -->
+   03. SECCIÓN DE INFORMACIÓN Y FORMULARIO DE CONTACTO - FIN
+   ========================================================================== -->
     </main>
 
     <!-- ==========================================================================
-           04. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - INICIO
-           ========================================================================== -->
+   04. FOOTER - INICIO
+   ========================================================================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
                     <a href="index.html" class="header__logo" style="color: var(--white);">TRIBU <span
                             style="color: var(--lime-btn);">PUBLICIDAD</span></a>
-                    <p>Plataforma OOH de categoría mundial enfocada en la efectividad publicitaria y el desarrollo de
-                        infraestructura urbana en SCLC.</p>
+                    <p>Plataforma OOH de categoría mundial enfocada en la efectividad publicitaria en SCLC.</p>
                 </div>
                 <div>
                     <h4 class="footer__heading">Navegación</h4>
@@ -170,13 +160,12 @@
                         <li><a href="servicios.html" class="footer__link">Pantallas LED DOOH</a></li>
                         <li><a href="servicios.html" class="footer__link">Mobiliario Urbano</a></li>
                         <li><a href="servicios.html" class="footer__link">Espectaculares Fijos</a></li>
-                        <li><a href="servicios.html" class="footer__link">Rutas Eje Vial 1</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer__heading">Contacto Directo</h4>
                     <p class="footer__info">Atención Ejecutiva OOH<br>Lunes a Viernes - 9:00 a 18:00 hrs</p>
-                    <a href="https://wa.me/529671378393?text=Hola,%20me%20interesa%20cotizar%20publicidad%20en%20el%20Eje%20Vial%201"
+                    <a href="https://wa.me/529671378393?text=Hola,%20me%20interesa%20cotizar%20una%20campaña"
                         class="footer__link"
                         style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; color: var(--lime-btn); font-weight: 600;"
                         target="_blank" rel="noopener noreferrer">
@@ -193,16 +182,14 @@
         </div>
     </footer>
 
-    <!-- Botón flotante de WhatsApp requerido y blindado -->
-    <a href="https://wa.me/529671378393?text=Hola,%20me%20interesa%20cotizar%20publicidad%20en%20el%20Eje%20Vial%201"
-        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacto de WhatsApp">
+    <a href="https://wa.me/529671378393?text=Hola,%20me%20interesa%20cotizar%20una%20campaña" class="whatsapp-float"
+        target="_blank" rel="noopener noreferrer" aria-label="Contacto de WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
     <!-- ==========================================================================
-           04. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - FIN
-           ========================================================================== -->
+   04. FOOTER - FIN
+   ========================================================================== -->
 
-    <!-- Script JS Externo -->
     <script src="js/main.js"></script>
 </body>
 

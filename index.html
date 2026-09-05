@@ -28,7 +28,7 @@
 
 <body>
 
-    <header class="header">
+    <header class="header" id="main-header">
         <div class="container header__container">
             <a href="index.html" class="header__logo">TRIBU <span>PUBLICIDAD</span></a>
             <nav class="nav" id="main-nav">
@@ -52,40 +52,87 @@
 
     <main>
         <!-- ==========================================================================
-   02. HERO PRINCIPAL (INDEX) - INICIO
+   02. HERO SLIDER PRINCIPAL (INDEX) - INICIO
    ========================================================================== -->
-        <section class="hero-index">
-            <div class="hero__overlay"></div>
-            <div class="container hero__container">
-                <span class="badge"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Cobertura Urbana en
-                    San Cristóbal de las Casas</span>
-                <h1 class="hero__title">El Medio Más Efectivo para Dominar la Calle en SCLC</h1>
-                <p class="hero__subtitle">Conectamos tu marca con más de 215,000 habitantes y miles de visitantes a
-                    través de pantallas LED DOOH, paradas estratégicas en el Eje Vial 1 y espectaculares de gran
-                    formato.</p>
-                <div class="hero__buttons">
-                    <a href="contacto.html" class="btn btn--lime">Cotizar Campaña OOH</a>
-                    <a href="servicios.html" class="btn btn--outline">Explorar Ubicaciones</a>
+        <section class="hero-index" id="hero-slider">
+            <!-- Slide 1 -->
+            <div class="hero__slide active"
+                style="background-image: linear-gradient(180deg, rgba(50, 28, 89, 0.85) 0%, rgba(50, 28, 89, 0.95) 100%), url('https://images.unsplash.com/photo-1533069027836-fa937181a8ce?q=80&w=1170&auto=format&fit=crop');">
+                <div class="container hero__container">
+                    <span class="badge"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Cobertura
+                        Urbana en San Cristóbal</span>
+                    <h1 class="hero__title">Red Masiva de 115 Paradas en el Eje Vial 1</h1>
+                    <p class="hero__subtitle">Conectamos tu marca con más de 215,000 habitantes mediante exposición
+                        constante frente al flujo peatonal y vehicular de la ciudad.</p>
+                    <div class="hero__buttons">
+                        <a href="#ruta-urbana" class="btn btn--lime">Cotizar</a>
+                        <a href="servicios.html" class="btn btn--outline">Explorar Ubicaciones</a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Slide 2 -->
+            <div class="hero__slide"
+                style="background-image: linear-gradient(180deg, rgba(50, 28, 89, 0.85) 0%, rgba(50, 28, 89, 0.95) 100%), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop');">
+                <div class="container hero__container">
+                    <span class="badge"><i data-lucide="layers" style="width: 16px; height: 16px;"></i> Publicidad
+                        Exterior & DOOH</span>
+                    <h1 class="hero__title">Publicidad Exterior & Pantallas LED DOOH</h1>
+                    <p class="hero__subtitle">Cobertura estratégica con pantallas LED gigantes, publicidad en rutas de
+                        transporte y espectaculares en impresión de gran formato.</p>
+                    <div class="hero__buttons">
+                        <a href="contacto.html" class="btn btn--lime">Cotizar</a>
+                        <a href="servicios.html" class="btn btn--outline">Ver Formatos</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero__slide"
+                style="background-image: linear-gradient(180deg, rgba(50, 28, 89, 0.85) 0%, rgba(50, 28, 89, 0.95) 100%), url('https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=1200&auto=format&fit=crop');">
+                <div class="container hero__container">
+                    <span class="badge"><i data-lucide="printer" style="width: 16px; height: 16px;"></i> Soluciones
+                        Gráficas</span>
+                    <h1 class="hero__title">Servicios de Impresión Publicitaria e Gran Formato</h1>
+                    <p class="hero__subtitle">Soluciones integrales en lonas, viniles, microperforados, tarjetas de
+                        presentación, tabloides y material POP.</p>
+                    <div class="hero__buttons">
+                        <a href="contacto.html" class="btn btn--lime">Cotizar Impresión</a>
+                        <a href="servicios.html" class="btn btn--outline">Conocer Más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles del Slider -->
+            <button class="slider-arrow slider-arrow--prev" id="slider-prev" aria-label="Diapositiva anterior"><i
+                    data-lucide="chevron-left"></i></button>
+            <button class="slider-arrow slider-arrow--next" id="slider-next" aria-label="Diapositiva siguiente"><i
+                    data-lucide="chevron-right"></i></button>
+
+            <div class="slider-dots" id="slider-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+
             <canvas id="particles-canvas"></canvas>
         </section>
         <!-- ==========================================================================
-   02. HERO PRINCIPAL (INDEX) - FIN
+   02. HERO SLIDER PRINCIPAL (INDEX) - FIN
    ========================================================================== -->
 
         <!-- ==========================================================================
-           03. SECCIÓN "PUBLICIDAD EN RUTA URBANA" (EJE VIAL 1) - INICIO
-           ========================================================================== -->
-        <section class="route-section">
+            03. SECCIÓN "PUBLICIDAD EN RUTA URBANA" (EJE VIAL 1) - INICIO
+            ========================================================================== -->
+        <section class="route-section" id="ruta-urbana">
             <div class="container route-grid">
                 <div class="route-content">
                     <span class="badge badge--light"><i data-lucide="route" style="width: 16px; height: 16px;"></i>
                         El Producto Estrella En SCLC</span>
                     <h2>El Alcance Real Que Obtendrás</h2>
                     <p>Aprovecha el flujo medido sobre una de las arterias principales de San Cristóbal de las Casas: La
-                        red de
-                        paradas de transporte público en el <strong>Eje Vial 1</strong> garantiza exposición constante
+                        red de paradas de transporte público en el <strong>Eje Vial 1</strong> de 115 ubicaciones
+                        garantiza exposición constante
                         ante una población base real de <strong>215,874 habitantes</strong>.</p>
 
                     <div class="commercial-note">
@@ -142,26 +189,30 @@
                         <input type="range" id="sim-units" min="1" max="10" step="1" value="2">
                     </div>
 
-                    <div class="sim-results">
-                        <div>
+                    <div class="sim-result">
+                        <div style="margin-bottom: 0.75rem;">
                             <span class="sim-metric-val" id="res-impacts">48,000</span>
-                            <span class="sim-metric-lbl">Impactos Reales Estimados</span>
+                            <span class="sim-metric-lbl"
+                                style="display: block; font-size: 0.85rem; color: rgba(255,255,255,0.8);">Impactos
+                                Reales Estimados</span>
                         </div>
                         <div>
-                            <span class="sim-metric-val" id="res-freq">1.7x</span>
-                            <span class="sim-metric-lbl">Frecuencia Promedio</span>
+                            <span class="sim-metric-val" id="res-freq" style="font-size: 1.4rem;">1.7x</span>
+                            <span class="sim-metric-lbl"
+                                style="display: block; font-size: 0.85rem; color: rgba(255,255,255,0.8);">Frecuencia
+                                Promedio</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- ==========================================================================
-           03. SECCIÓN "PUBLICIDAD EN RUTA URBANA" (EJE VIAL 1) - FIN
-           ========================================================================== -->
+            03. SECCIÓN "PUBLICIDAD EN RUTA URBANA" (EJE VIAL 1) - FIN
+            ========================================================================== -->
 
         <!-- ==========================================================================
-           04. SECCIÓN "NOSOTROS" - INICIO
-           ========================================================================== -->
+            04. SECCIÓN "NOSOTROS" - INICIO
+            ========================================================================== -->
         <section class="about-section">
             <div class="container about-grid">
                 <div class="about-image-wrapper">
@@ -183,12 +234,12 @@
             </div>
         </section>
         <!-- ==========================================================================
-           04. SECCIÓN "NOSOTROS" - FIN
-           ========================================================================== -->
+            04. SECCIÓN "NOSOTROS" - FIN
+            ========================================================================== -->
 
         <!-- ==========================================================================
-           05. SECCIÓN "PRINCIPALES SERVICIOS" - INICIO
-           ========================================================================== -->
+            05. SECCIÓN "PRINCIPALES SERVICIOS" - INICIO
+            ========================================================================== -->
         <section class="services-section">
             <div class="container">
                 <div class="section-header">
@@ -239,13 +290,13 @@
             </div>
         </section>
         <!-- ==========================================================================
-           05. SECCIÓN "PRINCIPALES SERVICIOS" - FIN
-           ========================================================================== -->
+            05. SECCIÓN "PRINCIPALES SERVICIOS" - FIN
+            ========================================================================== -->
     </main>
 
     <!-- ==========================================================================
-           06. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - INICIO
-           ========================================================================== -->
+            06. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - INICIO
+            ========================================================================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
@@ -299,8 +350,8 @@
         <i class="fab fa-whatsapp"></i>
     </a>
     <!-- ==========================================================================
-           06. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - FIN
-           ========================================================================== -->
+            06. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - FIN
+            ========================================================================== -->
 
     <!-- Script JS Externo -->
     <script src="js/main.js"></script>

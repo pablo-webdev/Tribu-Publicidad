@@ -26,26 +26,14 @@ body {
 }
 
 :root {
-  --primary-petrol: #673ab7; /* Variante del morado base para el simulador y tarjetas de impacto */
-  --lime-btn: #ccff00; /* Amarillo/Lima neón de alto contraste para botones y acentos */
-  --lime-hover: #b3e600; /* Tono lima ajustado para los estados hover */
-  --dark-bg: #321c59; /* EL MORADO BASE OFICIAL para Header, Hero, Footer y bloques principales */
-  --gray-pearl: #f4f0fa; /* Blanco perla con matiz violeta sutil para fondos claros */
-  --white: #ffffff; /* Blanco puro para tipografía y legibilidad limpia */
-  --transition: all 0.3s ease;
-}
-
-/* 
-PALETA DE COLORES ORIGINAL
-:root {
-  --primary-petrol: #0e7490;
-  --lime-btn: #84cc16;
-  --lime-hover: #65a30d;
-  --dark-bg: #090d16;
-  --gray-pearl: #f8fafc;
+  --primary-petrol: #673ab7;
+  --lime-btn: #ccff00;
+  --lime-hover: #b3e600;
+  --dark-bg: #321c59;
+  --gray-pearl: #f4f0fa;
   --white: #ffffff;
   --transition: all 0.3s ease;
-} */
+}
 
 .container {
   width: 100%;
@@ -66,9 +54,14 @@ PALETA DE COLORES ORIGINAL
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(9, 13, 22, 0.95);
-  backdrop-filter: blur(8px);
+  background-color: transparent;
+  transition: var(--transition);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header.scrolled {
+  background-color: var(--dark-bg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .header__container {
@@ -132,81 +125,170 @@ PALETA DE COLORES ORIGINAL
    ========================================================================== */
 
 /* ==========================================================================
-   03. ESTANDARIZACIÓN DE HEROES (100VH) - INICIO
+   03. ESTANDARIZACIÓN Y SLIDER DE HERO (100VH) - INICIO
    ========================================================================== */
-.hero,
-.hero-index,
-.hero-page {
-  width: 100%;
-  min-height: 100vh;
-  height: 100vh;
+/* ==========================================================================
+   03.1. HERO INTERNO ESTANDARIZADO - INICIO
+   ========================================================================== */
+.hero-internal {
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 120px 1.5rem 4rem 1.5rem;
+  background-color: var(--dark-bg);
+  background-image:
+    linear-gradient(to bottom, rgba(50, 28, 89, 0.85), rgba(50, 28, 89, 0.95)),
+    url("../images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: var(--white);
   overflow: hidden;
-  padding-top: 80px;
 }
 
-.hero__overlay {
+.hero-internal__container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  z-index: 2;
+}
+
+.hero-internal h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  font-weight: 800;
+  max-width: 800px;
+  color: var(--white);
+}
+
+.hero-internal p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 650px;
+}
+
+.hero-internal .badge {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--lime-btn);
+}
+
+.hero-internal .btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+/* ==========================================================================
+   03.1. HERO INTERNO ESTANDARIZADO - FIN
+   ========================================================================== */
+
+/* ==========================================================================
+   03.2. TRANSICIÓN Y ESPACIADO SECCIONES INMEDIATAS - INICIO
+   ========================================================================== */
+.hero-internal + section,
+.hero-internal ~ .section,
+.hero-internal ~ .oferta-comercial,
+.hero-internal ~ .services-section,
+.hero-internal ~ .about-section,
+.hero-internal ~ .route-section {
+  padding-top: 5rem;
+}
+/* ==========================================================================
+   03.2. TRANSICIÓN Y ESPACIADO SECCIONES INMEDIATAS - FIN
+   ========================================================================== */
+
+.hero-index {
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__slide {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.8s ease-in-out,
+    visibility 0.8s ease-in-out;
   z-index: 1;
+}
+
+.hero__slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.hero__slide.active .hero__container > * {
+  animation: slideUpFade 0.8s ease forwards;
+}
+
+.hero__slide.active .hero__container .badge {
+  animation-delay: 0.1s;
+}
+.hero__slide.active .hero__container .hero__title {
+  animation-delay: 0.2s;
+}
+.hero__slide.active .hero__container .hero__subtitle {
+  animation-delay: 0.3s;
+}
+.hero__slide.active .hero__container .hero__buttons {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero__container {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
   max-width: 800px;
-}
-
-.hero-index {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(9, 13, 22, 0.82) 0%,
-      rgba(9, 13, 22, 0.94) 100%
-    ),
-    url("https://images.unsplash.com/photo-1533069027836-fa937181a8ce?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-      no-repeat center center/cover;
-  color: #ffffff;
-}
-
-.hero,
-.hero-page {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(9, 13, 22, 0.85) 0%,
-      rgba(14, 116, 144, 0.9) 100%
-    ),
-    url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop")
-      no-repeat center center/cover;
-  color: #ffffff;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(132, 204, 22, 0.15);
+  background: rgba(204, 255, 0, 0.15);
   color: var(--lime-btn);
   padding: 0.4rem 1rem;
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(132, 204, 22, 0.3);
+  border: 1px solid rgba(204, 255, 0, 0.3);
 }
 
 .badge--light {
-  background: rgba(14, 116, 144, 0.1);
+  background: rgba(103, 58, 183, 0.1);
   color: var(--primary-petrol);
-  border: 1px solid rgba(14, 116, 144, 0.2);
+  border: 1px solid rgba(103, 58, 183, 0.2);
 }
 
 .hero__title {
@@ -216,6 +298,7 @@ PALETA DE COLORES ORIGINAL
   line-height: 1.2;
   margin-bottom: 1rem;
   letter-spacing: -1px;
+  color: #ffffff;
 }
 
 .hero__subtitle {
@@ -232,6 +315,62 @@ PALETA DE COLORES ORIGINAL
   flex-wrap: wrap;
 }
 
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(50, 28, 89, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+}
+
+.slider-arrow:hover {
+  background-color: var(--lime-btn);
+  color: var(--dark-bg);
+  border-color: var(--lime-btn);
+}
+
+.slider-arrow--prev {
+  left: 20px;
+}
+.slider-arrow--next {
+  right: 20px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active {
+  background: var(--lime-btn);
+  width: 30px;
+  border-radius: 6px;
+}
+
 #particles-canvas {
   position: absolute;
   top: 0;
@@ -242,12 +381,59 @@ PALETA DE COLORES ORIGINAL
   z-index: 1;
 }
 /* ==========================================================================
-   03. ESTANDARIZACIÓN DE HEROES (100VH) - FIN
+   03. ESTANDARIZACIÓN Y SLIDER DE HERO (100VH) - FIN
    ========================================================================== */
 
 /* ==========================================================================
    04. BOTONES Y ACCESORIOS - INICIO
    ========================================================================== */
+/* ==========================================================================
+   04.1. CANVAS DE PARTÍCULAS Y SLIDER INDEPENDIENTE - INICIO
+   ========================================================================== */
+
+/* Canvas independiente en capa inferior */
+#particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Slider y diapositivas en capa superior transparente */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: transparent;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.8s ease-in-out,
+    visibility 0.8s ease-in-out;
+  background: transparent; /* Importante: Sin fondos opacos que tapen el canvas */
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   04.1. CANVAS DE PARTÍCULAS Y SLIDER INDEPENDIENTE - FIN
+   ========================================================================== */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -359,7 +545,7 @@ PALETA DE COLORES ORIGINAL
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #0e7490;
+  color: var(--primary-petrol);
   font-weight: 600;
   text-decoration: none;
   margin-top: 15px;
@@ -367,15 +553,16 @@ PALETA DE COLORES ORIGINAL
     color 0.3s ease,
     transform 0.3s ease;
 }
+
 .service-card a:hover,
 .service-link:hover {
-  color: #84cc16;
+  color: var(--lime-btn);
   transform: translateX(4px);
 }
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 35px -10px rgba(14, 116, 144, 0.15);
+  box-shadow: 0 20px 35px -10px rgba(103, 58, 183, 0.15);
 }
 
 .service-card__img {
@@ -403,12 +590,13 @@ PALETA DE COLORES ORIGINAL
 }
 
 .commercial-note {
-  background: rgba(14, 116, 144, 0.05);
+  background: var(--gray-pearl);
   border-left: 3px solid var(--primary-petrol);
   padding: 0.75rem;
   font-size: 0.85rem;
   color: #334155;
   border-radius: 0 6px 6px 0;
+  margin: 1rem 0;
 }
 /* ==========================================================================
    05. SECCIONES DE CONTENIDO Y SERVICIOS - FIN
@@ -442,6 +630,7 @@ PALETA DE COLORES ORIGINAL
   flex-direction: column;
   gap: 1.25rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .route-feature-item {
@@ -474,7 +663,7 @@ PALETA DE COLORES ORIGINAL
   color: var(--white);
   padding: 2.5rem;
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(14, 116, 144, 0.25);
+  box-shadow: 0 20px 40px rgba(103, 58, 183, 0.25);
 }
 
 .simulator-box h3 {
@@ -502,7 +691,7 @@ PALETA DE COLORES ORIGINAL
   padding: 0.75rem 1rem;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(9, 13, 22, 0.4);
+  background: rgba(50, 28, 89, 0.4);
   color: var(--white);
   font-family: "Inter", sans-serif;
   font-size: 0.95rem;
@@ -510,47 +699,29 @@ PALETA DE COLORES ORIGINAL
   transition: var(--transition);
 }
 
-.sim-group input[type="range"] {
-  accent-color: var(--lime-btn);
-  background: transparent;
-  padding: 1rem 0;
-  border: none;
-  cursor: pointer;
-}
-
 .sim-group select:focus,
 .sim-group input:focus {
   border-color: var(--lime-btn);
 }
 
-.sim-results {
-  display: flex;
-  text-align: center;
-  justify-content: space-between;
+.sim-group input[type="range"] {
+  accent-color: var(--lime-btn);
+  padding: 0;
+}
+
+.sim-result {
+  background: rgba(50, 28, 89, 0.6);
+  padding: 1.25rem;
+  border-radius: 8px;
   margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .sim-metric-val {
-  display: block;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1.75rem;
   font-weight: 800;
   color: var(--lime-btn);
-}
-
-.sim-metric-lbl {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.sim-result__price {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--lime-btn);
-  margin-top: 0.25rem;
 }
 /* ==========================================================================
    06. SIMULADOR Y RUTA EJE VIAL 1 - FIN
@@ -606,7 +777,7 @@ PALETA DE COLORES ORIGINAL
 }
 
 .footer__brand p {
-  color: #fff;
+  color: #94a3b8;
   font-size: 0.9rem;
   margin-top: 1rem;
   line-height: 1.6;
@@ -628,7 +799,7 @@ PALETA DE COLORES ORIGINAL
 }
 
 .footer__link {
-  color: #fff;
+  color: #94a3b8;
   text-decoration: none;
   font-size: 0.9rem;
   transition: var(--transition);
@@ -639,7 +810,7 @@ PALETA DE COLORES ORIGINAL
 }
 
 .footer__info {
-  color: #fff;
+  color: #94a3b8;
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -651,7 +822,7 @@ PALETA DE COLORES ORIGINAL
   justify-content: space-between;
   align-items: center;
   font-size: 0.85rem;
-  color: #f2f2f2;
+  color: #94a3b8;
 }
 
 .footer__credits-link {
@@ -691,7 +862,7 @@ PALETA DE COLORES ORIGINAL
   .nav {
     position: fixed;
     top: 80px;
-    right: -100%; /* Oculto completamente a la derecha */
+    right: -100%;
     left: auto;
     width: 100vw;
     height: calc(100vh - 80px);
@@ -703,7 +874,7 @@ PALETA DE COLORES ORIGINAL
   }
 
   .nav.active {
-    right: 0; /* Se desliza hacia la pantalla ocupando el 100% */
+    right: 0;
   }
 
   .nav__list {
@@ -711,18 +882,6 @@ PALETA DE COLORES ORIGINAL
     padding: 2rem;
     align-items: flex-start;
     gap: 1.25rem;
-  }
-
-  /*SIMULADOR   */
-  .sim-results {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .footer__grid {
@@ -736,19 +895,17 @@ PALETA DE COLORES ORIGINAL
     text-align: center;
   }
 
-  /* Forzar que CUALQUIER botón .btn ocupe todo el ancho y se centre en móvil */
   .btn {
     display: flex !important;
     width: 100% !important;
     max-width: 100% !important;
     justify-content: center !important;
     text-align: center !important;
-    margin-top: 20px !important;
+    margin-top: 10px !important;
     margin-bottom: 10px !important;
     box-sizing: border-box !important;
   }
 
-  /* Estilo base y animación del botón hamburguesa a X */
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -766,16 +923,12 @@ PALETA DE COLORES ORIGINAL
     display: block;
     width: 100%;
     height: 3px;
-    background-color: var(
-      --primary-color,
-      #84cc16
-    ); /* O el color de tus líneas */
+    background-color: var(--lime-btn);
     border-radius: 3px;
     transition: all 0.3s ease-in-out;
     transform-origin: center;
   }
 
-  /* Animación cuando el botón tiene la clase .active */
   .menu-toggle.active span:nth-child(1) {
     transform: translateY(9.5px) rotate(45deg);
   }
@@ -791,29 +944,3 @@ PALETA DE COLORES ORIGINAL
 /* ==========================================================================
    09. MEDIA QUERIES RESPONSIVE - FIN
    ========================================================================== */
-
-/* ==========================================================================
-   HEADER TRANSPARENTE CON EFECTO SCROLL
-   ========================================================================== */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: transparent;
-  border-bottom: 1px solid transparent;
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.header.scrolled {
-  background-color: var(
-    --dark-bg,
-    #0f172a
-  ); /* Toma el color principal oscuro */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}

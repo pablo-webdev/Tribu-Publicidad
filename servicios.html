@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios OOH | Tribu Publicidad San Cristóbal de las Casas</title>
+    <title>Servicios | Tribu Publicidad San Cristóbal</title>
 
     <!-- Google Fonts: Plus Jakarta Sans e Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
 
 <body>
 
-    <header class="header">
+    <header class="header" id="main-header">
         <div class="container header__container">
             <a href="index.html" class="header__logo">TRIBU <span>PUBLICIDAD</span></a>
             <nav class="nav" id="main-nav">
@@ -52,106 +52,92 @@
 
     <main>
         <!-- ==========================================================================
-           02. HERO DE SERVICIOS - INICIO
-           ========================================================================== -->
-        <section class="hero">
-            <div class="hero__overlay"></div>
+   02. HERO INTERNO (SERVICIOS) - INICIO
+   ========================================================================== -->
+        <section class="hero-internal"
+            style="background-image: linear-gradient(180deg, rgba(50, 28, 89, 0.85) 0%, rgba(50, 28, 89, 0.95) 100%), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop');">
             <div class="container hero__container">
-                <span class="badge"><i data-lucide="layers" style="width: 16px; height: 16px;"></i> Catálogo OOH
-                    2026</span>
-                <h1 class="hero__title">Soluciones de Publicidad Exterior de Alto Impacto</h1>
-                <p class="hero__subtitle">Infraestructura urbana estratégica diseñada para posicionar tu marca en los
-                    puntos de mayor tránsito y visibilidad de San Cristóbal de las Casas.</p>
+                <span class="badge"><i data-lucide="layers" style="width: 16px; height: 16px;"></i> Soluciones OOH
+                    Integrales</span>
+                <h1 class="hero__title">Servicios de Publicidad Exterior e Impresión en San Cristóbal</h1>
+                <p class="hero__subtitle">Soluciones integrales desde cobertura en transporte público hasta pantallas
+                    LED y gran formato.</p>
+                <div class="hero__buttons">
+                    <a href="contacto.html" class="btn btn--lime">Cotizar Servicio</a>
+                </div>
             </div>
-            <canvas id="particles-canvas"></canvas>
         </section>
         <!-- ==========================================================================
-           02. HERO DE SERVICIOS - FIN
-           ========================================================================== -->
+   02. HERO INTERNO (SERVICIOS) - FIN
+   ========================================================================== -->
 
         <!-- ==========================================================================
-           03. DETALLE DE SERVICIOS OOH - INICIO
-           ========================================================================== -->
+   03. CONTENIDO DETALLADO DE SERVICIOS - INICIO
+   ========================================================================== -->
         <section class="services-section">
             <div class="container">
                 <div class="section-header">
                     <span class="badge badge--light"><i data-lucide="grid" style="width: 16px; height: 16px;"></i>
-                        Nuestros Formatos</span>
-                    <h2>Estructuras y Redes de Exposición</h2>
-                    <p>Conoce a detalle cada uno de nuestros soportes publicitarios orientados a maximizar el retorno de
-                        inversión de tu empresa.</p>
+                        Catálogo de Soportes</span>
+                    <h2>Nuestra Oferta Comercial</h2>
+                    <p>Diseñamos estrategias de alto impacto visual con cobertura garantizada en las zonas de mayor
+                        tránsito de la ciudad.</p>
                 </div>
 
                 <div class="services-grid">
                     <div class="service-card">
-                        <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=600&q=80"
+                        <img src="https://vivesancristobal.com/wp-content/uploads/2015/05/como_llegar_a_san_cristobal2.png"
+                            alt="Eje Vial 1" class="service-card__img">
+                        <div class="service-card__body">
+                            <h3>Red de Paradas (Eje Vial 1)</h3>
+                            <p>115 ubicaciones estratégicas sobre el principal corredor de transporte público con gran
+                                visibilidad peatonal y vehicular.</p>
+                            <a href="contacto.html" class="service-link">Cotizar Ubicación <i data-lucide="arrow-right"
+                                    style="width: 16px; height: 16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E12AQH-Ed5W7881vg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1728421605417?e=2147483647&v=beta&t=iCmn4J1h3WgxigZYsJN24DeYDDhRt4TAsonCY4b88GI"
                             alt="Pantallas LED DOOH" class="service-card__img">
                         <div class="service-card__body">
                             <h3>Pantallas LED DOOH</h3>
-                            <p>Red digital programática de gran formato. Permite rotación dinámica de spots,
-                                actualización en tiempo real y segmentación por horarios comerciales estratégicos en la
-                                ciudad.</p>
-                            <div class="commercial-note" style="margin: 0.75rem 0; font-size: 0.8rem;">
-                                <strong>Especificación:</strong> Duración de spot: 10s / Frecuencia garantizada: 120
-                                exposiciones diarias por pantalla.
-                            </div>
-                            <a href="contacto.html" class="btn btn--lime" style="margin-top: 1rem; width: 100%;">Cotizar
-                                DOOH</a>
+                            <p>Anuncios digitales dinámicos con programación por horarios y excelente nitidez tanto de
+                                día como de noche.</p>
+                            <a href="contacto.html" class="service-link">Cotizar Servicio <i data-lucide="arrow-right"
+                                    style="width: 16px; height: 16px;"></i></a>
                         </div>
                     </div>
 
                     <div class="service-card">
-                        <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80"
-                            alt="Paradas de Colectivos Eje Vial 1" class="service-card__img">
+                        <img src="https://publicidad-y-medios.com/storage/uploads/1657374035_espectacular3.PNG"
+                            alt="Gran Formato" class="service-card__img">
                         <div class="service-card__body">
-                            <h3>Paradas de Colectivos (Eje Vial 1)</h3>
-                            <p>Nuestro producto estrella. Parabuses y paradas estratégicas ubicadas sobre la arteria
-                                principal, ofreciendo exposición frontal continua ante peatones y pasajeros de
-                                transporte colectivo.</p>
-                            <div class="commercial-note" style="margin: 0.75rem 0; font-size: 0.8rem;">
-                                <strong>Condición clave:</strong> Mínimo de contratación de 2 meses (60 días) para
-                                asegurar mantenimiento e impresión.
-                            </div>
-                            <a href="contacto.html" class="btn btn--lime" style="margin-top: 1rem; width: 100%;">Cotizar
-                                Eje Vial 1</a>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80"
-                            alt="Espectaculares y Gran Formato" class="service-card__img">
-                        <div class="service-card__body">
-                            <h3>Espectaculares y Gran Formato</h3>
-                            <p>Estructuras monumentales instaladas en accesos carreteros y bulevares principales con
-                                visibilidad de largo alcance. Ideal para campañas de posicionamiento masivo de marca.
-                            </p>
-                            <div class="commercial-note" style="margin: 0.75rem 0; font-size: 0.8rem;">
-                                <strong>Especificación:</strong> Alta resistencia estructural y lonas frontlight de
-                                máxima durabilidad ante clima local.
-                            </div>
-                            <a href="contacto.html" class="btn btn--lime" style="margin-top: 1rem; width: 100%;">Cotizar
-                                Gran Formato</a>
+                            <h3>Espectaculares Gran Formato</h3>
+                            <p>Estructuras de gran tamaño ubicadas en accesos carreteros y puntos clave de alta
+                                afluencia vehicular.</p>
+                            <a href="contacto.html" class="service-link">Cotizar Servicio <i data-lucide="arrow-right"
+                                    style="width: 16px; height: 16px;"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- ==========================================================================
-           03. DETALLE DE SERVICIOS OOH - FIN
-           ========================================================================== -->
+   03. CONTENIDO DETALLADO DE SERVICIOS - FIN
+   ========================================================================== -->
     </main>
 
     <!-- ==========================================================================
-           04. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - INICIO
-           ========================================================================== -->
+   04. FOOTER - INICIO
+   ========================================================================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
                     <a href="index.html" class="header__logo" style="color: var(--white);">TRIBU <span
                             style="color: var(--lime-btn);">PUBLICIDAD</span></a>
-                    <p>Plataforma OOH de categoría mundial enfocada en la efectividad publicitaria y el desarrollo de
-                        infraestructura urbana en SCLC.</p>
+                    <p>Plataforma OOH de categoría mundial enfocada en la efectividad publicitaria en SCLC.</p>
                 </div>
                 <div>
                     <h4 class="footer__heading">Navegación</h4>
@@ -168,13 +154,12 @@
                         <li><a href="servicios.html" class="footer__link">Pantallas LED DOOH</a></li>
                         <li><a href="servicios.html" class="footer__link">Mobiliario Urbano</a></li>
                         <li><a href="servicios.html" class="footer__link">Espectaculares Fijos</a></li>
-                        <li><a href="servicios.html" class="footer__link">Rutas Eje Vial 1</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer__heading">Contacto Directo</h4>
                     <p class="footer__info">Atención Ejecutiva OOH<br>Lunes a Viernes - 9:00 a 18:00 hrs</p>
-                    <a href="https://wa.me/529671378393?text=Hola,%20me%20interesa%20cotizar%20publicidad%20en%20el%20Eje%20Vial%201"
+                    <a href="https://wa.me/529671378393?text=Hola,%20me%20interesa%20cotizar%20servicios%20de%20publicidad"
                         class="footer__link"
                         style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; color: var(--lime-btn); font-weight: 600;"
                         target="_blank" rel="noopener noreferrer">
@@ -191,16 +176,14 @@
         </div>
     </footer>
 
-    <!-- Botón flotante de WhatsApp requerido y blindado -->
-    <a href="https://wa.me/529671378393?text=Hola,%20me%20interesa%20cotizar%20publicidad%20en%20el%20Eje%20Vial%201"
+    <a href="https://wa.me/529671378393?text=Hola,%20me%20interesa%20cotizar%20servicios%20de%20publicidad"
         class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacto de WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
     <!-- ==========================================================================
-           04. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - FIN
-           ========================================================================== -->
+   04. FOOTER - FIN
+   ========================================================================== -->
 
-    <!-- Script JS Externo -->
     <script src="js/main.js"></script>
 </body>
 

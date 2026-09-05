@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (menuToggle && mainNav) {
     menuToggle.addEventListener("click", () => {
-      menuToggle.classList.toggle("active"); // <--- Esto le da la animación de "X" al botón
-      mainNav.classList.toggle("active"); // <--- Esto despliega el menú
+      menuToggle.classList.toggle("active");
+      mainNav.classList.toggle("active");
       document.body.style.overflow = mainNav.classList.contains("active")
         ? "hidden"
         : "";
@@ -24,18 +24,103 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         mainNav.classList.remove("active");
-        menuToggle.classList.remove("active"); // <--- Esto regresa la "X" a hamburguesa al hacer clic en un enlace
+        menuToggle.classList.remove("active");
         document.body.style.overflow = "";
       });
     });
   }
+
+  // Header scroll effect
+  const mainHeader = document.getElementById("main-header");
+  window.addEventListener("scroll", () => {
+    if (mainHeader) {
+      if (window.scrollY > 30) {
+        mainHeader.classList.add("scrolled");
+      } else {
+        mainHeader.classList.remove("scrolled");
+      }
+    }
+  });
   /* ==========================================================================
    01. INICIALIZACIÓN Y MENÚ MÓVIL RESPONSIVE - FIN
    ========================================================================== */
 
   /* ==========================================================================
-   02. SISTEMA DE PARTÍCULAS ADAPTABLE EN CANVAS - INICIO
+   02. SLIDER INTERACTIVO DE HERO Y PARTÍCULAS - INICIO
    ========================================================================== */
+  const slides = document.querySelectorAll(".hero__slide");
+  const dots = document.querySelectorAll(".slider-dots .dot");
+  const btnPrev = document.getElementById("slider-prev");
+  const btnNext = document.getElementById("slider-next");
+  const heroSlider = document.getElementById("hero-slider");
+
+  if (slides.length > 0) {
+    let currentIndex = 0;
+    let slideInterval;
+    const intervalTime = 6000;
+
+    function goToSlide(index) {
+      slides.forEach((slide) => slide.classList.remove("active"));
+      dots.forEach((dot) => dot.classList.remove("active"));
+
+      currentIndex = (index + slides.length) % slides.length;
+
+      slides[currentIndex].classList.add("active");
+      if (dots[currentIndex]) {
+        dots[currentIndex].classList.add("active");
+      }
+
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    if (btnNext)
+      btnNext.addEventListener("click", () => {
+        nextSlide();
+        resetInterval();
+      });
+    if (btnPrev)
+      btnPrev.addEventListener("click", () => {
+        prevSlide();
+        resetInterval();
+      });
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener("click", () => {
+        goToSlide(idx);
+        resetInterval();
+      });
+    });
+
+    function startInterval() {
+      slideInterval = setInterval(nextSlide, intervalTime);
+    }
+
+    function resetInterval() {
+      clearInterval(slideInterval);
+      startInterval();
+    }
+
+    if (heroSlider) {
+      heroSlider.addEventListener("mouseenter", () =>
+        clearInterval(slideInterval),
+      );
+      heroSlider.addEventListener("mouseleave", () => startInterval());
+    }
+
+    startInterval();
+  }
+
+  // Sistema de Partículas Canvas
   const canvas = document.getElementById("particles-canvas");
   if (canvas) {
     const ctx = canvas.getContext("2d");
@@ -48,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const particles = [];
-    const particleCount = window.innerWidth < 768 ? 15 : 30;
+    const particleCount = window.innerWidth < 768 ? 15 : 35;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -57,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         radius: Math.random() * 2 + 1,
         color:
           Math.random() > 0.5
-            ? "rgba(132, 204, 22, 0.6)"
+            ? "rgba(204, 255, 0, 0.6)"
             : "rgba(255, 255, 255, 0.4)",
         vx: (Math.random() - 0.5) * 0.4,
         vy: (Math.random() - 0.5) * 0.4 - 0.2,
@@ -66,7 +151,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function animateParticles() {
       ctx.clearRect(0, 0, width, height);
-      particles.forEach((p) => {
+
+      // Dibujar partículas y líneas de conexión
+      for (let i = 0; i < particles.length; i++) {
+        let p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
 
@@ -79,38 +167,34 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.fill();
-      });
+
+        // Conectar partículas cercanas con líneas tenues
+        for (let j = i + 1; j < particles.length; j++) {
+          let p2 = particles[j];
+          let dx = p.x - p2.x;
+          let dy = p.y - p2.y;
+          let dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 100) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - dist / 100)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
       requestAnimationFrame(animateParticles);
     }
     animateParticles();
   }
   /* ==========================================================================
-   02. SISTEMA DE PARTÍCULAS ADAPTABLE EN CANVAS - FIN
+   02. SLIDER INTERACTIVO DE HERO Y PARTÍCULAS - FIN
    ========================================================================== */
 
   /* ==========================================================================
-   03. HEDAER TRANSPARENTE A SÓLIDO CON SCROLL - INICIO
-   ========================================================================== */
-
-  // Efecto Header Transparente a Sólido con Scroll
-  const header = document.querySelector(".header");
-
-  if (header) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 30) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-    });
-  }
-
-  /* ==========================================================================
-   03. HEDAER TRANSPARENTE A SÓLIDO CON SCROLL - FIN
-   ========================================================================== */
-
-  /* ==========================================================================
-   04. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - INICIO
+   03. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - INICIO
    ========================================================================== */
   const simService = document.getElementById("sim-service");
   const simMonths = document.getElementById("sim-months");
@@ -129,10 +213,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const serviceType = simService.value;
     const months = parseInt(simMonths.value);
     const units = parseInt(simUnits.value);
-    const days = months * 30; // Mínimo 2 meses = 60 días
+    const days = months * 30;
 
     let serviceName = "Paradas de Combi (Eje Vial 1)";
-    // Flujo conservador y ultra-realista de 400 impactos diarios por parabús/unidad (Población SCLC: 215,874 habitantes)
     let dailyImpactsPerUnit = 400;
 
     if (serviceType === "dooh") {
@@ -143,16 +226,18 @@ document.addEventListener("DOMContentLoaded", () => {
       dailyImpactsPerUnit = 800;
     }
 
-    lblServiceVal.textContent = serviceName;
-    lblMonthsVal.textContent = `${months} meses (${days} días)`;
-    lblUnitsVal.textContent = `${units} ${units === 1 ? "soporte" : "soportes"}`;
+    if (lblServiceVal) lblServiceVal.textContent = serviceName;
+    if (lblMonthsVal)
+      lblMonthsVal.textContent = `${months} meses (${days} días)`;
+    if (lblUnitsVal)
+      lblUnitsVal.textContent = `${units} ${units === 1 ? "soporte" : "soportes"}`;
 
-    // Cálculo matemático conservador y aterrizado (Ej: 2 meses x 60 días * 2 soportes * 400 impactos = 48,000 impactos)
     const totalImpacts = days * units * dailyImpactsPerUnit;
     const frequency = (1.2 + units * 0.05).toFixed(1);
 
-    resImpacts.textContent = totalImpacts.toLocaleString("es-MX");
-    resFreq.textContent = `${frequency}x`;
+    if (resImpacts)
+      resImpacts.textContent = totalImpacts.toLocaleString("es-MX");
+    if (resFreq) resFreq.textContent = `${frequency}x`;
   }
 
   if (simService && simMonths && simUnits) {
@@ -163,5 +248,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 /* ==========================================================================
-   04. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - FIN
+   03. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - FIN
    ========================================================================== */
