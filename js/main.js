@@ -120,17 +120,20 @@ document.addEventListener("DOMContentLoaded", () => {
     startInterval();
   }
 
-  // Sistema de Partículas Canvas
+  // Sistema de Partículas Canvas (Independiente y persistente)
   const canvas = document.getElementById("particles-canvas");
   if (canvas) {
     const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+    }
+
     let width = (canvas.width = canvas.offsetWidth);
     let height = (canvas.height = canvas.offsetHeight);
 
-    window.addEventListener("resize", () => {
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
-    });
+    window.addEventListener("resize", resizeCanvas);
 
     const particles = [];
     const particleCount = window.innerWidth < 768 ? 15 : 35;

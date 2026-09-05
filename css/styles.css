@@ -132,6 +132,7 @@ body {
    ========================================================================== */
 .hero-internal {
   min-height: 70vh;
+  max-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,7 +141,7 @@ body {
   background-color: var(--dark-bg);
   background-image:
     linear-gradient(to bottom, rgba(50, 28, 89, 0.85), rgba(50, 28, 89, 0.95)),
-    url("../images/hero-bg.jpg");
+    url("https://images.unsplash.com/photo-1587614313085-5da51cebd8ac?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -209,6 +210,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--dark-bg);
+}
+
+/* Imagen de Fondo en Hero Principal (.hero-index::before o .hero::before según estructura original, aplicada aquí con seguridad en .hero-index) */
+.hero-index::before,
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(50, 28, 89, 0.82), rgba(50, 28, 89, 0.88)),
+    url("../images/espectacular-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero__slide {
@@ -217,8 +237,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center center;
+  background: transparent !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,7 +246,7 @@ body {
   transition:
     opacity 0.8s ease-in-out,
     visibility 0.8s ease-in-out;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero__slide.active {
@@ -377,8 +396,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
   z-index: 1;
+  pointer-events: none;
 }
 /* ==========================================================================
    03. ESTANDARIZACIÓN Y SLIDER DE HERO (100VH) - FIN
@@ -408,7 +427,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: transparent;
+  background: transparent !important;
 }
 
 .slide {
@@ -417,12 +436,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  background: transparent !important;
   opacity: 0;
   visibility: hidden;
   transition:
     opacity 0.8s ease-in-out,
     visibility 0.8s ease-in-out;
-  background: transparent; /* Importante: Sin fondos opacos que tapen el canvas */
 }
 
 .slide.active {
@@ -855,6 +874,14 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Ocultar flechas del slider en dispositivos móviles */
+  .slider-arrow,
+  .slider-nav-btn,
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none !important;
+  }
+
   .menu-toggle {
     display: flex;
   }
