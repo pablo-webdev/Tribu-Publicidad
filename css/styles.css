@@ -905,9 +905,30 @@ body {
 }
 
 @media (max-width: 768px) {
-  * {
+
+  .hero-content,
+  .section-header,
+  .section-title,
+  .section-subtitle {
     text-align: center;
   }
+
+  h2, h3 {
+    text-align: center;
+  }
+
+  .badge, 
+  .tag-label {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .sim-result {
+    text-align: center;
+  }
+
   /* Ocultar flechas del slider en dispositivos móviles */
   .slider-arrow,
   .slider-nav-btn,
