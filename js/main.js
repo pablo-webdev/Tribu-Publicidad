@@ -263,7 +263,7 @@ const autoRevealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.30 },
+  { threshold: 0.15 },
 );
 
 function initScrollReveals() {

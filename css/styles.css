@@ -1014,7 +1014,7 @@ body {
    ========================================================================== */
 .reveal-scale {
   opacity: 0;
-  transform: scale(0.50);
+  transform: scale(0.92);
   /* Cambiado a 1.2s para un fade elegante y sin prisas */
   transition:
     opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
