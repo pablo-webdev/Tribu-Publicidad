@@ -905,12 +905,25 @@ body {
 }
 
 @media (max-width: 768px) {
+  * {
+    text-align: center;
+  }
   /* Ocultar flechas del slider en dispositivos móviles */
   .slider-arrow,
   .slider-nav-btn,
   .carousel-control-prev,
   .carousel-control-next {
     display: none !important;
+  }
+
+  .slider-dots {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
   }
 
   .menu-toggle {
