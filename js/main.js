@@ -253,3 +253,32 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ==========================================================================
    03. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - FIN
    ========================================================================== */
+
+// ==========================================================================
+// OBSERVER DINÁMICO ESCALABLE - INICIO
+// ==========================================================================
+
+// Observer dinámico que escala con cualquier sección nueva
+const autoRevealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  },
+  { threshold: 0.15 },
+);
+
+// Función para registrar elementos actuales e inyectados
+function initScrollReveals() {
+  document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
+    autoRevealObserver.observe(el);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initScrollReveals);
+
+// ==========================================================================
+// OBSERVER DINÁMICO ESCALABLE - FIN
+// ==========================================================================

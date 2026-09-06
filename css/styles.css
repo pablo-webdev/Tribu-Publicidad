@@ -649,7 +649,6 @@ body {
   margin: 1rem 0;
 }
 
-
 .commercial-note strong {
   color: var(--dark-bg);
 }
@@ -914,7 +913,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
   .hero-content,
   .section-header,
   .section-title,
@@ -922,11 +920,12 @@ body {
     text-align: center;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     text-align: center;
   }
 
-  .badge, 
+  .badge,
   .tag-label {
     display: table;
     margin-left: auto;
@@ -1007,7 +1006,7 @@ body {
     box-sizing: border-box !important;
   }
 
-   .hero__buttons .btn {
+  .hero__buttons .btn {
     display: flex !important;
     width: 100% !important;
     max-width: 100% !important;
@@ -1055,4 +1054,44 @@ body {
 }
 /* ==========================================================================
    09. MEDIA QUERIES RESPONSIVE - FIN
+   ========================================================================== */
+
+/* ==========================================================================
+   SISTEMA DE DISEÑO MODULAR Y ESCALABLE - INICIO
+   ========================================================================== */
+
+/* Espaciados y contenedores estandarizados */
+.site-section {
+  padding: 80px 0;
+  position: relative;
+  width: 100%;
+}
+
+/* Temas intercambiables por sección */
+.theme-dark {
+  background-color: var(--gray-pearl);
+  color: #ffffff;
+}
+
+.theme-light {
+  background-color: #fff;
+  color: #1a1a1a;
+}
+
+/* Animación global para elementos nuevos y dinámicos */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   SISTEMA DE DISEÑO MODULAR Y ESCALABLE - FIN
    ========================================================================== */
