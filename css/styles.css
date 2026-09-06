@@ -640,8 +640,8 @@ body {
 }
 
 .commercial-note {
-  background: var(--primary-petrol);
-  border-left: 4px solid var(--lime-btn);
+  background: #d3d6db;
+  border-left: 4px solid var(--dark-bg);
   padding: 0.75rem;
   font-size: 0.85rem;
   color: #415533;
@@ -651,11 +651,11 @@ body {
 
 
 .commercial-note strong {
-  color: var(--lime-btn);
+  color: var(--dark-bg);
 }
 
 .commercial-note p {
-  color: #fff !important;
+  color: #000 !important;
 }
 /* ==========================================================================
    05. SECCIONES DE CONTENIDO Y SERVICIOS - FIN
