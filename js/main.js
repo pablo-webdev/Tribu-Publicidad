@@ -155,7 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function animateParticles() {
       ctx.clearRect(0, 0, width, height);
 
-      // Dibujar partículas y líneas de conexión
       for (let i = 0; i < particles.length; i++) {
         let p = particles[i];
         p.x += p.vx;
@@ -171,7 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.fillStyle = p.color;
         ctx.fill();
 
-        // Conectar partículas cercanas con líneas tenues
         for (let j = i + 1; j < particles.length; j++) {
           let p2 = particles[j];
           let dx = p.x - p2.x;
@@ -257,8 +255,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // ==========================================================================
 // OBSERVER DINÁMICO ESCALABLE - INICIO
 // ==========================================================================
-
-// Observer dinámico que escala con cualquier sección nueva
 const autoRevealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -267,18 +263,19 @@ const autoRevealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.15 },
+  { threshold: 0.30 },
 );
 
-// Función para registrar elementos actuales e inyectados
 function initScrollReveals() {
-  document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
-    autoRevealObserver.observe(el);
-  });
+  // AHORA ESCUCHA AMBAS CLASES:
+  document
+    .querySelectorAll(".reveal-on-scroll, .reveal-scale")
+    .forEach((el) => {
+      autoRevealObserver.observe(el);
+    });
 }
 
 document.addEventListener("DOMContentLoaded", initScrollReveals);
-
 // ==========================================================================
 // OBSERVER DINÁMICO ESCALABLE - FIN
 // ==========================================================================
