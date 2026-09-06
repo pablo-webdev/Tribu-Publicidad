@@ -640,13 +640,22 @@ body {
 }
 
 .commercial-note {
-  background: var(--gray-pearl);
-  border-left: 3px solid var(--primary-petrol);
+  background: var(--primary-petrol);
+  border-left: 4px solid var(--lime-btn);
   padding: 0.75rem;
   font-size: 0.85rem;
-  color: #334155;
+  color: #415533;
   border-radius: 0 6px 6px 0;
   margin: 1rem 0;
+}
+
+
+.commercial-note strong {
+  color: var(--lime-btn);
+}
+
+.commercial-note p {
+  color: #fff !important;
 }
 /* ==========================================================================
    05. SECCIONES DE CONTENIDO Y SERVICIOS - FIN
@@ -993,7 +1002,18 @@ body {
     max-width: 100% !important;
     justify-content: center !important;
     text-align: center !important;
-    margin-top: 10px !important;
+    margin-top: 40px !important;
+    margin-bottom: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+   .hero__buttons .btn {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-top: 0px !important;
     margin-bottom: 10px !important;
     box-sizing: border-box !important;
   }
