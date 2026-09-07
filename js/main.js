@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (slides.length > 0) {
     let currentIndex = 0;
     let slideInterval;
-    const intervalTime = 6000;
+    const intervalTime = 9000;
 
     function goToSlide(index) {
       slides.forEach((slide) => slide.classList.remove("active"));
@@ -136,19 +136,19 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", resizeCanvas);
 
     const particles = [];
-    const particleCount = window.innerWidth < 768 ? 15 : 35;
+    const particleCount = window.innerWidth < 768 ? 15 : 60;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        radius: Math.random() * 2 + 1,
+        radius: Math.random() * 2.5 + 1.2,
         color:
           Math.random() > 0.5
             ? "rgba(204, 255, 0, 0.6)"
             : "rgba(255, 255, 255, 0.4)",
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4 - 0.2,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.9) * 0.4 - 0.4,
       });
     }
 
