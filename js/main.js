@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", resizeCanvas);
 
     const particles = [];
-    const particleCount = window.innerWidth < 768 ? 15 : 60;
+    const particleCount = window.innerWidth < 768 ? 15 : 40;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ? "rgba(204, 255, 0, 0.6)"
             : "rgba(255, 255, 255, 0.4)",
         vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.9) * 0.4 - 0.4,
+        vy: (Math.random() - 0.7) * 0.4 - 0.4,
       });
     }
 
