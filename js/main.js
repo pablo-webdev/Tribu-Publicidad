@@ -57,7 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
   if (slides.length > 0) {
     let currentIndex = 0;
     let slideInterval;
-    const intervalTime = 9000;
+    const intervalTime = 10000;
+
+    // SEGURO DE VIDA: Si editaste el HTML y ningún slide tiene la clase .active, activa el primero.
+    const activeSlide = document.querySelector(".hero__slide.active");
+    if (!activeSlide) {
+      slides[0].classList.add("active");
+      if (dots[0]) dots[0].classList.add("active");
+    } else {
+      // Si ya hay uno activo, sincroniza el índice inicial
+      slides.forEach((slide, idx) => {
+        if (slide.classList.contains("active")) currentIndex = idx;
+      });
+    }
 
     function goToSlide(index) {
       slides.forEach((slide) => slide.classList.remove("active"));
@@ -83,16 +95,21 @@ document.addEventListener("DOMContentLoaded", () => {
       goToSlide(currentIndex - 1);
     }
 
-    if (btnNext)
-      btnNext.addEventListener("click", () => {
+    if (btnNext) {
+      btnNext.addEventListener("click", (e) => {
+        e.preventDefault();
         nextSlide();
         resetInterval();
       });
-    if (btnPrev)
-      btnPrev.addEventListener("click", () => {
+    }
+
+    if (btnPrev) {
+      btnPrev.addEventListener("click", (e) => {
+        e.preventDefault();
         prevSlide();
         resetInterval();
       });
+    }
 
     dots.forEach((dot, idx) => {
       dot.addEventListener("click", () => {
@@ -107,31 +124,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function resetInterval() {
       clearInterval(slideInterval);
-      startInterval();
-    }
-
-    if (heroSlider) {
-      heroSlider.addEventListener("mouseenter", () =>
-        clearInterval(slideInterval),
-      );
-      heroSlider.addEventListener("mouseleave", () => startInterval());
+      slideInterval = setInterval(nextSlide, intervalTime);
     }
 
     startInterval();
   }
 
-  // Sistema de Partículas Canvas (Independiente y persistente)
+  // Sistema de Partículas Canvas (Tu código exacto con fallback de tamaño)
   const canvas = document.getElementById("particles-canvas");
   if (canvas) {
     const ctx = canvas.getContext("2d");
 
     function resizeCanvas() {
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
+      width = canvas.width = canvas.offsetWidth || window.innerWidth;
+      height = canvas.height = canvas.offsetHeight || window.innerHeight;
     }
 
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
+    let width = (canvas.width = canvas.offsetWidth || window.innerWidth);
+    let height = (canvas.height = canvas.offsetHeight || window.innerHeight);
 
     window.addEventListener("resize", resizeCanvas);
 

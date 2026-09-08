@@ -64,10 +64,11 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* GRID 3 COLUMNAS: Columna 1 (Logo), Columna 2 (Nav Centrado), Columna 3 (Botón Derecha) */
 .header__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   height: 80px;
 }
 
@@ -78,10 +79,15 @@ body {
   color: var(--white);
   text-decoration: none;
   letter-spacing: -0.5px;
+  justify-self: start;
 }
 
 .header__logo span {
   color: var(--lime-btn);
+}
+
+.nav {
+  justify-self: center;
 }
 
 .nav__list {
@@ -119,6 +125,63 @@ body {
   height: 2px;
   background-color: var(--white);
   transition: var(--transition);
+}
+
+/* ==========================================
+   REGLAS PARA EL BOTÓN DE COTIZAR
+   ========================================== */
+
+.nav__cotizar-mobile {
+  display: none;
+}
+
+.btn-cotizar--desktop {
+  justify-self: end;
+}
+
+.btn-cotizar {
+  display: inline-block;
+  background-color: var(--lime-btn);
+  color: var(--dark-bg);
+  padding: 0.6rem 1.4rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.btn-cotizar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(204, 255, 0, 0.3);
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btn-cotizar--desktop {
+    display: none;
+  }
+
+  .nav__cotizar-mobile {
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .nav__cotizar-mobile .btn-cotizar {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
 }
 /* ==========================================================================
    02. HEADER Y NAVEGACIÓN - FIN
@@ -243,7 +306,7 @@ body {
 }
 
 .hero__slide--2 {
-  --bg-img: url("https://images.unsplash.com/photo-1533069027836-fa937181a8ce?q=80&w=1170&auto=format&fit=crop");
+  --bg-img: url("https://www.valentinaeventos.com/wp-content/uploads/E.jpg");
 }
 
 .hero__slide--3 {
