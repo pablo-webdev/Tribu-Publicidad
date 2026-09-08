@@ -29,8 +29,8 @@ body {
   --primary-petrol: #231932;
   --lime-btn: #ccff00;
   --lime-hover: #b3e600;
-  --dark-bg: #160F22;
-  --gray-pearl: #F9F8FC;
+  --dark-bg: #160f22;
+  --gray-pearl: #f9f8fc;
   --white: #ffffff;
   --transition: all 0.3s ease;
 }
@@ -218,11 +218,30 @@ body {
     opacity 0.8s ease-in-out,
     visibility 0.8s ease-in-out;
   z-index: 1;
+
+  /* CAPA MORADA MÁS IMAGEN (Combinadas en una sola regla usando la variable --bg-img) */
+  background-image:
+    linear-gradient(180deg,rgba(22, 15, 34, 1) 0%, rgba(0, 0, 0, 0.8) 50%),
+    var(--bg-img);
 }
 
 .hero__slide.active {
   opacity: 1;
   visibility: visible;
+  z-index: 2;
+}
+
+/* ASIGNACIÓN DE IMÁGENES DE FONDO POR SLIDE */
+.hero__slide--1 {
+  --bg-img: url("https://propiedadescom.s3.amazonaws.com/files/1200x507/eje-vial-1-sector-salud-san-cristobal-de-las-casas-chiapas-3022838-foto-01.jpg");
+}
+
+.hero__slide--2 {
+  --bg-img: url("https://images.unsplash.com/photo-1533069027836-fa937181a8ce?q=80&w=1170&auto=format&fit=crop");
+}
+
+.hero__slide--3 {
+  --bg-img: url("https://images.unsplash.com/photo-1670291597041-5b0f9b3388b5?q=80&w=1074&auto=format&fit=crop");
 }
 
 .hero__slide.active .hero__container > * {
