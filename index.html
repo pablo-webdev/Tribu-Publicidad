@@ -21,6 +21,10 @@
 
     <!-- Estilos CSS Externos -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- MAPA DE UBICACIONES CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -60,6 +64,7 @@
    ========================================================================== -->
 
     <main>
+
         <!-- ==========================================================================
    02. HERO SLIDER PRINCIPAL (INDEX) - INICIO
    ========================================================================== -->
@@ -126,10 +131,38 @@
         <!-- ==========================================================================
    02. HERO SLIDER PRINCIPAL (INDEX) - FIN
    ========================================================================== -->
-
         <!-- ==========================================================================
             03. SECCIÓN "PUBLICIDAD EN RUTA URBANA" (EJE VIAL 1) - INICIO
             ========================================================================== -->
+        <!-- ==========================================================================
+   03.1 MAPA DE DISPONIBILIDAD - EJE VIAL 1 (INICIO)
+   ========================================================================== -->
+        <section id="mapa-disponibilidad" class="mapa-section">
+            <div class="mapa-container">
+                <div class="mapa-header">
+                    <h2 class="mapa-title">Inventario en Tiempo Real — Eje Vial 1</h2>
+                    <p class="mapa-subtitle">San Cristóbal de las Casas, Chiapas</p>
+                </div>
+
+                <!-- Leyenda e indicadores rápidos -->
+                <div class="mapa-legend">
+                    <div class="legend-item">
+                        <span class="dot dot-disponible"></span>
+                        <span>Disponible (<strong id="count-disponibles">0</strong>)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="dot dot-ocupado"></span>
+                        <span>Rentado / Ocupado (<strong id="count-ocupados">0</strong>)</span>
+                    </div>
+                </div>
+
+                <!-- Contenedor del mapa Leaflet -->
+                <div id="mapa-eje-vial" class="mapa-wrapper"></div>
+            </div>
+        </section>
+        <!-- ==========================================================================
+   03.1 MAPA DE DISPONIBILIDAD - EJE VIAL 1 (FIN)
+   ========================================================================== -->
         <section class="route-section site-section theme-light reveal-on-scroll" id="ruta-urbana">
             <div class="container route-grid">
                 <div class="route-content">

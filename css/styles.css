@@ -670,6 +670,191 @@ body {
 /* ==========================================================================
    06. SIMULADOR Y RUTA EJE VIAL 1 - INICIO
    ========================================================================== */
+/* ==========================================================================
+   06.1 MAPA DE DISPONIBILIDAD EJE VIAL 1 - INICIO
+   ========================================================================== */
+.mapa-section {
+  padding: 3rem 1.5rem;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.mapa-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mapa-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.mapa-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.mapa-subtitle {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin: 0;
+}
+
+.mapa-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  background: #1a1a1a;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-disponible {
+  background-color: #00e676;
+  box-shadow: 0 0 8px rgba(0, 230, 118, 0.6);
+}
+
+.dot-ocupado {
+  background-color: #ff1744;
+  box-shadow: 0 0 8px rgba(255, 23, 68, 0.6);
+}
+
+.mapa-wrapper {
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  overflow: hidden;
+  background-color: #121212;
+}
+
+/* Custom Popups para Leaflet en Tema Oscuro */
+.leaflet-popup-content-wrapper {
+  background: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px !important;
+}
+
+.leaflet-popup-tip {
+  background: #1a1a1a !important;
+}
+
+.popup-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 2px;
+}
+
+.popup-code {
+  color: #888;
+  font-size: 11px;
+}
+
+.popup-info h4,
+.popup-title {
+  margin: 0;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.popup-status {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  width: fit-content;
+}
+
+.popup-status.disponible {
+  background: #00381e;
+  color: #00e676;
+}
+
+.popup-status.ocupado {
+  background: #4a000e;
+  color: #ff1744;
+}
+
+.btn-popup-wa {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 6px 12px;
+  background-color: #25d366;
+  color: #ffffff !important;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-popup-wa:hover {
+  background-color: #128c7e;
+}
+
+/* Ajustes Responsive para Pantallas Pequeñas */
+@media (max-width: 600px) {
+  .mapa-section {
+    padding: 2rem 1rem;
+  }
+
+  .mapa-title {
+    font-size: 1.35rem;
+  }
+
+  .mapa-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .mapa-legend {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .legend-item {
+    font-size: 0.85rem;
+  }
+
+  .mapa-wrapper {
+    height: 380px;
+    border-radius: 8px;
+  }
+}
+/* ==========================================================================
+   06.1 MAPA DE DISPONIBILIDAD EJE VIAL 1 - FIN
+   ========================================================================== */
+
+/* CÓDIGO ORIGINAL */
+
 .route-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

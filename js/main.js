@@ -207,6 +207,140 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ==========================================================================
    03. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - INICIO
    ========================================================================== */
+  /* ==========================================================================
+   03.1 MAPA DE DISPONIBILIDAD EN TIEMPO REAL (EJE VIAL 1) - GOOGLE SHEETS
+   ========================================================================== */
+  function initMapaDisponibilidad() {
+    const mapElement = document.getElementById("mapa-eje-vial");
+    if (!mapElement || typeof L === "undefined") return;
+
+    const SHEET_CSV_URL =
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZCc1Om6n4F3VJAcm7JpBkLSbyQNikgEOSdMKU5CvYE9j7LiLVtPcaR86UemwXlvOwxSUAVKG_u071/pub?output=csv";
+
+    const map = L.map("mapa-eje-vial").setView([16.737, -92.637], 13.5);
+
+    L.tileLayer(
+      "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+      {
+        maxZoom: 16,
+        attribution: "Tiles © Esri",
+      },
+    ).addTo(map);
+
+    const ejeCoordinates = [
+      [16.7585, -92.6302],
+      [16.749, -92.6325],
+      [16.738, -92.636],
+      [16.728, -92.64],
+      [16.715, -92.646],
+    ];
+
+    L.polyline(ejeCoordinates, {
+      color: "#ffffff",
+      weight: 3,
+      opacity: 0.3,
+      dashArray: "6, 8",
+    }).addTo(map);
+
+    function parseCSV(text) {
+      const lines = text.trim().split(/\r?\n/);
+      if (lines.length <= 1) return [];
+
+      const headers = lines[0].split(",").map((h) =>
+        h
+          .trim()
+          .toLowerCase()
+          .replace(/^["'\s]+|["'\s]+$/g, ""),
+      );
+
+      return lines.slice(1).map((line) => {
+        const values = line
+          .split(",")
+          .map((v) => v.trim().replace(/^["'\s]+|["'\s]+$/g, ""));
+        let obj = {};
+        headers.forEach((h, i) => (obj[h] = values[i]));
+        return obj;
+      });
+    }
+
+    fetch(SHEET_CSV_URL + "&t=" + new Date().getTime())
+      .then((res) => res.text())
+      .then((csvText) => {
+        const paradasData = parseCSV(csvText);
+        let countDisp = 0;
+        let countOcup = 0;
+
+        paradasData.forEach((parada) => {
+          const lat = parseFloat(parada.lat);
+          const lng = parseFloat(parada.lng || parada.ing);
+
+          if (isNaN(lat) || isNaN(lng)) return;
+
+          const isDisponible =
+            (parada.estado || "").trim().toLowerCase() === "disponible";
+          if (isDisponible) countDisp++;
+          else countOcup++;
+
+          // Colores más intensos y realistas (Verde neón / Rojo vibrante)
+          const colorHex = isDisponible ? "#00e676" : "#ff1744";
+
+          const marker = L.circleMarker([lat, lng], {
+            radius: 9,
+            fillColor: colorHex,
+            color: "#ffffff",
+            weight: 2,
+            opacity: 0.95,
+            fillOpacity: 0.9,
+          }).addTo(map);
+
+          // Mensaje dinámico de WhatsApp para la parada
+          const waMsg = encodeURIComponent(
+            `Hola, me interesa cotizar la parada ${parada.id || ""} (${parada.nombre || ""}) del Eje Vial 1.`,
+          );
+          const waUrl = `https://wa.me/529671378393?text=${waMsg}`;
+
+          const popupContent = `
+          <div class="popup-info">
+            <small class="popup-code">Código: ${parada.id || ""}</small>
+            <h4 class="popup-title">${parada.nombre || "Parada"}</h4>
+            <span class="popup-status ${isDisponible ? "disponible" : "ocupado"}">
+              ${isDisponible ? "DISPONIBLE PARA RENTA" : "RENTADO / OCUPADO"}
+            </span>
+            ${
+              isDisponible
+                ? `<a href="${waUrl}" target="_blank" rel="noopener" class="btn-popup-wa">
+                     Cotizar por WhatsApp
+                   </a>`
+                : ""
+            }
+          </div>
+        `;
+          marker.bindPopup(popupContent);
+        });
+
+        const elDisp = document.getElementById("count-disponibles");
+        const elOcup = document.getElementById("count-ocupados");
+        if (elDisp) elDisp.textContent = countDisp;
+        if (elOcup) elOcup.textContent = countOcup;
+      })
+      .catch((err) =>
+        console.error("Error al conectar con Google Sheets:", err),
+      );
+
+    setTimeout(() => map.invalidateSize(), 300);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMapaDisponibilidad);
+  } else {
+    initMapaDisponibilidad();
+  }
+  /* ==========================================================================
+   03.1 MAPA DE DISPONIBILIDAD EN TIEMPO REAL (EJE VIAL 1) - GOOGLE SHEETS FIN
+   ========================================================================== */
+
+  //CÓDIGO ORIGINAL DEL SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1)
+
   const simService = document.getElementById("sim-service");
   const simMonths = document.getElementById("sim-months");
   const simUnits = document.getElementById("sim-units");
