@@ -221,7 +221,13 @@ body {
 
   /* CAPA MORADA MÁS IMAGEN (Combinadas en una sola regla usando la variable --bg-img) */
   background-image:
-    linear-gradient(180deg,rgba(22, 15, 34, 1) 0%, rgba(0, 0, 0, 0.8) 50%),
+    linear-gradient(
+      180deg,
+      rgba(35, 19, 64, 0.92) 0%,
+      /* Sombra arriba para resaltar la cabecera */ rgba(50, 28, 89, 0.7) 50%,
+      /* Apertura al medio para ver la foto */ rgba(15, 8, 28, 0.95) 100%
+        /* Oscuro abajo para sostener los botones */
+    ),
     var(--bg-img);
 }
 
