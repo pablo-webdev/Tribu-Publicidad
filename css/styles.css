@@ -26,11 +26,11 @@ body {
 }
 
 :root {
-  --primary-petrol: #673ab7;
+  --primary-petrol: #231932;
   --lime-btn: #ccff00;
   --lime-hover: #b3e600;
-  --dark-bg: #321c59;
-  --gray-pearl: #f4f0fa;
+  --dark-bg: #160F22;
+  --gray-pearl: #F9F8FC;
   --white: #ffffff;
   --transition: all 0.3s ease;
 }
