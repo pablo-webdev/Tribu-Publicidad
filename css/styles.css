@@ -186,6 +186,73 @@ body {
 /* ==========================================================================
    02. HEADER Y NAVEGACIÓN - FIN
    ========================================================================== */
+/* ==========================================================================
+   02.1 TRUST BAR - MARCAS (MAYOR TAMAÑO Y CONTRASTE)
+   ========================================================================== */
+.trust-bar {
+  background-color: #121214;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.trust-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 2rem;
+}
+
+.trust-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+/* Caja contenedora para equilibrar tamaños horizontales y verticales */
+.trust-logo-wrapper {
+  width: 130px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trust-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* Fuerza el logotipo a color blanco mate uniforme y visible */
+  filter: brightness(0) invert(1) opacity(0.8);
+  transition: all 0.3s ease;
+}
+
+.trust-logo:hover {
+  /* Al pasar el cursor recupera su color y posición original */
+  filter: brightness(1) invert(0) opacity(1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .trust-bar {
+    padding: 1.8rem 0;
+  }
+  .trust-logos {
+    gap: 1.5rem;
+  }
+  .trust-logo-wrapper {
+    width: 100px;
+    height: 35px;
+  }
+}
+/* ==========================================================================
+   02.1 TRUST BAR - MARCAS (ESCALA DE GRISES) FINAL
+   ========================================================================== */
 
 /* ==========================================================================
    03. ESTANDARIZACIÓN Y SLIDER DE HERO (100VH) - INICIO
@@ -302,7 +369,7 @@ body {
 
 /* ASIGNACIÓN DE IMÁGENES DE FONDO POR SLIDE */
 .hero__slide--1 {
-  --bg-img: url("https://propiedadescom.s3.amazonaws.com/files/1200x507/eje-vial-1-sector-salud-san-cristobal-de-las-casas-chiapas-3022838-foto-01.jpg");
+  --bg-img: url("https://publicidad-y-medios.com/storage/uploads/1659893915_publicidad20.jpg");
 }
 
 .hero__slide--2 {
