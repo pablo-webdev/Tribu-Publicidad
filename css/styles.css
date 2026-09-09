@@ -289,19 +289,21 @@ body {
 }
 
 @media (max-width: 768px) {
-  .trust-bar {
-    padding: 1.8rem 0;
-  }
+  /* 1. Reduce el espacio entre logos */
   .trust-group {
-    gap: 2rem;
-    padding-right: 2rem;
+    gap: 1.5rem;
+    padding-right: 1.5rem;
   }
-  .trust-marquee-track {
-    animation-duration: 20s;
-  }
+
+  /* 2. Haz los contenedores de los logos más pequeños */
   .trust-logo-wrapper {
-    width: 100px;
-    height: 40px;
+    width: 80px;
+    height: 35px;
+  }
+
+  /* 3. Ajusta la velocidad para que el recorrido completo dé tiempo de verse */
+  .trust-marquee-track {
+    animation-duration: 45s;
   }
 }
 /* ==========================================================================
