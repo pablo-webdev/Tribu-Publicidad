@@ -187,7 +187,7 @@ body {
    02. HEADER Y NAVEGACIÓN - FIN
    ========================================================================== */
 /* ==========================================================================
-   02.1 TRUST BAR - MARCAS (SISTEMA ESCALABLE Y UNIFORME)
+   02.1 TRUST BAR - MARCAS (CARRUSEL INFINITO MARQUEE)
    ========================================================================== */
 .trust-bar {
   background-color: #121214;
@@ -195,6 +195,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding: 2.5rem 0;
   text-align: center;
+  overflow: hidden;
 }
 
 .trust-title {
@@ -206,21 +207,50 @@ body {
   margin-bottom: 2rem;
 }
 
-.trust-logos {
+/* Contenedor del scroll con difuminado lateral */
+.trust-marquee-container {
+  width: 100%;
+  overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2.5rem;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
 }
 
-/* Caja contenedora para equilibrar tamaños horizontales y verticales */
+/* Riel que se desplaza */
+.trust-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+/* Pausa al pasar el cursor */
+.trust-marquee-container:hover .trust-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Caja contenedora */
 .trust-logo-wrapper {
   width: 140px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .trust-logo {
@@ -240,15 +270,27 @@ body {
   opacity: 1;
   transform: translateY(-2px);
 }
+
+/* Animación de desplazamiento continuo */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @media (max-width: 768px) {
   .trust-bar {
     padding: 1.8rem 0;
   }
-  .trust-logos {
-    gap: 1.5rem;
+  .trust-marquee-track {
+    gap: 2rem;
+    animation-duration: 18s;
   }
   .trust-logo-wrapper {
-    width: 110px;
+    width: 100px;
     height: 40px;
   }
 }
