@@ -682,7 +682,13 @@ body {
 .route-section,
 .about-section {
   padding: 100px 0;
-  background-color: var(--gray-pearl);
+  background-color: #f8f9fa;
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 24px 24px;
+
+  /*   background-color: #f8f9fa;
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 24px 24px; este fondo es de puntos discretos */
 }
 
 .section-header {

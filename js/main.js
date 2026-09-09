@@ -416,28 +416,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const serviceType = simService.value;
     const months = parseInt(simMonths.value);
-    const units = parseInt(simUnits.value);
     const days = months * 30;
 
     let serviceName = "Paradas de Combi (Eje Vial 1)";
     let dailyImpactsPerUnit = 400;
 
+    // Asigna el nombre, impactos y el tope máximo dinámico del slider
     if (serviceType === "dooh") {
       serviceName = "Pantallas LED DOOH";
       dailyImpactsPerUnit = 600;
+      simUnits.max = "10";
     } else if (serviceType === "granformato") {
       serviceName = "Gran Formato / Espectaculares";
       dailyImpactsPerUnit = 800;
+      simUnits.max = "15";
+    } else {
+      simUnits.max = "115";
     }
+
+    // Si las unidades seleccionadas superan el nuevo máximo, ajusta el valor al instante
+    if (parseInt(simUnits.value) > parseInt(simUnits.max)) {
+      simUnits.value = simUnits.max;
+    }
+
+    const units = parseInt(simUnits.value);
 
     if (lblServiceVal) lblServiceVal.textContent = serviceName;
     if (lblMonthsVal)
       lblMonthsVal.textContent = `${months} meses (${days} días)`;
     if (lblUnitsVal)
-      lblUnitsVal.textContent = `${units} ${units === 1 ? "soporte" : "soportes"}`;
+      lblUnitsVal.textContent = `${units} ${
+        units === 1 ? "soporte" : "soportes"
+      }`;
 
     const totalImpacts = days * units * dailyImpactsPerUnit;
-    const frequency = (1.2 + units * 0.05).toFixed(1);
+
+    // Frecuencia adaptada para escalar hasta 115 unidades con tope en 4.5x
+    const calculatedFreq = 1.2 + units * 0.02;
+    const frequency = Math.min(calculatedFreq, 4.5).toFixed(1);
 
     if (resImpacts)
       resImpacts.textContent = totalImpacts.toLocaleString("es-MX");
