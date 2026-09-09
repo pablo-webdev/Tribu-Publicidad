@@ -671,32 +671,27 @@ body {
    06. SIMULADOR Y RUTA EJE VIAL 1 - INICIO
    ========================================================================== */
 /* ==========================================================================
-   06.1 MAPA DE DISPONIBILIDAD EJE VIAL 1 - ESTILO DASHBOARD / CONSOLA
+   06.1 MAPA DE DISPONIBILIDAD EJE VIAL 1 - DASHBOARD Y RESPONSIVE
    ========================================================================== */
-
-/* Fondo general de la sección para dar contraste con el Hero */
 .mapa-section {
-  padding: 4rem 1.5rem;
-  background-color: #08080c; /* Un tono ligeramente más azulado/oscuro que el negro puro */
-  border-top: 1px solid #1f1f2e; /* Línea divisora superior tipo consola */
+  padding: 3rem 1rem;
+  background-color: #08080c;
+  border-top: 1px solid #1f1f2e;
   border-bottom: 1px solid #1f1f2e;
 }
 
-/* El contenedor principal actuará como el marco del Dashboard */
 .mapa-container {
   max-width: 1100px;
   margin: 0 auto;
-  background-color: #12121a; /* Fondo tarjeta/consola */
+  background-color: #12121a;
   border: 1px solid #2a2a3d;
   border-radius: 16px;
-  padding: 2rem;
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.6),
-    0 0 1px rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .mapa-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   text-align: center;
 }
 
@@ -704,7 +699,6 @@ body {
   font-size: 1.6rem;
   font-weight: 700;
   color: #ffffff;
-  letter-spacing: -0.5px;
 }
 
 .mapa-subtitle {
@@ -713,47 +707,64 @@ body {
   margin-top: 4px;
 }
 
-/* Leyenda integrada como barra de control superior de la consola */
+/* Layout de Filtros / Leyenda */
 .mapa-legend {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
   background: #0b0b10;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem;
   border-radius: 10px;
   border: 1px solid #1f1f2e;
+  flex-wrap: wrap; /* Permite acomodarse si no caben */
 }
 
-.legend-item {
+.filter-btn {
+  background: #12121a;
+  color: #a0a0a0;
+  border: 1px solid #2a2a3d;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #d1d1e0;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-/* Puntos de estado con resplandor neón tipo LED */
+.filter-btn:hover {
+  background: #1f1f2e;
+  color: #fff;
+}
+
+.filter-btn.active {
+  background: #2a2a3d;
+  color: #fff;
+  border-color: #00e676;
+}
+
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   display: inline-block;
 }
 
 .dot-disponible {
   background-color: #00e676;
-  box-shadow: 0 0 10px rgba(0, 230, 118, 0.8);
+  box-shadow: 0 0 6px rgba(0, 230, 118, 0.8);
 }
 
 .dot-ocupado {
   background-color: #ff1744;
-  box-shadow: 0 0 10px rgba(255, 23, 68, 0.8);
+  box-shadow: 0 0 6px rgba(255, 23, 68, 0.8);
 }
 
-/* El mapa encajonado dentro de la pantalla del dashboard */
 .mapa-wrapper {
   width: 100%;
   height: 480px;
@@ -761,6 +772,72 @@ body {
   border: 1px solid #2a2a3d;
   overflow: hidden;
   background-color: #0d0d12;
+  position: relative;
+  overflow: hidden !important;
+}
+
+/* Mantiene el control de zoom en la esquina superior izquierda con margen interior */
+.leaflet-top.leaflet-left {
+  top: 10px;
+  left: 10px;
+}
+
+/* Ajusta capas para evitar que el header principal o la barra tapen los botones */
+.leaflet-control-container {
+  position: relative;
+  z-index: 400;
+}
+
+/* Ajustes para Celular (< 600px) */
+@media (max-width: 600px) {
+  .mapa-container {
+    padding: 1rem 0.75rem;
+  }
+
+  .mapa-title {
+    font-size: 1.25rem;
+  }
+
+  .mapa-legend {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .filter-btn {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+  .mapa-wrapper {
+    height: 380px;
+  }
+}
+
+/* BOTONES DE FILTRO */
+.filter-btn {
+  background: #12121a;
+  color: #a0a0a0;
+  border: 1px solid #2a2a3d;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #1f1f2e;
+  color: #fff;
+}
+
+.filter-btn.active {
+  background: #2a2a3d;
+  color: #fff;
+  border-color: #00e676;
 }
 /* ==========================================================================
    06.1 MAPA DE DISPONIBILIDAD EJE VIAL 1 - FIN

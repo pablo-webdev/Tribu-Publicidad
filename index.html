@@ -228,16 +228,16 @@
 
                 <!-- Leyenda e indicadores rápidos -->
                 <div class="mapa-legend">
-                    <div class="legend-item">
-                        <span class="dot dot-disponible"></span>
-                        <span>Disponible (<strong id="count-disponibles">0</strong>)</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="dot dot-ocupado"></span>
-                        <span>Rentado / Ocupado (<strong id="count-ocupados">0</strong>)</span>
-                    </div>
+                    <button class="filter-btn active" onclick="filtrarMapa('todos', this)">
+                        Todas (<span id="count-todos">0</span>)
+                    </button>
+                    <button class="filter-btn" onclick="filtrarMapa('disponible', this)">
+                        <span class="dot dot-disponible"></span> Disponibles (<span id="count-disponibles">0</span>)
+                    </button>
+                    <button class="filter-btn" onclick="filtrarMapa('ocupado', this)">
+                        <span class="dot dot-ocupado"></span> Ocupadas (<span id="count-ocupados">0</span>)
+                    </button>
                 </div>
-
                 <!-- Contenedor del mapa Leaflet -->
                 <div id="mapa-eje-vial" class="mapa-wrapper"></div>
             </div>

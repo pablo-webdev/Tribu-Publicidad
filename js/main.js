@@ -208,8 +208,9 @@ document.addEventListener("DOMContentLoaded", () => {
    03. SIMULADOR DE ALCANCE ULTRA-REALISTA (EJE VIAL 1) - INICIO
    ========================================================================== */
   /* ==========================================================================
-   03.1 MAPA DE DISPONIBILIDAD EN TIEMPO REAL (EJE VIAL 1) - GOOGLE SHEETS
+   03.1 MAPA DE DISPONIBILIDAD EN TIEMPO REAL CON FILTROS - GOOGLE SHEETS
    ========================================================================== */
+  let marcadoresMapa = [];
 
   function initMapaDisponibilidad() {
     const mapElement = document.getElementById("mapa-eje-vial");
@@ -220,34 +221,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const map = L.map("mapa-eje-vial").setView([16.737, -92.637], 13.5);
 
-    // Desactiva el zoom con la rueda del mouse para no trabar el scroll de la página
     map.scrollWheelZoom.disable();
-
-    // Desactiva el arrastre con un solo dedo en móviles para no atorar el scroll táctil
-    if (L.Browser.mobile) {
-      map.dragging.disable();
-    }
+    if (L.Browser.mobile) map.dragging.disable();
 
     L.tileLayer(
       "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
-      {
-        maxZoom: 16,
-        attribution: "Tiles © Esri",
-      },
+      { maxZoom: 19, attribution: "Tiles © Esri" },
     ).addTo(map);
 
+    // Trazo de la ruta del Eje Vial 1 (Línea punteada)
     const ejeCoordinates = [
-      [16.7585, -92.6302],
-      [16.749, -92.6325],
-      [16.738, -92.636],
-      [16.728, -92.64],
-      [16.715, -92.646],
+      [16.721983, -92.653196],
+      [16.721969, -92.652728],
+      [16.721944, -92.652353],
+      [16.721892, -92.651890],
+      [16.721856, -92.651689],
+      [16.721852, -92.651431],
+      [16.721853, -92.651244],
+      [16.721788, -92.649347],
+      [16.721750, -92.648397],
+      [16.721733, -92.647623],
+      [16.721644, -92.646176],
+      [16.721629, -92.645905],
+      [16.721516, -92.644477],
+      [16.721447, -92.643850],
+      [16.721401, -92.642956],
+      [16.721355, -92.642367],
+      [16.721259, -92.641135],
+      [16.721104, -92.640055],
+      [16.720987, -92.639096],
+      [16.720944, -92.638544],
+      [16.720916, -92.637904],
+      [16.720904, -92.637438],
+      [16.720960, -92.636961],
+      [16.721075, -92.636185],
+      [16.721186, -92.635390],
+      [16.721257, -92.634687],
+      [16.721359, -92.634050],
+      [16.721393, -92.633854],
     ];
 
     L.polyline(ejeCoordinates, {
       color: "#ffffff",
       weight: 3,
-      opacity: 0.3,
+      opacity: 0.35,
       dashArray: "6, 8",
     }).addTo(map);
 
@@ -272,12 +289,16 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    fetch(SHEET_CSV_URL + "&t=" + new Date().getTime())
+    const fetchUrl = SHEET_CSV_URL + "&nocache=" + new Date().getTime();
+
+    fetch(fetchUrl, { cache: "no-store" })
       .then((res) => res.text())
       .then((csvText) => {
         const paradasData = parseCSV(csvText);
         let countDisp = 0;
         let countOcup = 0;
+
+        marcadoresMapa = []; // Limpia arreglo de marcadores
 
         paradasData.forEach((parada) => {
           const lat = parseFloat(parada.lat);
@@ -287,10 +308,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
           const isDisponible =
             (parada.estado || "").trim().toLowerCase() === "disponible";
+
           if (isDisponible) countDisp++;
           else countOcup++;
 
-          // Colores más intensos y realistas (Verde neón / Rojo vibrante)
           const colorHex = isDisponible ? "#00e676" : "#ff1744";
 
           const marker = L.circleMarker([lat, lng], {
@@ -302,7 +323,9 @@ document.addEventListener("DOMContentLoaded", () => {
             fillOpacity: 0.9,
           }).addTo(map);
 
-          // Mensaje dinámico de WhatsApp para la parada
+          marker.estado = isDisponible ? "disponible" : "ocupado";
+          marcadoresMapa.push(marker);
+
           const waMsg = encodeURIComponent(
             `Hola, me interesa cotizar la parada ${parada.id || ""} (${parada.nombre || ""}) del Eje Vial 1.`,
           );
@@ -329,12 +352,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const elDisp = document.getElementById("count-disponibles");
         const elOcup = document.getElementById("count-ocupados");
+        const elTodos = document.getElementById("count-todos");
+
         if (elDisp) elDisp.textContent = countDisp;
         if (elOcup) elOcup.textContent = countOcup;
+        if (elTodos) elTodos.textContent = countDisp + countOcup;
       })
       .catch((err) =>
         console.error("Error al conectar con Google Sheets:", err),
       );
+
+    window.filtrarMapa = function (tipo, elemento) {
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach((btn) => btn.classList.remove("active"));
+      if (elemento) elemento.classList.add("active");
+
+      marcadoresMapa.forEach((marker) => {
+        if (tipo === "todos" || marker.estado === tipo) {
+          marker.addTo(map);
+        } else {
+          map.removeLayer(marker);
+        }
+      });
+    };
 
     setTimeout(() => map.invalidateSize(), 300);
   }
