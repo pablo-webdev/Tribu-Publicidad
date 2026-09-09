@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZCc1Om6n4F3VJAcm7JpBkLSbyQNikgEOSdMKU5CvYE9j7LiLVtPcaR86UemwXlvOwxSUAVKG_u071/pub?output=csv";
 
     // Centrado exacto sobre las paradas del Eje Vial 1
-    const map = L.map("mapa-eje-vial", { maxZoom: 16 }).setView(
+    const map = L.map("mapa-eje-vial", { maxZoom: 18 }).setView(
       [16.7215, -92.643],
       15,
     );

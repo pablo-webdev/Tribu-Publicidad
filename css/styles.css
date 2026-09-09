@@ -676,7 +676,7 @@ body {
 
 .mapa-section {
   padding: 3rem 1rem;
-  background-color: #08080c;
+  background-color: var(--dark-bg);
   border-top: 1px solid #1f1f2e;
   border-bottom: 1px solid #1f1f2e;
 }
@@ -746,7 +746,7 @@ body {
 .filter-btn.active {
   background: #2a2a3d;
   color: #fff;
-  border-color: #00e676;
+  border-color: #eaff07;
 }
 
 .dot {
@@ -757,13 +757,13 @@ body {
 }
 
 .dot-disponible {
-  background-color: #00e676;
-  box-shadow: 0 0 6px rgba(0, 230, 118, 0.8);
+  background-color: #b4e600;
+  box-shadow: 0 0 2px rgba(252, 252, 252, 0.8);
 }
 
 .dot-ocupado {
-  background-color: #ff1744;
-  box-shadow: 0 0 6px rgba(255, 23, 68, 0.8);
+  background-color: #ff0000;
+  box-shadow: 0 0 2px rgba(255, 23, 68, 0.8);
 }
 
 .mapa-wrapper {
@@ -838,7 +838,7 @@ body {
 .filter-btn.active {
   background: #2a2a3d;
   color: #fff;
-  border-color: #00e676;
+  border-color: var(--gray-pearl);
 }
 /* ==========================================================================
    06.1 MAPA DE DISPONIBILIDAD EJE VIAL 1 - FIN
