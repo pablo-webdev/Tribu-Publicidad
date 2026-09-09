@@ -232,10 +232,17 @@ body {
 /* Riel que se desplaza */
 .trust-marquee-track {
   display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+/* Grupos internos con espaciado constante */
+.trust-group {
+  display: flex;
   align-items: center;
   gap: 3.5rem;
-  width: max-content;
-  animation: marquee 25s linear infinite;
+  padding-right: 3.5rem;
+  flex-shrink: 0;
 }
 
 /* Pausa al pasar el cursor */
@@ -261,7 +268,7 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Única excepción: para marcas que sean texto negro sobre fondo oscuro */
+/* Excepción para marcas que sean texto negro sobre fondo oscuro */
 .trust-logo.logo-texto-oscuro {
   filter: brightness(0) invert(1);
 }
@@ -271,7 +278,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Animación de desplazamiento continuo */
+/* Desplaza el 50% de la tira (Exactamente 2 grupos de 4) para un bucle infinito */
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -285,9 +292,12 @@ body {
   .trust-bar {
     padding: 1.8rem 0;
   }
-  .trust-marquee-track {
+  .trust-group {
     gap: 2rem;
-    animation-duration: 18s;
+    padding-right: 2rem;
+  }
+  .trust-marquee-track {
+    animation-duration: 20s;
   }
   .trust-logo-wrapper {
     width: 100px;
