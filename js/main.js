@@ -210,6 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ==========================================================================
    03.1 MAPA DE DISPONIBILIDAD EN TIEMPO REAL (EJE VIAL 1) - GOOGLE SHEETS
    ========================================================================== */
+
   function initMapaDisponibilidad() {
     const mapElement = document.getElementById("mapa-eje-vial");
     if (!mapElement || typeof L === "undefined") return;
@@ -218,6 +219,14 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZCc1Om6n4F3VJAcm7JpBkLSbyQNikgEOSdMKU5CvYE9j7LiLVtPcaR86UemwXlvOwxSUAVKG_u071/pub?output=csv";
 
     const map = L.map("mapa-eje-vial").setView([16.737, -92.637], 13.5);
+
+    // Desactiva el zoom con la rueda del mouse para no trabar el scroll de la página
+    map.scrollWheelZoom.disable();
+
+    // Desactiva el arrastre con un solo dedo en móviles para no atorar el scroll táctil
+    if (L.Browser.mobile) {
+      map.dragging.disable();
+    }
 
     L.tileLayer(
       "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
