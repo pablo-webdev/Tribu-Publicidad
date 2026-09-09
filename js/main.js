@@ -219,32 +219,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const SHEET_CSV_URL =
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZCc1Om6n4F3VJAcm7JpBkLSbyQNikgEOSdMKU5CvYE9j7LiLVtPcaR86UemwXlvOwxSUAVKG_u071/pub?output=csv";
 
-    const map = L.map("mapa-eje-vial").setView([16.737, -92.637], 13.5);
+    // Inicialización con límite de zoom
+    const map = L.map("mapa-eje-vial", { maxZoom: 18 }).setView(
+      [16.737, -92.637],
+      13.5,
+    );
 
     map.scrollWheelZoom.disable();
     if (L.Browser.mobile) map.dragging.disable();
 
-    L.tileLayer(
-      "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
-      { maxZoom: 19, attribution: "Tiles © Esri" },
-    ).addTo(map);
+    // Servidor 100% público, libre y sin API Key
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
 
-    // Trazo de la ruta del Eje Vial 1 (Línea punteada)
+    // Trazo de la ruta real del Eje Vial 1 (Línea punteada)
     const ejeCoordinates = [
       [16.721983, -92.653196],
       [16.721969, -92.652728],
       [16.721944, -92.652353],
-      [16.721892, -92.651890],
+      [16.721892, -92.65189],
       [16.721856, -92.651689],
       [16.721852, -92.651431],
       [16.721853, -92.651244],
       [16.721788, -92.649347],
-      [16.721750, -92.648397],
+      [16.72175, -92.648397],
       [16.721733, -92.647623],
       [16.721644, -92.646176],
       [16.721629, -92.645905],
       [16.721516, -92.644477],
-      [16.721447, -92.643850],
+      [16.721447, -92.64385],
       [16.721401, -92.642956],
       [16.721355, -92.642367],
       [16.721259, -92.641135],
@@ -253,11 +259,11 @@ document.addEventListener("DOMContentLoaded", () => {
       [16.720944, -92.638544],
       [16.720916, -92.637904],
       [16.720904, -92.637438],
-      [16.720960, -92.636961],
+      [16.72096, -92.636961],
       [16.721075, -92.636185],
-      [16.721186, -92.635390],
+      [16.721186, -92.63539],
       [16.721257, -92.634687],
-      [16.721359, -92.634050],
+      [16.721359, -92.63405],
       [16.721393, -92.633854],
     ];
 
@@ -298,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let countDisp = 0;
         let countOcup = 0;
 
-        marcadoresMapa = []; // Limpia arreglo de marcadores
+        marcadoresMapa = [];
 
         paradasData.forEach((parada) => {
           const lat = parseFloat(parada.lat);
