@@ -228,14 +228,13 @@ document.addEventListener("DOMContentLoaded", () => {
     map.scrollWheelZoom.disable();
     if (L.Browser.mobile) map.dragging.disable();
 
-    // Mapa base oscuro nativo (100% libre, sin API key)
-    // Permite Zoom 18 completo, totalmente libre y sin API key
+    // Servidor oficial de OpenStreetMap (Totalmente libre y sin API Key)
     L.tileLayer(
-      "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
+      "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
       {
         maxZoom: 18,
-        attribution:
-          '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
+        maxNativeZoom: 16, // Evita pedir tiles inexistentes y escala suavemente la imagen
+        attribution: "Tiles &copy; Esri",
       },
     ).addTo(map);
 
