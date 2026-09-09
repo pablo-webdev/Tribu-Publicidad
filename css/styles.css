@@ -187,7 +187,7 @@ body {
    02. HEADER Y NAVEGACIÓN - FIN
    ========================================================================== */
 /* ==========================================================================
-   02.1 TRUST BAR - MARCAS (MAYOR TAMAÑO Y CONTRASTE)
+   02.1 TRUST BAR - MARCAS (SISTEMA ESCALABLE Y UNIFORME)
    ========================================================================== */
 .trust-bar {
   background-color: #121214;
@@ -216,8 +216,8 @@ body {
 
 /* Caja contenedora para equilibrar tamaños horizontales y verticales */
 .trust-logo-wrapper {
-  width: 130px;
-  height: 45px;
+  width: 140px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,17 +227,19 @@ body {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  /* Fuerza el logotipo a color blanco mate uniforme y visible */
-  filter: brightness(0) invert(1) opacity(0.8);
+  opacity: 0.85;
   transition: all 0.3s ease;
 }
 
-.trust-logo:hover {
-  /* Al pasar el cursor recupera su color y posición original */
-  filter: brightness(1) invert(0) opacity(1);
-  transform: translateY(-2px);
+/* Única excepción: para marcas que sean texto negro sobre fondo oscuro */
+.trust-logo.logo-texto-oscuro {
+  filter: brightness(0) invert(1);
 }
 
+.trust-logo:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
 @media (max-width: 768px) {
   .trust-bar {
     padding: 1.8rem 0;
@@ -246,14 +248,13 @@ body {
     gap: 1.5rem;
   }
   .trust-logo-wrapper {
-    width: 100px;
-    height: 35px;
+    width: 110px;
+    height: 40px;
   }
 }
 /* ==========================================================================
-   02.1 TRUST BAR - MARCAS (ESCALA DE GRISES) FINAL
+   02.1 TRUST BAR - MARCAS FINAL
    ========================================================================== */
-
 /* ==========================================================================
    03. ESTANDARIZACIÓN Y SLIDER DE HERO (100VH) - INICIO
    ========================================================================== */
