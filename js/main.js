@@ -219,23 +219,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const SHEET_CSV_URL =
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZCc1Om6n4F3VJAcm7JpBkLSbyQNikgEOSdMKU5CvYE9j7LiLVtPcaR86UemwXlvOwxSUAVKG_u071/pub?output=csv";
 
-    // Inicialización con límite de zoom
-    const map = L.map("mapa-eje-vial", { maxZoom: 18 }).setView(
-      [16.737, -92.637],
-      13.5,
+    // Centrado exacto sobre las paradas del Eje Vial 1
+    const map = L.map("mapa-eje-vial", { maxZoom: 16 }).setView(
+      [16.7215, -92.643],
+      15,
     );
 
     map.scrollWheelZoom.disable();
     if (L.Browser.mobile) map.dragging.disable();
 
-    // Servidor 100% público, libre y sin API Key
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(map);
+    // Mapa base oscuro nativo (100% libre, sin API key)
+    // Permite Zoom 18 completo, totalmente libre y sin API key
+    L.tileLayer(
+      "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
+      {
+        maxZoom: 18,
+        attribution:
+          '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
+      },
+    ).addTo(map);
 
-    // Trazo de la ruta real del Eje Vial 1 (Línea punteada)
+    // Trazo visible de la ruta del Eje Vial 1
     const ejeCoordinates = [
       [16.721983, -92.653196],
       [16.721969, -92.652728],
@@ -268,10 +272,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     L.polyline(ejeCoordinates, {
-      color: "#ffffff",
-      weight: 3,
-      opacity: 0.35,
-      dashArray: "6, 8",
+      color: "#00e676",
+      weight: 4,
+      opacity: 0.8,
+      dashArray: "8, 8",
     }).addTo(map);
 
     function parseCSV(text) {
