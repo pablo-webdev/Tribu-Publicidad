@@ -499,21 +499,46 @@ document.addEventListener("DOMContentLoaded", initScrollReveals);
 // OBSERVER DINÁMICO ESCALABLE - FIN
 // ==========================================================================
 
+// ==========================================================================
+// WEB SERVICES - INICIO
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll(".purple-tab");
+  const panels = document.querySelectorAll(".purple-panel");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      panels.forEach((p) => p.classList.remove("active"));
+
+      tab.classList.add("active");
+      const targetId = tab.getAttribute("data-target");
+      const targetPanel = document.getElementById(targetId);
+
+      if (targetPanel) {
+        targetPanel.classList.add("active");
+      }
+    });
+  });
+});
+// ==========================================================================
+// WEB SERVICES - FIN
+// ==========================================================================
 
 // ==========================================================================
 // FAQS - INICIO
 // ==========================================================================
 
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('click', () => {
+document.querySelectorAll(".faq-question").forEach((button) => {
+  button.addEventListener("click", () => {
     const faqItem = button.parentElement;
-    
+
     // Cierra las demás preguntas para mantener limpio el acordeón
-    document.querySelectorAll('.faq-item').forEach(item => {
-      if (item !== faqItem) item.classList.remove('active');
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      if (item !== faqItem) item.classList.remove("active");
     });
 
-    faqItem.classList.toggle('active');
+    faqItem.classList.toggle("active");
   });
 });
 // ==========================================================================

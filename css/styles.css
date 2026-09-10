@@ -702,10 +702,6 @@ body {
   background-color: #f8f9fa;
   background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
   background-size: 24px 24px;
-
-  /*   background-color: #f8f9fa;
-  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
-  background-size: 24px 24px; este fondo es de puntos discretos */
 }
 
 .section-header {
@@ -812,82 +808,258 @@ body {
 /* ==========================================================================
    05.1 WEB SERVICES - INICIO
    ========================================================================== */
-/* Restaurar grid original de 3 columnas */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
 
-/* Banner horizontal full width */
-.service-banner-web {
+.digital-solutions-purple {
   margin-top: 2rem;
-  background: var(--white);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
-  border: 1px solid #e2e8f0;
+  background: #231932;
+  border: 1px solid rgba(189, 255, 1, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 2.5rem;
   align-items: center;
-}
-
-.service-banner-web:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 35px -10px rgba(103, 58, 183, 0.15);
-}
-
-.service-banner-web__img {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
   width: 100%;
-  height: 100%;
-  min-height: 260px;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.service-banner-web__img img {
+.purple-col-left,
+.purple-col-right {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.purple-col-left p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+
+.purple-col-left h3 {
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 1rem 0 0.8rem;
+  line-height: 1.25;
+  word-wrap: break-word;
+}
+
+.badge--purple-lime {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(189, 255, 1, 0.1);
+  color: #bdff01;
+  border: 1px solid rgba(189, 255, 1, 0.3);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Tabs */
+.purple-tabs-wrapper {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+.purple-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.purple-tab {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.purple-tab.active {
+  background: #bdff01;
+  color: #231932;
+  border-color: #bdff01;
+  font-weight: 700;
+}
+
+.btn-purple-lime {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #bdff01;
+  color: #231932;
+  font-weight: 800;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 280px;
+}
+
+/* Control de Paneles (Ocultar / Mostrar) */
+.purple-panel {
+  display: none;
+  width: 100%;
+}
+
+.purple-panel.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tarjeta de previsualización */
+.purple-card {
+  background: #2d2140;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.purple-card__img {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.purple-card__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.service-banner-web__body {
-  padding: 2.5rem;
-}
-
-.service-banner-web__body h3 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 1.5rem;
+.purple-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(35, 25, 50, 0.85);
+  color: #bdff01;
+  border: 1px solid rgba(189, 255, 1, 0.4);
+  font-size: 0.7rem;
   font-weight: 700;
-  color: var(--dark-bg);
-  margin: 0.75rem 0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
 }
 
-.service-banner-web__body p {
-  color: #475569;
-  font-size: 0.98rem;
-  line-height: 1.6;
-  margin-bottom: 1.2rem;
+.purple-card__info {
+  padding: 1.25rem;
+  box-sizing: border-box;
 }
 
-/* Adaptación móvil y tablet */
-@media (max-width: 868px) {
-  .service-banner-web {
-    grid-template-columns: 1fr;
-  }
-
-  .service-banner-web__img {
-    height: 200px;
-    min-height: auto;
-  }
-
-  .service-banner-web__body {
-    padding: 1.5rem;
-  }
+.purple-card__info h4 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
 }
+
+.purple-card__info p {
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.purple-card__info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.purple-card__info li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e2e8f0;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.purple-card__info li i {
+  color: #bdff01;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
 /* ==========================================================================
-   05.1 WEB SERVICES - FIN
+   ADAPTACIÓN RESPONSIVE MÓVIL
    ========================================================================== */
+
+@media (max-width: 868px) {
+  .digital-solutions-purple {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .purple-col-left h3 {
+    font-size: 1.4rem;
+  }
+
+  .purple-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  .purple-tab {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.78rem;
+    padding: 8px 6px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .btn-purple-lime {
+    max-width: 100%;
+  }
+
+  .purple-card__img {
+    height: 150px;
+  }
+}
+
 /* ==========================================================================
    05. SECCIONES DE CONTENIDO Y SERVICIOS - FIN
    ========================================================================== */
