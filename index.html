@@ -311,7 +311,8 @@
                             <i data-lucide="map-pin" style="width: 22px; height: 22px;"></i>
                             <div>
                                 <h4>Ubicación Estratégica</h4>
-                                <p>Corredores viales altamente concurridos con visibilidad frontal permanente para peatones y
+                                <p>Corredores viales altamente concurridos con visibilidad frontal permanente para
+                                    peatones y
                                     pasajeros de colectivos.</p>
                             </div>
                         </div>
@@ -333,7 +334,8 @@
                     <h3>Simulador de Alcance de Campaña</h3>
 
                     <div class="sim-group">
-                        <label for="sim-service">Tipo de Servicio: <span id="lbl-service-val">Paradas de Transporte Público</span></label>
+                        <label for="sim-service">Tipo de Servicio: <span id="lbl-service-val">Paradas de Transporte
+                                Público</span></label>
                         <select id="sim-service">
                             <option value="combi">Paradas de Transporte Público</option>
                             <option value="dooh">Pantallas LED DOOH</option>
@@ -405,7 +407,7 @@
         <!-- ==========================================================================
         04. SECCIÓN "NOSOTROS" - INICIO
         ========================================================================== -->
-        <section class="about-section site-section theme-dark reveal-on-scroll">
+        <section class="about-section site-section theme-light reveal-on-scroll">
             <div class="container about-grid">
                 <div class="about-image-wrapper">
                     <img src="https://noticias.coches.com/wp-content/uploads/2015/03/publi-cocacola-bus.jpg"
@@ -430,19 +432,21 @@
             ========================================================================== -->
 
         <!-- ==========================================================================
-            05. SECCIÓN "PRINCIPALES SERVICIOS" - INICIO
-            ========================================================================== -->
-        <section class="services-section site-section theme-light reveal-on-scroll">
+     05. SECCIÓN "PRINCIPALES SERVICIOS" - INICIO
+     ========================================================================== -->
+        <section class="services-section site-section theme-dark reveal-on-scroll">
             <div class="container">
                 <div class="section-header">
                     <span class="badge badge--light"><i data-lucide="layers" style="width: 16px; height: 16px;"></i>
-                        Soluciones OOH</span>
+                        Soluciones OOH & Digital</span>
                     <h2>Principales Servicios de Publicidad</h2>
                     <p>Formatos diseñados bajo estándares editoriales rigurosos para potenciar la visibilidad y
-                        autoridad de tu marca en espacios públicos clave.</p>
+                        autoridad de tu marca.</p>
                 </div>
 
+                <!-- GRID DE 3 SERVICIOS TRADICIONALES -->
                 <div class="services-grid">
+                    <!-- 01. Pantallas LED -->
                     <div class="service-card">
                         <img src="https://media.licdn.com/dms/image/v2/D4E12AQH-Ed5W7881vg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1728421605417?e=2147483647&v=beta&t=iCmn4J1h3WgxigZYsJN24DeYDDhRt4TAsonCY4b88GI"
                             alt="Pantallas LED DOOH" class="service-card__img">
@@ -455,6 +459,7 @@
                         </div>
                     </div>
 
+                    <!-- 02. Rutas de Colectivos -->
                     <div class="service-card">
                         <img src="https://vivesancristobal.com/wp-content/uploads/2015/05/como_llegar_a_san_cristobal2.png"
                             alt="Ruta de Colectivos con Publicidad" class="service-card__img">
@@ -467,6 +472,7 @@
                         </div>
                     </div>
 
+                    <!-- 03. Espectaculares -->
                     <div class="service-card">
                         <img src="https://publicidad-y-medios.com/storage/uploads/1657374035_espectacular3.PNG"
                             alt="Espectaculares Gran Formato" class="service-card__img">
@@ -479,15 +485,102 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- BANNER DE SERVICIO DIGITAL (DIFERENCIADO Y ANCHO COMPLETO) -->
+                <div class="service-banner-web">
+                    <div class="service-banner-web__img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop"
+                            alt="Desarrollo Web y PWAs">
+                    </div>
+                    <div class="service-banner-web__body">
+                        <span class="badge badge--light"><i data-lucide="code-2" style="width: 14px; height: 14px;"></i>
+                            Soluciones Digitales</span>
+                        <h3>Desarrollo Web & PWAs</h3>
+                        <p>Plataformas digitales de alta velocidad y PWAs interactivas diseñadas para maximizar la
+                            conversión, integrar catálogos o rutas y captar clientes en automático.</p>
+                        <a href="servicios.html" class="service-card__link">Explorar Solución Digital <i
+                                data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- ==========================================================================
-            05. SECCIÓN "PRINCIPALES SERVICIOS" - FIN
-            ========================================================================== -->
+     05. SECCIÓN "PRINCIPALES SERVICIOS" - FIN
+     ========================================================================== -->
     </main>
 
     <!-- ==========================================================================
-            06. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - INICIO
+            06. FAQS - INICIO
+            ========================================================================== -->
+
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+
+            <!-- Columna Izquierda -->
+            <div class="section-header">
+                <span class="badge">DUDAS FRECUENTES</span>
+                <h2>¿Tienes preguntas sobre el servicio?</h2>
+            </div>
+
+            <!-- Columna Derecha -->
+            <div class="faq-accordion-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Con qué frecuencia se transmiten los anuncios en las pantallas LED?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Los anuncios se emiten en rotaciones continuas de alto impacto durante todo el día,
+                            garantizando miles de reproducciones diarias en los puntos de mayor tráfico.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo entregan las evidencias del servicio?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Entregamos reportes fotográficos y de video periódicos que confirman la correcta instalación
+                            y funcionamiento de tu campaña.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Puedo contratar espacios por temporadas o meses específicos?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, contamos con planes flexibles que van desde campañas mensuales hasta contrataciones por
+                            temporadas específicas o eventos especiales.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ==========================================================================
+            06. FAQS - FIN
+            ========================================================================== -->
+
+    <!-- ==========================================================================
+            07. CTA FINAL - INICIO
+            ========================================================================== -->
+
+    <section class="cta-banner">
+        <div class="container cta-content">
+            <h2>¿Listo para hacer destacar tu marca en la ciudad?</h2>
+            <p>Diseñamos la estrategia de visibilidad perfecta según tus objetivos de cobertura y presupuesto.</p>
+            <a href="https://wa.me/tu_numero" class="btn btn-lime btn-cta">Hablar con un Asesor</a>
+        </div>
+    </section>
+    <!-- ==========================================================================
+            07. CTA FINAL - FIN
+            ========================================================================== -->
+
+    <!-- ==========================================================================
+            08. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - INICIO
             ========================================================================== -->
     <footer class="footer">
         <div class="container">
@@ -542,7 +635,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
     <!-- ==========================================================================
-            06. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - FIN
+            08. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - FIN
             ========================================================================== -->
 
     <!-- Script JS Externo -->

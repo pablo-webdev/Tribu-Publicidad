@@ -498,3 +498,24 @@ document.addEventListener("DOMContentLoaded", initScrollReveals);
 // ==========================================================================
 // OBSERVER DINÁMICO ESCALABLE - FIN
 // ==========================================================================
+
+
+// ==========================================================================
+// FAQS - INICIO
+// ==========================================================================
+
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const faqItem = button.parentElement;
+    
+    // Cierra las demás preguntas para mantener limpio el acordeón
+    document.querySelectorAll('.faq-item').forEach(item => {
+      if (item !== faqItem) item.classList.remove('active');
+    });
+
+    faqItem.classList.toggle('active');
+  });
+});
+// ==========================================================================
+// FAQS - FIN
+// ==========================================================================

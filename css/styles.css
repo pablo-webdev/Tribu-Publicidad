@@ -808,6 +808,86 @@ body {
 .commercial-note p {
   color: #000 !important;
 }
+
+/* ==========================================================================
+   05.1 WEB SERVICES - INICIO
+   ========================================================================== */
+/* Restaurar grid original de 3 columnas */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Banner horizontal full width */
+.service-banner-web {
+  margin-top: 2rem;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  border: 1px solid #e2e8f0;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+}
+
+.service-banner-web:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(103, 58, 183, 0.15);
+}
+
+.service-banner-web__img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+}
+
+.service-banner-web__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-banner-web__body {
+  padding: 2.5rem;
+}
+
+.service-banner-web__body h3 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark-bg);
+  margin: 0.75rem 0;
+}
+
+.service-banner-web__body p {
+  color: #475569;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* Adaptación móvil y tablet */
+@media (max-width: 868px) {
+  .service-banner-web {
+    grid-template-columns: 1fr;
+  }
+
+  .service-banner-web__img {
+    height: 200px;
+    min-height: auto;
+  }
+
+  .service-banner-web__body {
+    padding: 1.5rem;
+  }
+}
+/* ==========================================================================
+   05.1 WEB SERVICES - FIN
+   ========================================================================== */
 /* ==========================================================================
    05. SECCIONES DE CONTENIDO Y SERVICIOS - FIN
    ========================================================================== */
@@ -1512,41 +1592,199 @@ body {
 /* ==========================================================================
    AMPLIACIÓN DE INTERACCIONES Y CLASES DE ANIMACIÓN - FIN
    ========================================================================== */
-/* Contenedor del badge */
-.badge-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px; /* Espacio entre el punto y el texto */
-  padding: 6px 12px;
-  background-color: rgba(189, 255, 1, 0.1); /* Fondo translúcido neón */
+
+/* ==========================================================================
+   FAQS - INICIO (Diseño Split en 2 Columnas / Fondo Oscuro)
+   ========================================================================== */
+
+.faq-section {
+  padding: 5rem 1.5rem;
+  background-color: var(--dark-bg, #0b0c10); /* Fondo oscuro general */
+}
+
+/* Contenedor principal en 2 columnas */
+.faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Columna izquierda (Títulos y Badge) */
+.faq-section .section-header {
+  text-align: left;
+  margin: 0;
+  max-width: 100%;
+}
+
+.faq-section .section-header .badge {
+  background: rgba(189, 255, 1, 0.1);
+  color: #bdff01;
   border: 1px solid rgba(189, 255, 1, 0.3);
-  border-radius: 20px;
-  color: #bdff01; /* Verde neón */
-  font-size: 0.85rem;
+}
+
+.faq-section .section-header h2 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  text-align: left;
+  margin-top: 0.8rem;
+}
+
+/* Tarjetas del acordeón (Columna derecha) */
+.faq-item {
+  background: #12131c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.faq-item:hover,
+.faq-item.active {
+  border-color: rgba(189, 255, 1, 0.4);
+  box-shadow: 0 8px 20px rgba(189, 255, 1, 0.05);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.05rem;
   font-weight: 600;
-  white-space: nowrap; /* Evita que el texto brinque de línea */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
 }
 
-/* El punto con la animación de pulso */
-.pulse-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #bdff01;
+.faq-icon {
+  background: rgba(189, 255, 1, 0.1);
+  color: #bdff01;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  flex-shrink: 0; /* Impide que el punto se aplaste o se desborde */
-  box-shadow: 0 0 0 rgba(189, 255, 1, 0.7);
-  animation: pulse-animation 1.6s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-/* Animación del pulso */
-@keyframes pulse-animation {
-  0% {
-    box-shadow: 0 0 0 0 rgba(189, 255, 1, 0.7);
+.faq-item.active .faq-icon {
+  transform: rotate(45deg); /* Cambia el + por una X */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease;
+  padding: 0 1.5rem;
+  color: #a0a0a0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding-bottom: 1.2rem;
+}
+
+/* Adaptación para pantallas móviles */
+/* Adaptación para pantallas móviles */
+@media (max-width: 768px) {
+  .faq-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
-  70% {
-    box-shadow: 0 0 0 8px rgba(189, 255, 1, 0);
+
+  .faq-section .section-header {
+    text-align: center;
   }
-  100% {
-    box-shadow: 0 0 0 0 rgba(189, 255, 1, 0);
+
+  .faq-section .section-header h2 {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  .faq-question {
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
   }
 }
+
+/* ==========================================================================
+   FAQS - FIN
+   ========================================================================== */
+/* ==========================================================================
+   CTA FINAL - INICIO
+   ========================================================================== */
+
+/* Sección contenedora exterior con fondo blanco para dividir */
+.cta-banner {
+  background-color: #ffffff;
+  padding: 5rem 1.5rem;
+  width: 100%;
+}
+
+/* Tarjeta neón centrada */
+.cta-content {
+  background: #bdff01; /* Verde neón */
+  color: #0b0c10;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.cta-content h2 {
+  color: #0b0c10 !important;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  color: #222222 !important;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botón oscuro dentro de la tarjeta neón */
+.cta-content .btn-cta {
+  background-color: #0b0c10;
+  color: #bdff01 !important;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cta-content .btn-cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   CTA FINAL - FIN
+   ========================================================================== */
