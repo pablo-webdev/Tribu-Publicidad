@@ -376,25 +376,67 @@
    ========================================================================== -->
         <section id="mapa-disponibilidad" class="mapa-section reveal-on-scroll">
             <div class="mapa-container">
-                <div class="mapa-header">
-                    <h2 class="mapa-title">Disponibilidad - Eje Vial 1</h2>
-                    <p class="mapa-subtitle">San Cristóbal de las Casas, Chiapas</p>
+
+                <!-- Header del Dashboard -->
+                <div class="mapa-top-bar">
+                    <div class="mapa-header-info">
+                        <span class="badge--purple-lime"><i class="fa-solid fa-satellite-dish"></i> Monitoreo en
+                            Vivo</span>
+                        <h2 class="mapa-title">Disponibilidad - Eje Vial 1</h2>
+                        <p class="mapa-subtitle">San Cristóbal de las Casas, Chiapas</p>
+                    </div>
+
+                    <!-- Filtros -->
+                    <div class="mapa-legend">
+                        <button class="filter-btn active" onclick="filtrarMapa('todos', this)">
+                            Todas (<span id="count-todos">0</span>)
+                        </button>
+                        <button class="filter-btn" onclick="filtrarMapa('disponible', this)">
+                            <span class="dot dot-disponible"></span> Disponibles (<span id="count-disponibles">0</span>)
+                        </button>
+                        <button class="filter-btn" onclick="filtrarMapa('ocupado', this)">
+                            <span class="dot dot-ocupado"></span> Ocupadas (<span id="count-ocupados">0</span>)
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Leyenda e indicadores rápidos -->
-                <div class="mapa-legend">
-                    <button class="filter-btn active" onclick="filtrarMapa('todos', this)">
-                        Todas (<span id="count-todos">0</span>)
-                    </button>
-                    <button class="filter-btn" onclick="filtrarMapa('disponible', this)">
-                        <span class="dot dot-disponible"></span> Disponibles (<span id="count-disponibles">0</span>)
-                    </button>
-                    <button class="filter-btn" onclick="filtrarMapa('ocupado', this)">
-                        <span class="dot dot-ocupado"></span> Ocupadas (<span id="count-ocupados">0</span>)
-                    </button>
+                <!-- Cuerpo Principal (Grid 2 Columnas) -->
+                <div class="mapa-dashboard-grid">
+                    <!-- Panel de Datos Lateral -->
+                    <div class="mapa-sidebar">
+                        <div class="mapa-stat-card">
+                            <i class="fa-solid fa-bus"></i>
+                            <div>
+                                <h5>Cobertura Principal</h5>
+                                <p>Eje Vial 1</p>
+                            </div>
+                        </div>
+
+                        <div class="mapa-stat-card">
+                            <i class="fa-solid fa-users"></i>
+                            <div>
+                                <h5>Impactos Diarios</h5>
+                                <p><strong>45,000</strong> personas / día</p>
+                            </div>
+                        </div>
+
+                        <div class="mapa-stat-card">
+                            <i class="fa-solid fa-clock"></i>
+                            <div>
+                                <h5>Actualización</h5>
+                                <p>En tiempo real: 2026</p>
+                            </div>
+                        </div>
+
+                        <a href="contacto.html" class="btn-purple-lime mapa-sidebar-btn">
+                            <i class="fa-solid fa-paper-plane"></i> Apartar Espacio
+                        </a>
+                    </div>
+
+                    <!-- Contenedor del mapa Leaflet -->
+                    <div id="mapa-eje-vial" class="mapa-wrapper"></div>
                 </div>
-                <!-- Contenedor del mapa Leaflet -->
-                <div id="mapa-eje-vial" class="mapa-wrapper"></div>
+
             </div>
         </section>
         <!-- ==========================================================================
@@ -407,23 +449,40 @@
         <!-- ==========================================================================
         04. SECCIÓN "NOSOTROS" - INICIO
         ========================================================================== -->
-        <section class="about-section site-section theme-light reveal-on-scroll">
-            <div class="container about-grid">
-                <div class="about-image-wrapper">
-                    <img src="https://noticias.coches.com/wp-content/uploads/2015/03/publi-cocacola-bus.jpg"
-                        alt="Equipo de TRIBUSINESS operativo">
-                </div>
-                <div class="about-content">
-                    <span class="badge badge--light"><i data-lucide="users" style="width: 16px; height: 16px;"></i>
-                        Perfil Corporativo</span>
-                    <h2>¿Quiénes Somos?</h2>
-                    <p>En TRIBUSINESS combinamos la ingeniería urbana con la efectividad publicitaria. Operamos
-                        soportes de alto impacto visual y precisión logística en San Cristóbal de las Casas para
-                        garantizar retornos de inversión sólidos y transparentes a nuestros clientes.</p>
-                    <p>Nuestro enfoque se basa en el mantenimiento continuo, reportes de visibilidad y una selección
-                        rigurosa de espacios comerciales clave que impulsan la autoridad de las marcas locales y
-                        nacionales.</p>
-                    <a href="nosotros.html" class="btn btn--lime centrar--btn">Conoce Más Sobre Nosotros</a>
+        <section class="about-section pattern-grid-bg">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-wrapper">
+                        <img src="https://noticias.coches.com/wp-content/uploads/2015/03/publi-cocacola-bus.jpg"
+                            alt="Instalaciones y soportes de publicidad" />
+                    </div>
+
+                    <div class="about-content">
+                        <span class="badge badge--light">Sobre Nosotros</span>
+                        <h2>¿Quiénes Somos?</h2>
+                        <p>En Agencia Vía, transformamos la vía pública en un canal de alta visibilidad. Contamos con
+                            una red estratégica de espacios publicitarios diseñados para conectar tu marca con miles de
+                            personas diariamente.</p>
+
+                        <!-- Métricas de Autoridad -->
+                        <div class="about-kpis">
+                            <div class="kpi-item">
+                                <h4>+100</h4>
+                                <p>Espacios Activos</p>
+                            </div>
+                            <div class="kpi-item">
+                                <h4>5M+</h4>
+                                <p>Impactos / Mes</p>
+                            </div>
+                            <div class="kpi-item">
+                                <h4>99%</h4>
+                                <p>Cobertura Urbana</p>
+                            </div>
+                        </div>
+
+                        <a href="#contacto" class="btn-purple-lime centrar--btn">Conocer Más Sobre
+                            Nosotros</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -688,10 +747,9 @@
             ========================================================================== -->
 
     <!-- ==========================================================================
-            07. CTA FINAL - INICIO
-            ========================================================================== -->
-
-    <section class="cta-banner">
+     07. CTA FINAL - INICIO
+     ========================================================================== -->
+    <section class="cta-banner pattern-grid-bg">
         <div class="container cta-content">
             <h2>¿Listo para hacer destacar tu marca en la ciudad?</h2>
             <p>Diseñamos la estrategia de visibilidad perfecta según tus objetivos de cobertura y presupuesto.</p>
@@ -699,8 +757,8 @@
         </div>
     </section>
     <!-- ==========================================================================
-            07. CTA FINAL - FIN
-            ========================================================================== -->
+     07. CTA FINAL - FIN
+     ========================================================================== -->
 
     <!-- ==========================================================================
             08. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP - INICIO
