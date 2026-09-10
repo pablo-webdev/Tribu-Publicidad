@@ -632,6 +632,11 @@ body {
   border: none;
 }
 
+.centrar--btn {
+  display: table;
+  margin: 30px auto 0px auto;
+}
+
 .btn--lime {
   background-color: var(--lime-btn);
   color: var(--dark-bg);
@@ -1507,3 +1512,41 @@ body {
 /* ==========================================================================
    AMPLIACIÓN DE INTERACCIONES Y CLASES DE ANIMACIÓN - FIN
    ========================================================================== */
+/* Contenedor del badge */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre el punto y el texto */
+  padding: 6px 12px;
+  background-color: rgba(189, 255, 1, 0.1); /* Fondo translúcido neón */
+  border: 1px solid rgba(189, 255, 1, 0.3);
+  border-radius: 20px;
+  color: #bdff01; /* Verde neón */
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap; /* Evita que el texto brinque de línea */
+}
+
+/* El punto con la animación de pulso */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #bdff01;
+  border-radius: 50%;
+  flex-shrink: 0; /* Impide que el punto se aplaste o se desborde */
+  box-shadow: 0 0 0 rgba(189, 255, 1, 0.7);
+  animation: pulse-animation 1.6s infinite;
+}
+
+/* Animación del pulso */
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(189, 255, 1, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(189, 255, 1, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(189, 255, 1, 0);
+  }
+}
