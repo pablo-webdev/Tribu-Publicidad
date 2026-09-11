@@ -1093,6 +1093,14 @@ body {
   }
 }
 
+/* Resaltado limpio y elegante */
+.text-purple-highlight {
+  color: #673ab7; /* Morado marca, vibrante pero legible */
+  font-weight: 700; /* Negrita para dar peso */
+  background: transparent; /* Eliminamos el fondo */
+  border: none; /* Eliminamos bordes y subrayados */
+  padding: 0;
+}
 /* ==========================================================================
    05. SECCIONES DE CONTENIDO Y SERVICIOS - FIN
    ========================================================================== */

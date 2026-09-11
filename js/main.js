@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const waMsg = encodeURIComponent(
             `Hola, me interesa cotizar la parada ${parada.id || ""} (${parada.nombre || ""}) del Eje Vial 1.`,
           );
-          const waUrl = `https://wa.me/529671378393?text=${waMsg}`;
+          const waUrl = `https://wa.me/529672824102?text=${waMsg}`;
 
           const popupContent = `
           <div class="popup-info">
