@@ -418,12 +418,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const months = parseInt(simMonths.value);
     const days = months * 30;
 
-    let serviceName = "Paradas de Combi (Eje Vial 1)";
+    let serviceName = "Paradas de Transporte";
     let dailyImpactsPerUnit = 400;
 
     // Asigna el nombre, impactos y el tope máximo dinámico del slider
     if (serviceType === "dooh") {
-      serviceName = "Pantallas LED DOOH";
+      serviceName = "Pantallas LED";
       dailyImpactsPerUnit = 600;
       simUnits.max = "10";
     } else if (serviceType === "granformato") {

@@ -633,7 +633,7 @@ body {
 }
 
 .centrar--btn {
-  display: table;
+  display: table !important;
   text-align: center;
   margin: 30px auto 0px auto;
 }
@@ -706,6 +706,10 @@ body {
   background-size: 24px 24px;
 }
 
+.services-section {
+  background-color: #f8fafc !important;
+}
+
 .section-header {
   text-align: center;
   max-width: 700px;
@@ -729,8 +733,10 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
+  align-items: stretch; /* Asegura que todas las tarjetas midan lo mismo de alto */
 }
 
+/* Tarjeta Principal */
 .service-card {
   background: var(--white);
   border-radius: 12px;
@@ -738,26 +744,9 @@ body {
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
   border: 1px solid #e2e8f0;
-}
-
-.service-card a,
-.service-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--primary-petrol);
-  font-weight: 600;
-  text-decoration: none;
-  margin-top: 15px;
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.service-card a:hover,
-.service-link:hover {
-  color: var(--lime-btn);
-  transform: translateX(4px);
+  display: flex; /* Habilitado Flexbox */
+  flex-direction: column; /* Organiza la imagen y el body verticalmente */
+  height: 100%; /* Forzar altura uniforme */
 }
 
 .service-card:hover {
@@ -769,10 +758,15 @@ body {
   width: 100%;
   height: 220px;
   object-fit: cover;
+  flex-shrink: 0; /* Mantiene la imagen fija sin aplastarse */
 }
 
+/* Cuerpo de la Tarjeta */
 .service-card__body {
   padding: 1.5rem;
+  display: flex; /* Habilitado Flexbox interno */
+  flex-direction: column;
+  flex-grow: 1; /* Ocupa todo el espacio vertical disponible */
 }
 
 .service-card__body h3 {
@@ -789,12 +783,13 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Nota Comercial */
 .commercial-note {
-  background: #d3d6db;
+  background: #f1f5f9;
   border-left: 4px solid var(--dark-bg);
   padding: 0.75rem;
   font-size: 0.85rem;
-  color: #415533;
+  color: #334155;
   border-radius: 0 6px 6px 0;
   margin: 1rem 0;
 }
@@ -804,9 +799,31 @@ body {
 }
 
 .commercial-note p {
-  color: #000 !important;
+  color: #334155 !important;
+  margin-bottom: 0;
 }
 
+/* Enlace/Botón Inferior (Alineación Forzada al Fondo) */
+.service-card a,
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-petrol);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: auto; /* <--- ESTO EMPUJA EL ENLACE AL FONDO */
+  padding-top: 1rem;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.service-card a:hover,
+.service-link:hover {
+  color: #673ab7;
+  transform: translateX(4px);
+}
 /* ==========================================================================
    05.1 WEB SERVICES - INICIO
    ========================================================================== */
@@ -1245,7 +1262,8 @@ body {
 }
 
 .mapa-sidebar-btn {
-  width: 100%;
+  width: 100% !important;
+  max-width: none !important;
   margin-top: 0.5rem;
   text-align: center;
   justify-content: center;
@@ -2042,7 +2060,7 @@ body {
 
 /* Sección contenedora exterior */
 .cta-banner {
-  padding: 5rem 1.5rem;
+  padding: 6rem 2rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -2054,7 +2072,7 @@ body {
   color: #ffffff;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 4rem 4rem;
   border-radius: 24px;
   text-align: center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
@@ -2064,7 +2082,7 @@ body {
 .cta-content h2 {
   color: #ffffff !important;
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-size: clamp(2.4rem, 3vw, 2.4rem);
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.25;
