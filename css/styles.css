@@ -1106,10 +1106,121 @@ body {
    ========================================================================== */
 
 /* ==========================================================================
-   06. SIMULADOR Y RUTA EJE VIAL 1 - INICIO
+   06. CASOS DE IMPACTO VISUAL - INICIO
+   ========================================================================== */
+
+.impact-cases-section {
+  padding: 5rem 0;
+  background: #181222;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.impact-cases-section h2 {
+  color: #ffffff !important;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0.8rem 0 0.5rem;
+}
+
+.impact-cases-section p {
+  color: #cbd5e1 !important; /* Gris claro de alta legibilidad */
+  font-size: 1rem;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-top: 3rem;
+}
+
+.impact-card {
+  background: #231932; /* El mismo morado de tus tarjetas principales */
+  border: 1px solid rgba(189, 255, 1, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.impact-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(189, 255, 1, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.impact-card__header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.impact-metric {
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #bdff01; /* Verde neón institucional */
+  line-height: 1;
+}
+
+.impact-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-top: 0.4rem;
+  display: block;
+}
+
+.impact-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+}
+
+.impact-card__body h4 {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.impact-card__body p {
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==========================================================================
+   06. CASOS DE IMPACTO VISUAL - FINAL
+   ========================================================================== */
+
+/* ==========================================================================
+   07. SIMULADOR Y RUTA EJE VIAL 1 - INICIO
    ========================================================================== */
 /* ==========================================================================
-   06.1 MAPA DE DISPONIBILIDAD EJE VIAL 1 - DASHBOARD Y RESPONSIVE
+   07.1 MAPA DE DISPONIBILIDAD EJE VIAL 1 - DASHBOARD Y RESPONSIVE
    ========================================================================== */
 
 .mapa-section {
@@ -1350,7 +1461,7 @@ body {
   }
 }
 /* ==========================================================================
-   06.1 MAPA DE DISPONIBILIDAD EJE VIAL 1 - FIN
+   07.1 MAPA DE DISPONIBILIDAD EJE VIAL 1 - FIN
    ========================================================================== */
 
 /* CÓDIGO ORIGINAL */
@@ -1474,11 +1585,11 @@ body {
   color: var(--lime-btn);
 }
 /* ==========================================================================
-   06. SIMULADOR Y RUTA EJE VIAL 1 - FIN
+   07. SIMULADOR Y RUTA EJE VIAL 1 - FIN
    ========================================================================== */
 
 /* ==========================================================================
-   07. SECCIÓN INSTITUCIONAL (NOSOTROS) - INICIO
+   08. SECCIÓN INSTITUCIONAL (NOSOTROS) - INICIO
    ========================================================================== */
 .about-grid {
   display: grid;
@@ -1558,11 +1669,11 @@ body {
   }
 }
 /* ==========================================================================
-   07. SECCIÓN INSTITUCIONAL (NOSOTROS) - FIN
+   08. SECCIÓN INSTITUCIONAL (NOSOTROS) - FIN
    ========================================================================== */
 
 /* ==========================================================================
-   08. FOOTER CORPORATIVO - INICIO
+   09. FOOTER CORPORATIVO - INICIO
    ========================================================================== */
 .footer {
   background-color: var(--dark-bg);
@@ -1637,11 +1748,11 @@ body {
   text-decoration: underline;
 }
 /* ==========================================================================
-   08. FOOTER CORPORATIVO - FIN
+   09. FOOTER CORPORATIVO - FIN
    ========================================================================== */
 
 /* ==========================================================================
-   09. MEDIA QUERIES RESPONSIVE - INICIO
+   10. MEDIA QUERIES RESPONSIVE - INICIO
    ========================================================================== */
 @media (max-width: 992px) {
   .route-grid,
@@ -1845,7 +1956,7 @@ body {
   }
 }
 /* ==========================================================================
-   09. MEDIA QUERIES RESPONSIVE - FIN
+   10. MEDIA QUERIES RESPONSIVE - FIN
    ========================================================================== */
 
 /* ==========================================================================
@@ -2064,7 +2175,7 @@ body {
    FAQS - FIN
    ========================================================================== */
 /* ==========================================================================
-   07. CTA FINAL - INICIO
+   11. CTA FINAL - INICIO
    ========================================================================== */
 
 /* Sección contenedora exterior */
@@ -2159,5 +2270,5 @@ body {
 }
 
 /* ==========================================================================
-   07. CTA FINAL - FIN
+   11. CTA FINAL - FIN
    ========================================================================== */
