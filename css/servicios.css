@@ -255,7 +255,7 @@
   flex-grow: 1;
 }
 
-/* Corrección de Acciones e Iconos CTA en Tarjetas */
+/* Acciones e Iconos CTA en Tarjetas */
 .service-card__actions {
   display: flex;
   align-items: center;
@@ -292,24 +292,34 @@
   transform: translateX(4px);
 }
 
-.btn-quick-wa {
+/* Botón flotante rápido de WhatsApp perfectamente centrado */
+.service-card .btn-quick-wa {
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  background-color: var(--lime-btn);
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  background-color: #f1f5f9;
   color: var(--dark-bg, #160f22);
   border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
   text-decoration: none;
   transition: all 0.3s ease;
+  box-sizing: border-box !important;
 }
 
-.btn-quick-wa svg {
-  width: 20px;
-  height: 20px;
-  display: block;
+.service-card .btn-quick-wa svg {
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  display: block !important;
+  margin: auto !important;
+  fill: currentColor;
 }
 
 .services-catalog .service-card:hover .btn-quick-wa {
@@ -318,7 +328,9 @@
   box-shadow: 0 4px 12px rgba(204, 255, 0, 0.4);
 }
 
-/* Banners Destacados dentro del Catálogo */
+/* ==========================================================================
+   BANNERS DESTACADOS (CORREGIDOS PARA EVITAR DESBORDAMIENTO)
+   ========================================================================== */
 .hero-service-banner {
   background: var(--primary-petrol, #1e1b4b);
   border-radius: 20px;
@@ -331,6 +343,7 @@
 .hero-banner__grid {
   display: grid;
   grid-template-columns: 1fr;
+  width: 100%;
 }
 
 .hero-banner__content {
@@ -426,15 +439,26 @@
   box-shadow: 0 4px 15px rgba(204, 255, 0, 0.4);
 }
 
+/* Contenedor estricto de la galería del banner para que no se desborde */
 .hero-banner__gallery {
   position: relative;
   width: 100%;
-  height: 240px;
+  height: 280px;
   background-color: var(--dark-bg, #160f22);
   overflow: hidden;
 }
 
-/* Ventanas Modales Mejoradas */
+.hero-banner__gallery img,
+.hero-banner__gallery .gallery-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Ventanas Modales */
 .service-modal {
   position: fixed;
   inset: 0;
@@ -582,7 +606,7 @@
   border-color: var(--lime-btn, #ccff00);
 }
 
-/* Responsivo (Desktop) y Distribución de Tarjetas Impares */
+/* Responsivo (Desktop) */
 @media (min-width: 768px) {
   .service-modal__container {
     grid-template-columns: 1.1fr 1fr;
@@ -597,13 +621,14 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* Tarjeta impar centrada y ocupando espacio completo si es necesario */
   .services-catalog .services-grid > .service-card:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    margin: 0 auto;
+    grid-column: auto;
+    max-width: none;
+    margin: 0;
     width: 100%;
   }
 
+  /* Distribución exacta simétrica para el banner principal */
   .hero-banner__grid {
     grid-template-columns: 1.1fr 0.9fr;
     align-items: stretch;
@@ -615,7 +640,7 @@
 
   .hero-banner__gallery {
     height: auto;
-    min-height: 380px;
+    min-height: 100%;
   }
 
   .hero-banner__actions {
@@ -644,23 +669,3 @@
 }
 
 
-/* Forzar centrado absoluto y anular herencias de enlaces genéricos en el botón de WhatsApp */
-.service-card .btn-quick-wa {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 0 !important;
-  width: 44px !important;
-  height: 44px !important;
-  min-width: 44px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
-}
-
-.service-card .btn-quick-wa svg {
-  display: block !important;
-  margin: auto !important;
-  width: 22px !important;
-  height: 22px !important;
-}
