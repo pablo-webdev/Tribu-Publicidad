@@ -151,3 +151,50 @@ window.loadScalableGallery = function (containerId, imageList, mainImgId) {
     gridContainer.appendChild(img);
   });
 };
+// TOUCH START
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sliders = document.querySelectorAll(
+    ".hero-banner__gallery, .gallery-slider",
+  );
+
+  sliders.forEach((slider) => {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slider.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      },
+      { passive: true },
+    );
+
+    slider.addEventListener(
+      "touchend",
+      (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe(slider);
+      },
+      { passive: true },
+    );
+
+    function handleSwipe(element) {
+      const threshold = 50; // Mínimo de pixeles de arrastre para considerarlo un gesto
+      if (touchEndX < touchStartX - threshold) {
+        // Deslizó hacia la izquierda -> Siguiente imagen
+        const nextBtn = element
+          .closest(".hero-banner__gallery")
+          ?.querySelector(".slider-arrow.next");
+        if (nextBtn) nextBtn.click();
+      }
+      if (touchEndX > touchStartX + threshold) {
+        // Deslizó hacia la derecha -> Imagen anterior
+        const prevBtn = element
+          .closest(".hero-banner__gallery")
+          ?.querySelector(".slider-arrow.prev");
+        if (prevBtn) prevBtn.click();
+      }
+    }
+  });
+});

@@ -425,11 +425,11 @@ body {
 
 /* ASIGNACIÓN DE IMÁGENES DE FONDO POR SLIDE */
 .hero__slide--1 {
-  --bg-img: url("https://publicidad-y-medios.com/storage/uploads/1659893915_publicidad20.webp");
+  --bg-img: url("https://publicidad-y-medios.com/storage/uploads/1659893915_publicidad20.jpg");
 }
 
 .hero__slide--2 {
-  --bg-img: url("https://www.valentinaeventos.com/wp-content/uploads/E.webp");
+  --bg-img: url("https://www.valentinaeventos.com/wp-content/uploads/E.jpg");
 }
 
 .hero__slide--3 {
