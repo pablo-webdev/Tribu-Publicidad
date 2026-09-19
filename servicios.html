@@ -6,27 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios | TRIBUSINESS San Cristóbal</title>
 
-    <!-- Google Fonts: Plus Jakarta Sans e Inter -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
         rel="stylesheet">
 
-    <!-- FontAwesome para iconos (WhatsApp) -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Estilos CSS Externos -->
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/servicios.css">
 </head>
 
 <body>
-    <!-- ==========================================================================
-   01. HEADER Y NAVEGACIÓN (SERVICIOS) - INICIO
-   ========================================================================== -->
     <header class="header" id="main-header">
         <div class="container header__container">
             <a href="index.html" class="header__logo">TRI<span>BUSINESS</span></a>
@@ -35,19 +33,16 @@
                 <ul class="nav__list">
                     <li><a href="index.html" class="nav__link">Inicio</a></li>
                     <li><a href="servicios.html" class="nav__link nav__link--active">Servicios</a></li>
-                    <li><a href="nosotros.html" class="nav__link nav__link">Nosotros</a></li>
-                    <li><a href="contacto.html" class="nav__link nav__link">Contacto</a></li>
-                    <!-- Botón dentro del menú desplegable (móvil) -->
+                    <li><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav__link">Contacto</a></li>
                     <li class="nav__cotizar-mobile">
                         <a href="contacto.html" class="btn-cotizar">COTIZAR</a>
                     </li>
                 </ul>
             </nav>
 
-            <!-- Botón de escritorio -->
             <a href="contacto.html" class="btn-cotizar btn-cotizar--desktop">COTIZAR</a>
 
-            <!-- Botón Hamburguesa (Mantiene tu ID y clase intactos) -->
             <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
                 <span></span>
                 <span></span>
@@ -55,98 +50,596 @@
             </button>
         </div>
     </header>
-    <!-- ==========================================================================
-   01. HEADER Y NAVEGACIÓN - FIN
-   ========================================================================== -->
 
     <main>
-        <!-- ==========================================================================
-   02. HERO INTERNO (SERVICIOS) - INICIO
-   ========================================================================== -->
         <section class="hero-internal"
-            style="background-image: linear-gradient(180deg, rgba(50, 28, 89, 0.85) 0%, rgba(50, 28, 89, 0.95) 100%), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop');">
-            <div class="container hero__container">
+            style="background-image: linear-gradient(180deg, rgba(50, 28, 89, 0.85) 0%, rgba(50, 28, 89, 0.95) 100%), url('https://images.unsplash.com/photo-1712757057495-016f69c8edbd?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="container hero-internal__container">
                 <span class="badge"><i data-lucide="layers" style="width: 16px; height: 16px;"></i> Soluciones OOH
-                    Integrales</span>
-                <h1 class="hero__title">Servicios de Publicidad Exterior / Impresión / WEB en San Cristóbal De Las Casas</h1>
-                <p class="hero__subtitle">Soluciones integrales desde cobertura en transporte público hasta pantallas
-                    LED y gran formato.</p>
+                    Integradas</span>
+                <h1 class="hero__title">Publicidad Exterior, Impresión & Desarrollo Web en San Cristóbal</h1>
+                <p class="hero__subtitle">Elevamos la presencia de tu marca con soportes estratégicos de alto impacto y
+                    tecnología digital avanzada.</p>
                 <div class="hero__buttons">
-                    <a href="contacto.html" class="btn btn--lime">Cotizar Servicio</a>
+                    <a href="contacto.html" class="btn btn--lime">Cotizar Proyecto</a>
+                    <a href="#catalogo-servicios" class="btn btn--outline">Ver Catálogo</a>
                 </div>
             </div>
         </section>
-        <!-- ==========================================================================
-   02. HERO INTERNO (SERVICIOS) - FIN
-   ========================================================================== -->
 
-        <!-- ==========================================================================
-   03. CONTENIDO DETALLADO DE SERVICIOS - INICIO
-   ========================================================================== -->
-        <section class="services-section site-section theme-light reveal-on-scroll">
+        <section class="services-catalog site-section" id="catalogo-servicios">
             <div class="container">
                 <div class="section-header">
-                    <span class="badge badge--light"><i data-lucide="grid" style="width: 16px; height: 16px;"></i>
-                        Catálogo de Soportes</span>
-                    <h2>Nuestra Oferta Comercial</h2>
-                    <p>Diseñamos estrategias de alto impacto visual con cobertura garantizada en las zonas de mayor
-                        tránsito de la ciudad.</p>
+                    <span class="badge badge--light"><i data-lucide="layers" style="width: 16px; height: 16px;"></i>
+                        Soluciones OOH & Digital</span>
+                    <h2>Catálogo de Servicios</h2>
+                    <p>Formatos diseñados para potenciar la visibilidad y autoridad de tu marca en San Cristóbal de las
+                        Casas.</p>
                 </div>
 
-                <div class="services-grid">
-                    <div class="service-card">
-                        <img src="assets/img/parada.webp"
-                            alt="Eje Vial 1" class="service-card__img">
-                        <div class="service-card__body">
-                            <h3>Red de Paradas De Transporte Público</h3>
-                            <p>115 ubicaciones estratégicas sobre el principal corredor de transporte público con gran
-                                visibilidad peatonal y vehicular.</p>
-                            <a href="contacto.html" class="service-link">Cotizar Ubicación <i data-lucide="arrow-right"
-                                    style="width: 16px; height: 16px;"></i></a>
+                <div class="catalog-filters">
+                    <button type="button" class="catalog-filter-btn active" data-filter="all">Todos los
+                        Servicios</button>
+                    <button type="button" class="catalog-filter-btn" data-filter="ooh">Publicidad Exterior &
+                        DOOH</button>
+                    <button type="button" class="catalog-filter-btn" data-filter="imprenta">Impresión Digital &
+                        Imprenta</button>
+                    <button type="button" class="catalog-filter-btn" data-filter="web">Desarrollo Web & Digital</button>
+                </div>
+
+                <div class="catalog-wrapper">
+
+                    <!-- CATEGORÍA 1: OOH / DOOH -->
+                    <div class="category-block" data-category="ooh">
+                        <div class="category-header">
+                            <span class="badge badge--light">Especialidad Principal</span>
+                            <h2 class="category-title">Publicidad Exterior & Cobertura Urbana (OOH / DOOH)</h2>
+                            <p class="category-description mx-auto">Conecta de forma masiva y constante con tu mercado
+                                meta mediante ubicaciones de alto tráfico peatonal y vehicular.</p>
+                        </div>
+
+                        <!-- TARJETA ESTELAR: PARADAS DE AUTOBÚS & MUPIS -->
+                        <article class="hero-service-banner featured-banner service-card-featured">
+                            <div class="hero-banner__grid">
+                                <div class="hero-banner__content">
+                                    <div class="service-card__icon"><i data-lucide="bus"></i></div>
+                                    <h3 class="hero-banner__title">Paradas de Autobús & Mupis Urbanos</h3>
+                                    <p class="hero-banner__text">
+                                        Exposición 24/7 garantizada en los corredores viales con mayor densidad
+                                        demográfica y comercial de San Cristóbal de las Casas. Equipada con iluminación
+                                        nocturna Backlight.
+                                    </p>
+                                    <ul class="hero-banner__list">
+                                        <li><i data-lucide="check-circle-2"></i> Cobertura total en Eje Vial y arterias
+                                            principales.</li>
+                                        <li><i data-lucide="check-circle-2"></i> Iluminación posterior y mantenimiento
+                                            preventivo mensual.</li>
+                                        <li><i data-lucide="check-circle-2"></i> Impacto directo a la altura de la vista
+                                            del consumidor.</li>
+                                    </ul>
+
+                                    <div class="hero-banner__actions">
+                                        <button type="button" class="btn-more-info btn-banner-details"
+                                            data-modal="modal-paradas">
+                                            <span>Ver Inventario Completo</span>
+                                            <i data-lucide="arrow-right"></i>
+                                        </button>
+                                        <a href="https://wa.me/529672824102?text=Hola,%20quiero%20cotizar%20publicidad%20en%20Paradas%20de%20Autobús."
+                                            target="_blank" rel="noopener noreferrer" class="btn-wa-action">
+                                            <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="hero-banner__gallery service-card__gallery">
+                                    <div class="gallery-slider">
+                                        <img src="assets/img/paradas/Parada 1 , EJE uno entrada/1.jpg"
+                                            alt="Parada Principal" class="gallery-slide active" loading="lazy">
+                                        <img src="assets/img/paradas/Parada 1 , EJE uno entrada/2.jpg"
+                                            alt="Parada Secundaria" class="gallery-slide" loading="lazy">
+                                        <img src="assets/img/paradas/Parada 1 , EJE uno entrada/3.jpg"
+                                            alt="Parada Terciaria" class="gallery-slide" loading="lazy">
+                                        <img src="assets/img/paradas/Parada 2, eje 1 entrada/1.jpg"
+                                            alt="Parada Terciaria" class="gallery-slide" loading="lazy">
+                                        <img src="assets/img/paradas/Parada 2, eje 1 entrada/2.jpg"
+                                            alt="Parada Terciaria" class="gallery-slide" loading="lazy">
+                                        <img src="assets/img/paradas/Parada 3 frente a Aurrera/1.jpg"
+                                            alt="Parada Terciaria" class="gallery-slide" loading="lazy">
+                                    </div>
+                                    <button type="button" class="slider-arrow prev" aria-label="Anterior"><i
+                                            data-lucide="chevron-left"></i></button>
+                                    <button type="button" class="slider-arrow next" aria-label="Siguiente"><i
+                                            data-lucide="chevron-right"></i></button>
+                                    <div class="slider-dots-mini">
+                                        <span class="dot-mini active"></span>
+                                        <span class="dot-mini"></span>
+                                        <span class="dot-mini"></span>
+                                        <span class="dot-mini active"></span>
+                                        <span class="dot-mini"></span>
+                                        <span class="dot-mini"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- GRID SECUNDARIO OOH -->
+                        <div class="services-grid">
+                            <!-- LED -->
+                            <article class="service-card">
+                                <div class="service-card__gallery">
+                                    <div class="gallery-slider">
+                                        <img src="https://images.unsplash.com/photo-1533069027836-fa937181a8ce?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                            alt="LED 1" class="gallery-slide active" loading="lazy">
+                                        <img src="https://images.unsplash.com/photo-1707581785295-c2119a0e9fdc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                            alt="LED 2" class="gallery-slide" loading="lazy">
+                                    </div>
+                                    <button type="button" class="slider-arrow prev" aria-label="Anterior"><i
+                                            data-lucide="chevron-left"></i></button>
+                                    <button type="button" class="slider-arrow next" aria-label="Siguiente"><i
+                                            data-lucide="chevron-right"></i></button>
+                                    <div class="slider-dots-mini">
+                                        <span class="dot-mini active"></span>
+                                        <span class="dot-mini"></span>
+                                    </div>
+                                </div>
+                                <div class="service-card__content">
+                                    <div class="service-card__icon"><i data-lucide="monitor"></i></div>
+                                    <h3 class="service-card__title">Pantallas LED Gigantes (DOOH)</h3>
+                                    <p class="service-card__excerpt">Anuncios dinámicos en video e imágenes de alta
+                                        resolución en cruceros clave.</p>
+                                    <div class="service-card__actions">
+                                        <button type="button" class="btn-more-info" data-modal="modal-led">
+                                            <span>Ver detalles</span>
+                                            <i data-lucide="arrow-right"></i>
+                                        </button>
+                                        <a href="https://wa.me/529672824102?text=Cotización%20Pantallas%20LED"
+                                            target="_blank" rel="noopener noreferrer" class="btn-quick-wa"
+                                            aria-label="Cotizar WhatsApp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Espectaculares -->
+                            <article class="service-card">
+                                <div class="service-card__gallery">
+                                    <div class="gallery-slider">
+                                        <img src="https://volvatroz.com/wp-content/uploads/2021/06/IMG-20160311-WA0019.jpg"
+                                            alt="Espectacular 1" class="gallery-slide active" loading="lazy">
+                                        <img src="https://blog.laminasyaceros.com/hs-fs/hubfs/espectacular-2-768x440-1.png?width=1152&height=660&name=espectacular-2-768x440-1.png"
+                                            alt="Espectacular 2" class="gallery-slide" loading="lazy">
+                                    </div>
+                                    <button type="button" class="slider-arrow prev" aria-label="Anterior"><i
+                                            data-lucide="chevron-left"></i></button>
+                                    <button type="button" class="slider-arrow next" aria-label="Siguiente"><i
+                                            data-lucide="chevron-right"></i></button>
+                                    <div class="slider-dots-mini">
+                                        <span class="dot-mini active"></span>
+                                        <span class="dot-mini"></span>
+                                    </div>
+                                </div>
+                                <div class="service-card__content">
+                                    <div class="service-card__icon"><i data-lucide="maximize-2"></i></div>
+                                    <h3 class="service-card__title">Anuncios Espectaculares</h3>
+                                    <p class="service-card__excerpt">Carteleras monumentales ubicadas estratégicamente
+                                        en accesos a la ciudad.</p>
+                                    <div class="service-card__actions">
+                                        <button type="button" class="btn-more-info" data-modal="modal-espectaculares">
+                                            <span>Ver detalles</span>
+                                            <i data-lucide="arrow-right"></i>
+                                        </button>
+                                        <a href="https://wa.me/529672824102?text=Cotización%20Espectaculares"
+                                            target="_blank" rel="noopener noreferrer" class="btn-quick-wa"
+                                            aria-label="Cotizar WhatsApp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <img src="https://media.cartabon.com/blog/post-None.webp?width=800" alt="Pantallas LED DOOH"
-                            class="service-card__img">
-                        <div class="service-card__body">
-                            <h3>Pantallas LED DOOH</h3>
-                            <p>Anuncios digitales dinámicos con programación por horarios y excelente nitidez tanto de
-                                día como de noche.</p>
-                            <a href="contacto.html" class="service-link">Cotizar Servicio <i data-lucide="arrow-right"
-                                    style="width: 16px; height: 16px;"></i></a>
+                    <!-- BANNER PROMOCIONAL OMNICANAL -->
+                    <div class="print-hub-banner catalog-promo-banner">
+                        <div class="print-hub-info">
+                            <span class="hub-tag">Campaña Integral</span>
+                            <h3>¿Planeas una campaña publicitaria omnicanal?</h3>
+                            <p>Integra paradas urbanas, pantallas LED y carteleras con condiciones preferenciales.</p>
+                        </div>
+                        <a href="https://wa.me/529672824102?text=Asesoría%20Campaña%20Integral" target="_blank"
+                            rel="noopener noreferrer" class="hub-btn">Solicitar Asesoría</a>
+                    </div>
+
+                    <!-- CATEGORÍA 2: IMPRENTA -->
+                    <div class="category-block" data-category="imprenta">
+                        <div class="category-header">
+                            <span class="badge badge--light">Producción Gráfica</span>
+                            <h2 class="category-title">Impresión Digital, Gran Formato & Imprenta</h2>
+                            <p class="category-description mx-auto">Soluciones de alta calidad tipográfica para stands,
+                                puntos de venta y papelería corporativa.</p>
+                        </div>
+
+                        <div class="services-grid">
+                            <!-- Lonas -->
+                            <article class="service-card">
+                                <div class="service-card__gallery">
+                                    <div class="gallery-slider">
+                                        <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1024,h_766/https://innovaprint.mx/wp-content/uploads/2022/10/Impresion-de-lonas-en-Torreon-1024x766.jpg"
+                                            alt="Lonas 1" class="gallery-slide active" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="service-card__content">
+                                    <div class="service-card__icon"><i data-lucide="printer"></i></div>
+                                    <h3 class="service-card__title">Lonas, Viniles & Microperforados</h3>
+                                    <p class="service-card__excerpt">Impresión resistente a rayos UV para exteriores y
+                                        decoración de fachadas.</p>
+                                    <div class="service-card__actions">
+                                        <button type="button" class="btn-more-info" data-modal="modal-lonas">
+                                            <span>Ver detalles</span>
+                                            <i data-lucide="arrow-right"></i>
+                                        </button>
+                                        <a href="https://wa.me/529672824102?text=Cotización%20Lonas" target="_blank"
+                                            rel="noopener noreferrer" class="btn-quick-wa"
+                                            aria-label="Cotizar WhatsApp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Imprenta -->
+                            <article class="service-card">
+                                <div class="service-card__gallery">
+                                    <div class="gallery-slider">
+                                        <img src="https://kingprint.mx/plataforma/wp-content/uploads/2017/07/69780044_1998932020207691_3642133233375641600_o.jpg"
+                                            alt="Papelería 1" class="gallery-slide active" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="service-card__content">
+                                    <div class="service-card__icon"><i data-lucide="file-text"></i></div>
+                                    <h3 class="service-card__title">Tarjetas, Tabloides & Invitaciones</h3>
+                                    <p class="service-card__excerpt">Papelería comercial y social con acabados premium y
+                                        laminados especiales.</p>
+                                    <div class="service-card__actions">
+                                        <button type="button" class="btn-more-info" data-modal="modal-imprenta">
+                                            <span>Ver detalles</span>
+                                            <i data-lucide="arrow-right"></i>
+                                        </button>
+                                        <a href="https://wa.me/529672824102?text=Cotización%20Papelería" target="_blank"
+                                            rel="noopener noreferrer" class="btn-quick-wa"
+                                            aria-label="Cotizar WhatsApp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Sublimación -->
+                            <article class="service-card">
+                                <div class="service-card__gallery">
+                                    <div class="gallery-slider">
+                                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                            alt="Sublimación 1" class="gallery-slide active" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="service-card__content">
+                                    <div class="service-card__icon"><i data-lucide="palette"></i></div>
+                                    <h3 class="service-card__title">Diseño Gráfico & Sublimación</h3>
+                                    <p class="service-card__excerpt">Creación de identidad visual corporativa y
+                                        estampado en artículos promocionales.</p>
+                                    <div class="service-card__actions">
+                                        <button type="button" class="btn-more-info" data-modal="modal-sublimacion">
+                                            <span>Ver detalles</span>
+                                            <i data-lucide="arrow-right"></i>
+                                        </button>
+                                        <a href="https://wa.me/529672824102?text=Cotización%20Diseño" target="_blank"
+                                            rel="noopener noreferrer" class="btn-quick-wa"
+                                            aria-label="Cotizar WhatsApp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <img src="https://volvatroz.com/wp-content/uploads/2021/06/IMG-20160311-WA0019.jpg"
-                            alt="Gran Formato" class="service-card__img">
-                        <div class="service-card__body">
-                            <h3>Espectaculares Gran Formato</h3>
-                            <p>Estructuras de gran tamaño ubicadas en accesos carreteros y puntos clave de alta
-                                afluencia vehicular.</p>
-                            <a href="contacto.html" class="service-link">Cotizar Servicio <i data-lucide="arrow-right"
-                                    style="width: 16px; height: 16px;"></i></a>
+                    <!-- CATEGORÍA 3: WEB -->
+                    <div class="category-block" data-category="web">
+                        <div class="category-header">
+                            <span class="badge badge--light">Ecosistema Digital</span>
+                            <h2 class="category-title">Diseño y Desarrollo Web</h2>
+                            <p class="category-description mx-auto">Plataformas digitales de alto rendimiento conectadas
+                                directamente a tus canales de venta.</p>
                         </div>
+
+                        <article class="hero-service-banner service-card-featured">
+                            <div class="hero-banner__grid">
+                                <div class="hero-banner__content">
+                                    <div class="service-card__icon"><i data-lucide="code"></i></div>
+                                    <h3 class="hero-banner__title">Páginas Web, Landing Pages & E-commerce</h3>
+                                    <p class="hero-banner__text">
+                                        Construimos sitios web modernos, adaptados 100% a celulares y optimizados para
+                                        cargar en milisegundos.
+                                    </p>
+                                    <ul class="hero-banner__list">
+                                        <li><i data-lucide="check-circle-2"></i> Diseño adaptable a teléfonos, tablets y
+                                            computadoras.</li>
+                                        <li><i data-lucide="check-circle-2"></i> Botones directos a WhatsApp y pasarelas
+                                            de pago.</li>
+                                        <li><i data-lucide="check-circle-2"></i> Estructura rápida y optimizada para
+                                            buscadores (SEO).</li>
+                                    </ul>
+
+                                    <div class="hero-banner__actions">
+                                        <button type="button" class="btn-more-info btn-banner-details"
+                                            data-modal="modal-web">
+                                            <span>Ver Especificaciones Web</span>
+                                            <i data-lucide="arrow-right"></i>
+                                        </button>
+                                        <a href="https://wa.me/529672824102?text=Cotización%20Desarrollo%20Web"
+                                            target="_blank" rel="noopener noreferrer" class="btn-wa-action">
+                                            <i class="fab fa-whatsapp"></i> Cotizar Web por WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="hero-banner__gallery service-card__gallery">
+                                    <div class="gallery-slider">
+                                        <img src="assets/img/forta.webp"
+                                            alt="Web 1" class="gallery-slide active" loading="lazy">
+                                        <img src="assets/img/legal.webp"
+                                            alt="Web 2" class="gallery-slide" loading="lazy">
+                                        <img src="assets/img/das.webp"
+                                            alt="Web 3" class="gallery-slide" loading="lazy">
+                                    </div>
+                                    <button type="button" class="slider-arrow prev" aria-label="Anterior"><i
+                                            data-lucide="chevron-left"></i></button>
+                                    <button type="button" class="slider-arrow next" aria-label="Siguiente"><i
+                                            data-lucide="chevron-right"></i></button>
+                                    <div class="slider-dots-mini">
+                                        <span class="dot-mini active"></span>
+                                        <span class="dot-mini"></span>
+                                        <span class="dot-mini"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
+
                 </div>
             </div>
         </section>
-        <!-- ==========================================================================
-   03. CONTENIDO DETALLADO DE SERVICIOS - FIN
-   ========================================================================== -->
+
+        <section class="cta-banner pattern-grid-bg">
+            <div class="container cta-content">
+                <h2>¿Listo para hacer destacar tu marca en la ciudad?</h2>
+                <p>Diseñamos la estrategia de visibilidad perfecta según tus objetivos de cobertura y presupuesto.</p>
+                <a href="https://wa.me/529672824102?text=Hola,%20me%20interesa%20cotizar%20publicidad%20en%20el%20Eje%20Vial%201"
+                    class="btn btn-lime btn-cta" target="_blank" rel="noopener noreferrer">Hablar con un Asesor</a>
+            </div>
+        </section>
     </main>
 
-    <!-- ==========================================================================
-   04. FOOTER - INICIO
-   ========================================================================== -->
+    <!-- VENTANAS MODALES -->
+    <div class="service-modal" id="modal-paradas">
+        <div class="service-modal__overlay"></div>
+        <div class="service-modal__container service-modal__container--large">
+            <button type="button" class="service-modal__close" aria-label="Cerrar">&times;</button>
+            <div class="modal-content-area">
+                <h3 class="modal-title">Paradas de Autobús & Mupis Urbanos</h3>
+                <p class="modal-text">Inventario completo y exclusivo de paradas de autobús distribuidas en puntos
+                    clave de alta afluencia en San Cristóbal de las Casas. Cada ubicación cuenta con iluminación
+                    nocturna y soporte publicitario de gran formato.</p>
+                <ul class="modal-specs-list">
+                    <li><i data-lucide="check"></i> Ubicaciones premium en Eje Vial y arterias comerciales.</li>
+                    <li><i data-lucide="check"></i> Iluminación posterior Backlight operativa 24/7.</li>
+                    <li><i data-lucide="check"></i> Reporte fotográfico y mantenimiento mensual incluido.</li>
+                    <li><i data-lucide="check"></i> Diseños adaptados para máxima visibilidad peatonal y vehicular.
+                    </li>
+                </ul>
+                <div class="modal-actions-box">
+                    <a href="https://wa.me/529672824102?text=Inventario%20completo%20Paradas" target="_blank"
+                        rel="noopener noreferrer" class="btn-wa-action">
+                        <i class="fab fa-whatsapp"></i> Cotizar Ubicación Específica
+                    </a>
+                </div>
+            </div>
+            <div class="modal-gallery-area">
+                <div class="modal-main-wrapper">
+                    <img id="main-paradas"
+                        src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=800&auto=format&fit=crop"
+                        alt="Parada Principal" class="modal-main-img" loading="lazy">
+                </div>
+                <div class="modal-grid-scroll" id="paradas-grid">
+                    <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=800&auto=format&fit=crop"
+                        alt="Ubicación 1" class="modal-thumb active" loading="lazy"
+                        onclick="selectModalThumb(this, 'main-paradas')">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop"
+                        alt="Ubicación 2" class="modal-thumb" loading="lazy"
+                        onclick="selectModalThumb(this, 'main-paradas')">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop"
+                        alt="Ubicación 3" class="modal-thumb" loading="lazy"
+                        onclick="selectModalThumb(this, 'main-paradas')">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-modal" id="modal-led">
+        <div class="service-modal__overlay"></div>
+        <div class="service-modal__container">
+            <button type="button" class="service-modal__close" aria-label="Cerrar">&times;</button>
+            <div class="modal-content-area">
+                <h3 class="modal-title">Pantallas LED Gigantes (DOOH)</h3>
+                <p class="modal-text">Maximiza el impacto de tu marca con inserciones de video en pantallas
+                    digitales de ultra alta definición ubicadas en los cruceros viales más transitados.</p>
+                <ul class="modal-specs-list">
+                    <li><i data-lucide="check"></i> Inserciones programadas por bloques diarios.</li>
+                    <li><i data-lucide="check"></i> Excelente brillo y visibilidad bajo luz solar directa.</li>
+                    <li><i data-lucide="check"></i> Flexibilidad para cambiar creatividades de forma digital.</li>
+                </ul>
+                <a href="https://wa.me/529672824102?text=Cotización%20LED" target="_blank" rel="noopener noreferrer"
+                    class="btn-wa-action">
+                    <i class="fab fa-whatsapp"></i> Cotizar Pantallas LED
+                </a>
+            </div>
+            <div class="modal-gallery-area">
+                <div class="modal-main-wrapper">
+                    <img id="main-led"
+                        src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=800&auto=format&fit=crop"
+                        alt="LED" class="modal-main-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-modal" id="modal-espectaculares">
+        <div class="service-modal__overlay"></div>
+        <div class="service-modal__container">
+            <button type="button" class="service-modal__close" aria-label="Cerrar">&times;</button>
+            <div class="modal-content-area">
+                <h3 class="modal-title">Anuncios Espectaculares</h3>
+                <p class="modal-text">Carteleras monumentales de gran formato diseñadas para captar la atención de
+                    automovilistas y transeúntes a larga distancia en accesos carreteros y bulevares.</p>
+                <ul class="modal-specs-list">
+                    <li><i data-lucide="check"></i> Estructuras firmes y seguras con iluminación frontal.</li>
+                    <li><i data-lucide="check"></i> Lona vinílica de alta densidad e impresión en alta definición.
+                    </li>
+                </ul>
+                <a href="https://wa.me/529672824102?text=Cotización%20Espectaculares" target="_blank"
+                    rel="noopener noreferrer" class="btn-wa-action">
+                    <i class="fab fa-whatsapp"></i> Cotizar Espectacular
+                </a>
+            </div>
+            <div class="modal-gallery-area">
+                <div class="modal-main-wrapper">
+                    <img id="main-espectaculares"
+                        src="https://images.unsplash.com/photo-1617854818583-09e7f077a156?q=80&w=800&auto=format&fit=crop"
+                        alt="Espectacular" class="modal-main-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-modal" id="modal-lonas">
+        <div class="service-modal__overlay"></div>
+        <div class="service-modal__container">
+            <button type="button" class="service-modal__close" aria-label="Cerrar">&times;</button>
+            <div class="modal-content-area">
+                <h3 class="modal-title">Lonas, Viniles & Microperforados</h3>
+                <p class="modal-text">Producción express y de gran formato con acabados profesionales para fachadas,
+                    escaparates comerciales y eventos corporativos.</p>
+                <ul class="modal-specs-list">
+                    <li><i data-lucide="check"></i> Dobladillos y ojillos metálicos reforzados incluidos.</li>
+                    <li><i data-lucide="check"></i> Vinil microperforado para cristales con visibilidad interior.
+                    </li>
+                </ul>
+                <a href="https://wa.me/529672824102?text=Cotización%20Lonas" target="_blank" rel="noopener noreferrer"
+                    class="btn-wa-action">
+                    <i class="fab fa-whatsapp"></i> Cotizar Lonas y Viniles
+                </a>
+            </div>
+            <div class="modal-gallery-area">
+                <div class="modal-main-wrapper">
+                    <img id="main-lonas"
+                        src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=800&auto=format&fit=crop"
+                        alt="Lonas" class="modal-main-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-modal" id="modal-imprenta">
+        <div class="service-modal__overlay"></div>
+        <div class="service-modal__container">
+            <button type="button" class="service-modal__close" aria-label="Cerrar">&times;</button>
+            <div class="modal-content-area">
+                <h3 class="modal-title">Tarjetas, Tabloides & Imprenta</h3>
+                <p class="modal-text">Imprenta comercial y social con la más alta fidelidad de color y una amplia
+                    variedad de gramajes en papeles finos.</p>
+                <ul class="modal-specs-list">
+                    <li><i data-lucide="check"></i> Tarjetas de presentación con laminado mate o brillante.</li>
+                    <li><i data-lucide="check"></i> Tabloides y volantes con entrega puntual.</li>
+                </ul>
+                <a href="https://wa.me/529672824102?text=Cotización%20Papelería" target="_blank"
+                    rel="noopener noreferrer" class="btn-wa-action">
+                    <i class="fab fa-whatsapp"></i> Cotizar Papelería
+                </a>
+            </div>
+            <div class="modal-gallery-area">
+                <div class="modal-main-wrapper">
+                    <img id="main-imprenta"
+                        src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=800&auto=format&fit=crop"
+                        alt="Imprenta" class="modal-main-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-modal" id="modal-sublimacion">
+        <div class="service-modal__overlay"></div>
+        <div class="service-modal__container">
+            <button type="button" class="service-modal__close" aria-label="Cerrar">&times;</button>
+            <div class="modal-content-area">
+                <h3 class="modal-title">Diseño Gráfico & Sublimación</h3>
+                <p class="modal-text">Desarrollo de branding corporativo y personalización térmica en artículos
+                    promocionales de alta durabilidad.</p>
+                <ul class="modal-specs-list">
+                    <li><i data-lucide="check"></i> Tazas, termos, playeras y gorras corporativas.</li>
+                    <li><i data-lucide="check"></i> Vectorización de logotipos e imagen comercial.</li>
+                </ul>
+                <a href="https://wa.me/529672824102?text=Cotización%20Diseño" target="_blank" rel="noopener noreferrer"
+                    class="btn-wa-action">
+                    <i class="fab fa-whatsapp"></i> Cotizar Diseño / Promocionales
+                </a>
+            </div>
+            <div class="modal-gallery-area">
+                <div class="modal-main-wrapper">
+                    <img id="main-sublimacion"
+                        src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800&auto=format&fit=crop"
+                        alt="Sublimación" class="modal-main-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-modal" id="modal-web">
+        <div class="service-modal__overlay"></div>
+        <div class="service-modal__container">
+            <button type="button" class="service-modal__close" aria-label="Cerrar">&times;</button>
+            <div class="modal-content-area">
+                <h3 class="modal-title">Desarrollo Web & E-commerce</h3>
+                <p class="modal-text">Sitios web corporativos rápidos, seguros y diseñados específicamente para
+                    convertir visitantes en clientes reales mediante botones directos a WhatsApp.</p>
+                <ul class="modal-specs-list">
+                    <li><i data-lucide="check"></i> Diseño 100% responsivo para celulares y computadoras.</li>
+                    <li><i data-lucide="check"></i> Optimización SEO para aparecer en buscadores.</li>
+                    <li><i data-lucide="check"></i> Integración con pasarelas de pago y redes sociales.</li>
+                </ul>
+                <a href="https://wa.me/529672824102?text=Cotización%20Desarrollo%20Web" target="_blank"
+                    rel="noopener noreferrer" class="btn-wa-action">
+                    <i class="fab fa-whatsapp"></i> Cotizar Sitio Web
+                </a>
+            </div>
+            <div class="modal-gallery-area">
+                <div class="modal-main-wrapper">
+                    <img id="main-web"
+                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+                        alt="Web" class="modal-main-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
                     <a href="index.html" class="header__logo" style="color: var(--white);">TRI<span
                             style="color: var(--lime-btn);">BUSINESS</span></a>
-                    <p>Plataforma OOH de categoría mundial enfocada en la efectividad publicitaria en SCLC.</p>
+                    <p>Plataforma OOH de categoría mundial enfocada en la efectividad publicitaria y el desarrollo de
+                        infraestructura urbana en SCLC.</p>
                 </div>
                 <div>
                     <h4 class="footer__heading">Navegación</h4>
@@ -163,12 +656,13 @@
                         <li><a href="servicios.html" class="footer__link">Pantallas LED DOOH</a></li>
                         <li><a href="servicios.html" class="footer__link">Mobiliario Urbano</a></li>
                         <li><a href="servicios.html" class="footer__link">Espectaculares Fijos</a></li>
+                        <li><a href="servicios.html" class="footer__link">Rutas Eje Vial 1</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer__heading">Contacto Directo</h4>
                     <p class="footer__info">Atención Ejecutiva OOH<br>Lunes a Viernes - 9:00 a 18:00 hrs</p>
-                    <a href="https://wa.me/529672824102?text=Hola,%20me%20interesa%20cotizar%20servicios%20de%20publicidad"
+                    <a href="https://wa.me/529672824102?text=Hola,%20me%20interesa%20cotizar%20publicidad%20en%20el%20Eje%20Vial%201"
                         class="footer__link"
                         style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; color: var(--lime-btn); font-weight: 600;"
                         target="_blank" rel="noopener noreferrer">
@@ -185,15 +679,13 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/529672824102?text=Hola,%20me%20interesa%20cotizar%20servicios%20de%20publicidad"
+    <a href="https://wa.me/529672824102?text=Hola,%20me%20interesa%20cotizar%20publicidad%20en%20el%20Eje%20Vial%201"
         class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacto de WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <!-- ==========================================================================
-   04. FOOTER - FIN
-   ========================================================================== -->
 
     <script src="js/main.js"></script>
+    <script src="js/servicios.js"></script>
 </body>
 
 </html>

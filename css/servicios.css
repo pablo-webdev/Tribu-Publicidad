@@ -1,0 +1,666 @@
+/* ==========================================================================
+   CATÁLOGO DE SERVICIOS — Estilo Profesional, Limpio y Moderno
+   ========================================================================== */
+
+.services-catalog {
+  padding: 5rem 0 3rem;
+  background-color: var(--gray-pearl, #f8fafc);
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.services-catalog .section-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.catalog-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.catalog-filter-btn {
+  background-color: var(--white, #ffffff);
+  color: var(--dark-bg, #160f22);
+  border: 1px solid rgba(22, 15, 34, 0.12);
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.catalog-filter-btn:hover,
+.catalog-filter-btn.active {
+  background-color: var(--lime-btn, #ccff00);
+  color: var(--dark-bg, #160f22);
+  border-color: var(--lime-btn, #ccff00);
+  box-shadow: 0 4px 15px rgba(204, 255, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.category-block {
+  margin: 0 0 3.5rem;
+  padding: 2.5rem 1.5rem;
+  background: var(--white, #ffffff);
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.category-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.category-header .badge {
+  margin-bottom: 0.8rem;
+}
+
+.category-title {
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--dark-bg, #160f22);
+  margin-bottom: 0.6rem;
+  font-weight: 800;
+}
+
+.category-description {
+  color: #64748b;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.services-catalog .services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Tarjetas de Servicio */
+.services-catalog .service-card {
+  background: var(--white, #ffffff);
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.services-catalog .service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -10px rgba(103, 58, 183, 0.12);
+  border-color: rgba(204, 255, 0, 0.8);
+}
+
+/* Galería / Carrusel de Tarjetas */
+.service-card__gallery {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: #0f172a;
+  overflow: hidden;
+  display: block;
+}
+
+.gallery-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.gallery-slide.active {
+  opacity: 1;
+}
+
+.service-card__gallery .slider-arrow,
+.hero-banner__gallery .slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(22, 15, 34, 0.75);
+  color: var(--white, #ffffff);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.25s ease;
+  z-index: 5;
+}
+
+.service-card__gallery:hover .slider-arrow,
+.hero-banner__gallery:hover .slider-arrow {
+  opacity: 1;
+}
+
+.service-card__gallery .slider-arrow:hover,
+.hero-banner__gallery .slider-arrow:hover {
+  background: var(--lime-btn, #ccff00);
+  color: var(--dark-bg, #160f22);
+  border-color: var(--lime-btn, #ccff00);
+}
+
+.service-card__gallery .slider-arrow svg,
+.hero-banner__gallery .slider-arrow svg {
+  width: 14px;
+  height: 14px;
+}
+
+.service-card__gallery .slider-arrow.prev,
+.hero-banner__gallery .slider-arrow.prev {
+  left: 12px;
+}
+
+.service-card__gallery .slider-arrow.next,
+.hero-banner__gallery .slider-arrow.next {
+  right: 12px;
+}
+
+.slider-dots-mini {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 5;
+  background: rgba(22, 15, 34, 0.6);
+  padding: 4px 10px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+}
+
+.dot-mini {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot-mini.active {
+  background: var(--lime-btn, #ccff00);
+  width: 16px;
+  border-radius: 8px;
+}
+
+/* Contenido de Tarjetas */
+.service-card__content {
+  padding: 1.8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-card__icon {
+  color: var(--lime-btn, #ccff00);
+  background: var(--dark-bg, #160f22);
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(22, 15, 34, 0.15);
+  flex-shrink: 0;
+}
+
+.service-card__icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.service-card__title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark-bg, #160f22);
+  margin-bottom: 0.6rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.service-card__excerpt {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Corrección de Acciones e Iconos CTA en Tarjetas */
+.service-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #f1f5f9;
+  margin-top: auto;
+}
+
+.btn-more-info {
+  background: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+  color: var(--primary-petrol, #1e1b4b);
+  padding: 0;
+  font-family: inherit;
+}
+
+.btn-more-info svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.btn-more-info:hover {
+  color: #673ab7;
+  transform: translateX(4px);
+}
+
+.btn-quick-wa {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background-color: var(--lime-btn);
+  color: var(--dark-bg, #160f22);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-quick-wa svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.services-catalog .service-card:hover .btn-quick-wa {
+  background-color: var(--lime-btn, #ccff00);
+  color: var(--dark-bg, #160f22);
+  box-shadow: 0 4px 12px rgba(204, 255, 0, 0.4);
+}
+
+/* Banners Destacados dentro del Catálogo */
+.hero-service-banner {
+  background: var(--primary-petrol, #1e1b4b);
+  border-radius: 20px;
+  border: 1px solid rgba(204, 255, 0, 0.25);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  margin: 0 0 2.5rem;
+}
+
+.hero-banner__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.hero-banner__content {
+  padding: 2.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-banner__title {
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--white, #ffffff);
+  margin: 0.4rem 0 1rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.hero-banner__text {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.hero-banner__list {
+  list-style: none;
+  margin-bottom: 1.6rem;
+  padding: 0;
+}
+
+.hero-banner__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--white, #ffffff);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.hero-banner__list li svg {
+  color: var(--lime-btn, #ccff00);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.hero-banner__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.btn-banner-details,
+.btn-wa-action {
+  justify-content: center;
+  width: 100%;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.btn-banner-details {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--white, #ffffff);
+}
+
+.btn-banner-details:hover {
+  border-color: var(--white, #ffffff);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.btn-wa-action {
+  background-color: var(--lime-btn, #ccff00);
+  color: var(--dark-bg, #160f22);
+  border: none;
+}
+
+.btn-wa-action:hover {
+  background-color: #b3e600;
+  box-shadow: 0 4px 15px rgba(204, 255, 0, 0.4);
+}
+
+.hero-banner__gallery {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background-color: var(--dark-bg, #160f22);
+  overflow: hidden;
+}
+
+/* Ventanas Modales Mejoradas */
+.service-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.service-modal.active {
+  display: flex;
+}
+
+.service-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+.service-modal__container {
+  position: relative;
+  background: var(--white, #ffffff);
+  border: 1px solid #e2e8f0;
+  color: var(--dark-bg, #160f22);
+  width: 100%;
+  max-width: 920px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 24px;
+  padding: 2.2rem 1.8rem;
+  z-index: 10000;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.service-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #f1f5f9;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-bg, #160f22);
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.service-modal__close:hover {
+  background: var(--lime-btn, #ccff00);
+  transform: scale(1.05);
+}
+
+.modal-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark-bg, #160f22);
+  margin-bottom: 0.75rem;
+}
+
+.modal-text {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.modal-specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.modal-specs-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--dark-bg, #160f22);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.modal-specs-list li svg {
+  color: #10b981;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.modal-gallery-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.modal-main-wrapper {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.modal-main-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-grid-scroll {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.modal-thumb {
+  width: 72px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.modal-thumb.active,
+.modal-thumb:hover {
+  opacity: 1;
+  border-color: var(--lime-btn, #ccff00);
+}
+
+/* Responsivo (Desktop) y Distribución de Tarjetas Impares */
+@media (min-width: 768px) {
+  .service-modal__container {
+    grid-template-columns: 1.1fr 1fr;
+    padding: 3rem;
+  }
+
+  .modal-main-img {
+    height: 280px;
+  }
+
+  .services-catalog .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Tarjeta impar centrada y ocupando espacio completo si es necesario */
+  .services-catalog .services-grid > .service-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-banner__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: stretch;
+  }
+
+  .hero-banner__content {
+    padding: 2.8rem;
+  }
+
+  .hero-banner__gallery {
+    height: auto;
+    min-height: 380px;
+  }
+
+  .hero-banner__actions {
+    flex-direction: row;
+  }
+
+  .btn-banner-details,
+  .btn-wa-action {
+    width: auto;
+    flex: 1;
+  }
+
+  .category-block {
+    padding: 3rem 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card__icon {
+    margin: 2rem auto;
+  }
+
+  .service-card h3 {
+    text-align: center;
+  }
+}
+
+
+/* Forzar centrado absoluto y anular herencias de enlaces genéricos en el botón de WhatsApp */
+.service-card .btn-quick-wa {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.service-card .btn-quick-wa svg {
+  display: block !important;
+  margin: auto !important;
+  width: 22px !important;
+  height: 22px !important;
+}
