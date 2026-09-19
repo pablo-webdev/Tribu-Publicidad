@@ -666,6 +666,18 @@
   .service-card h3 {
     text-align: center;
   }
+
+  .print-hub-banner .hub-tag,
+  .print-hub-info .hub-tag {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .print-hub-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
-
-
