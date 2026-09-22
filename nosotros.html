@@ -13,7 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
         rel="stylesheet">
 
-    <!-- FontAwesome para iconos (WhatsApp) -->
+    <!-- FontAwesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Lucide Icons CDN -->
@@ -21,12 +21,11 @@
 
     <!-- Estilos CSS Externos -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nosotros.css">
 </head>
 
 <body>
-<!-- ==========================================================================
-   01. HEADER Y NAVEGACIÓN (NOSOTROS) - INICIO
-   ========================================================================== -->
+    <!-- HEADER -->
     <header class="header" id="main-header">
         <div class="container header__container">
             <a href="index.html" class="header__logo">TRI<span>BUSINESS</span></a>
@@ -35,19 +34,16 @@
                 <ul class="nav__list">
                     <li><a href="index.html" class="nav__link">Inicio</a></li>
                     <li><a href="servicios.html" class="nav__link">Servicios</a></li>
-                    <li><a href="nosotros.html" class="nav__link  nav__link--active">Nosotros</a></li>
+                    <li><a href="nosotros.html" class="nav__link nav__link--active">Nosotros</a></li>
                     <li><a href="contacto.html" class="nav__link">Contacto</a></li>
-                    <!-- Botón dentro del menú desplegable (móvil) -->
                     <li class="nav__cotizar-mobile">
                         <a href="contacto.html" class="btn-cotizar">COTIZAR</a>
                     </li>
                 </ul>
             </nav>
 
-            <!-- Botón de escritorio -->
             <a href="contacto.html" class="btn-cotizar btn-cotizar--desktop">COTIZAR</a>
 
-            <!-- Botón Hamburguesa (Mantiene tu ID y clase intactos) -->
             <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
                 <span></span>
                 <span></span>
@@ -55,61 +51,128 @@
             </button>
         </div>
     </header>
-    <!-- ==========================================================================
-   01. HEADER Y NAVEGACIÓN (NOSOTROS) - FIN
-   ========================================================================== -->
 
     <main>
-        <!-- ==========================================================================
-   02. HERO INTERNO (NOSOTROS) - INICIO
-   ========================================================================== -->
+        <!-- HERO INTERNO -->
         <section class="hero-internal"
             style="background-image: linear-gradient(180deg, rgba(50, 28, 89, 0.85) 0%, rgba(50, 28, 89, 0.95) 100%), url('https://images.unsplash.com/photo-1533069027836-fa937181a8ce?q=80&w=1170&auto=format&fit=crop');">
             <div class="container hero__container">
-                <span class="badge"><i data-lucide="users" style="width: 16px; height: 16px;"></i> Identidad
-                    Corporativa</span>
+                <span class="badge"><i data-lucide="award" style="width: 16px; height: 16px;"></i> Excelencia en
+                    Publicidad OOH</span>
                 <h1 class="hero__title">Dominamos la Calle en SCLC</h1>
-                <p class="hero__subtitle">Estrategia, cobertura y compromiso logístico al servicio de tu marca.</p>
-                <div class="hero__buttons">
-                    <a href="servicios.html" class="btn btn--outline">Ver Cobertura y Portafolio</a>
-                </div>
+                <p class="hero__subtitle">Construimos puentes visuales de alto impacto entre las marcas líderes y la
+                    audiencia de San Cristóbal de las Casas.</p>
             </div>
         </section>
-        <!-- ==========================================================================
-   02. HERO INTERNO (NOSOTROS) - FIN
-   ========================================================================== -->
 
-        <!-- ==========================================================================
-   03. CONTENIDO INSTITUCIONAL DETALLADO - INICIO
-   ========================================================================== -->
-        <section class="about-section">
-            <div class="container about-grid">
-                <div class="about-image-wrapper">
-                    <img src="https://noticias.coches.com/wp-content/uploads/2015/03/publi-cocacola-bus.jpg"
-                        alt="Equipo operativo TRIBUSINESS">
-                </div>
-                <div class="about-content">
-                    <span class="badge badge--light"><i data-lucide="award" style="width: 16px; height: 16px;"></i>
-                        Trayectoria y Visión</span>
-                    <h2>Compromiso con la Efectividad Publicitaria</h2>
-                    <p>En TRIBUSINESS entendemos que la calle es el escenario más competitivo. Por ello,
-                        desarrollamos infraestructura urbana de alto impacto visual respaldada por un riguroso
-                        mantenimiento logístico y reportes periódicos de visibilidad.</p>
-                    <p>Nuestro equipo combina experiencia local en San Cristóbal de las Casas con estándares
-                        profesionales internacionales, asegurando que cada peso invertido se traduzca en posicionamiento
-                        y clientes reales para tu negocio.</p>
-                    <a href="contacto.html" class="btn btn--lime">Trabaja Con Nosotros</a>
+        <!-- SECCIÓN INSTITUCIONAL ASIMÉTRICA (HIGH-END) -->
+        <section class="about-premium-section">
+            <div class="container">
+                <div class="about-premium-grid">
+                    <div class="about-visual-side">
+                        <div class="about-img-main">
+                            <img src="https://noticias.coches.com/wp-content/uploads/2015/03/publi-cocacola-bus.jpg"
+                                alt="Infraestructura publicitaria TRIBUSINESS">
+                        </div>
+                        <div class="about-floating-card">
+                            <span class="stat-number">+100%</span>
+                            <span class="stat-text">Compromiso Logístico y Mantenimiento Urbano</span>
+                        </div>
+                    </div>
+                    <div class="about-text-side">
+                        <span class="badge badge--light"><i data-lucide="shield-check"
+                                style="width: 16px; height: 16px;"></i> Nuestra Identidad</span>
+                        <h2>Infraestructura urbana que transforma la presencia de tu marca</h2>
+                        <p class="lead-text">En TRIBUSINESS entendemos que el entorno urbano de San Cristóbal de las
+                            Casas exige soluciones publicitarias con un balance impecable entre estética arquitectónica
+                            y visibilidad comercial.</p>
+                        <p>No solo gestionamos espacios; garantizamos mantenimiento riguroso, ubicaciones estratégicas
+                            de alto tránsito y un respaldo operativo diseñado para empresas que exigen estándares de
+                            categoría global.</p>
+                        <div class="about-actions">
+                            <a href="contacto.html" class="btn btn--lime">Iniciar Proyecto</a>
+                            <a href="servicios.html" class="link-arrow">Ver nuestra cobertura <i
+                                    data-lucide="arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- ==========================================================================
-   03. CONTENIDO INSTITUCIONAL DETALLADO - FIN
-   ========================================================================== -->
+
+        <!-- SECCIÓN DE MÉTRICAS DE IMPACTO -->
+        <section class="metrics-section">
+            <div class="container">
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <span class="metric-val">SCLC</span>
+                        <span class="metric-label">Cobertura en Arterias Principales</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">24/7</span>
+                        <span class="metric-label">Exposición de Marca Continua</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">High-End</span>
+                        <span class="metric-label">Estándares de Calidad Corporativa</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FILOSOFÍA: MISIÓN, VISIÓN Y VALORES (ESTILO EDITORIAL) -->
+        <section class="philosophy-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="badge badge--light"><i data-lucide="compass" style="width: 16px; height: 16px;"></i>
+                        Filosofía Empresarial</span>
+                    <h2>Pilares que Guían Nuestra Dirección</h2>
+                    <p class="section-desc">Bajo qué principios operamos y proyectamos el futuro de la publicidad
+                        exterior en la región.</p>
+                </div>
+                <div class="philosophy-grid">
+                    <div class="phil-card">
+                        <div class="phil-icon-wrapper"><i data-lucide="rocket"></i></div>
+                        <h3>Misión</h3>
+                        <p>Potenciar de forma contundente la presencia comercial de las empresas mediante soportes
+                            publicitarios estratégicamente localizados y de calidad superior.</p>
+                    </div>
+                    <div class="phil-card">
+                        <div class="phil-icon-wrapper"><i data-lucide="eye"></i></div>
+                        <h3>Visión</h3>
+                        <p>Consolidarnos como la agencia de publicidad exterior y digital (OOH/DOOH) indiscutible en
+                            Chiapas por nuestra innovación, transparencia y efectividad.</p>
+                    </div>
+                    <div class="phil-card">
+                        <div class="phil-icon-wrapper"><i data-lucide="gem"></i></div>
+                        <h3>Valores</h3>
+                        <p>Compromiso absoluto con el cliente, rigor en el mantenimiento operativo, ética profesional y
+                            una visión de diseño estricta y refinada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL DE ALTO IMPACTO -->
+        <section class="cta-banner-section">
+            <div class="container cta-banner-container">
+                <div class="cta-banner-content">
+                    <h2>Lleva la estrategia de tu marca al siguiente nivel</h2>
+                    <p>Conversemos sobre los espacios disponibles y cómo podemos maximizar el retorno de tu inversión
+                        publicitaria en SCLC.</p>
+                </div>
+                <div class="cta-banner-actions">
+                    <a href="contacto.html" class="btn btn--lime">Cotizar Espacios</a>
+                    <a href="https://wa.me/529672824102?text=Hola,%20deseo%20asesoría%20personalizada%20para%20mi%20marca"
+                        target="_blank" rel="noopener noreferrer" class="btn btn--outline"
+                        style="border-color: #fff; color: #fff;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Directo
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- ==========================================================================
-   04. FOOTER - INICIO
-   ========================================================================== -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
@@ -159,11 +222,11 @@
         class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacto de WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <!-- ==========================================================================
-   04. FOOTER - FIN
-   ========================================================================== -->
 
     <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>

@@ -21,12 +21,11 @@
 
     <!-- Estilos CSS Externos -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contacto.css">
 </head>
 
 <body>
-    <!-- ==========================================================================
-   01. HEADER Y NAVEGACIÓN (NOSOTROS) - INICIO
-   ========================================================================== -->
+    <!-- HEADER -->
     <header class="header" id="main-header">
         <div class="container header__container">
             <a href="index.html" class="header__logo">TRI<span>BUSINESS</span></a>
@@ -37,17 +36,14 @@
                     <li><a href="servicios.html" class="nav__link">Servicios</a></li>
                     <li><a href="nosotros.html" class="nav__link">Nosotros</a></li>
                     <li><a href="contacto.html" class="nav__link nav__link--active">Contacto</a></li>
-                    <!-- Botón dentro del menú desplegable (móvil) -->
                     <li class="nav__cotizar-mobile">
                         <a href="contacto.html" class="btn-cotizar">COTIZAR</a>
                     </li>
                 </ul>
             </nav>
 
-            <!-- Botón de escritorio -->
             <a href="contacto.html" class="btn-cotizar btn-cotizar--desktop">COTIZAR</a>
 
-            <!-- Botón Hamburguesa (Mantiene tu ID y clase intactos) -->
             <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
                 <span></span>
                 <span></span>
@@ -55,22 +51,17 @@
             </button>
         </div>
     </header>
-    <!-- ==========================================================================
-   01. HEADER Y NAVEGACIÓN (NOSOTROS) - FIN
-   ========================================================================== -->
 
     <main>
-        <!-- ==========================================================================
-   02. HERO INTERNO (CONTACTO) - INICIO
-   ========================================================================== -->
+        <!-- HERO INTERNO -->
         <section class="hero-internal"
             style="background-image: linear-gradient(180deg, rgba(50, 28, 89, 0.85) 0%, rgba(50, 28, 89, 0.95) 100%), url('https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=1200&auto=format&fit=crop');">
             <div class="container hero__container">
                 <span class="badge"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> Canal Directo</span>
                 <h1 class="hero__title">Inicia Tu Campaña Publicitaria</h1>
-                <p class="hero__subtitle">Cotizaciones a la medida y asesoría técnica para potenciar tu presencia
-                    urbana.</p>
-                <div class="hero__buttons">
+                <p class="hero__subtitle">Cotizaciones a la medida y asesoría técnica para potenciar tu presencia urbana
+                    en SCLC.</p>
+                <div class="hero__buttons" style="margin-top: 20px;">
                     <a href="https://wa.me/529672824102?text=Hola,%20me%20interesa%20cotizar%20una%20campaña%20publicitaria"
                         class="btn btn--lime" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-whatsapp"></i> Hablar por WhatsApp
@@ -78,74 +69,92 @@
                 </div>
             </div>
         </section>
-        <!-- ==========================================================================
-   02. HERO INTERNO (CONTACTO) - FIN
-   ========================================================================== -->
 
-        <!-- ==========================================================================
-   03. SECCIÓN DE INFORMACIÓN Y FORMULARIO DE CONTACTO - INICIO
-   ========================================================================== -->
-        <section class="route-section">
-            <div class="container route-grid">
-                <div class="route-content">
-                    <span class="badge badge--light"><i data-lucide="headphones" style="width: 16px; height: 16px;"></i>
-                        Atención Ejecutiva</span>
-                    <h2>Estamos Listos Para Atenderte</h2>
-                    <p>Ponte en contacto con nuestro equipo comercial para recibir una propuesta personalizada acorde a
-                        los objetivos y presupuesto de tu marca en San Cristóbal de las Casas.</p>
+        <!-- SECCIÓN DE CONTACTO HIGH-END -->
+        <section class="contact-main-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Información de Contacto -->
+                    <div class="contact-info-side">
+                        <span class="badge badge--light"><i data-lucide="headphones"
+                                style="width: 16px; height: 16px;"></i> Atención Ejecutiva</span>
+                        <h2>Estamos Listos Para Atenderte</h2>
+                        <p class="contact-desc">Ponte en contacto con nuestro equipo comercial para recibir una
+                            propuesta personalizada acorde a los objetivos y presupuesto de tu marca.</p>
 
-                    <div class="route-features">
-                        <div class="route-feature-item">
-                            <i data-lucide="map-pin" style="width: 22px; height: 22px;"></i>
-                            <div>
-                                <h4>Ubicación Oficina</h4>
-                                <p>San Cristóbal de las Casas, Chiapas, México.</p>
+                        <div class="contact-cards-stack">
+                            <div class="contact-card-item">
+                                <div class="contact-icon-box">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+                                <div>
+                                    <h4>Ubicación de Oficina</h4>
+                                    <p>San Cristóbal de las Casas, Chiapas, México.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="route-feature-item">
-                            <i data-lucide="clock" style="width: 22px; height: 22px;"></i>
-                            <div>
-                                <h4>Horarios de Atención</h4>
-                                <p>Lunes a Viernes de 9:00 a 18:00 hrs.</p>
+
+                            <div class="contact-card-item">
+                                <div class="contact-icon-box">
+                                    <i data-lucide="clock"></i>
+                                </div>
+                                <div>
+                                    <h4>Horarios de Atención</h4>
+                                    <p>Lunes a Viernes de 9:00 a 18:00 hrs.</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-card-item">
+                                <div class="contact-icon-box">
+                                    <i data-lucide="message-square"></i>
+                                </div>
+                                <div>
+                                    <h4>Respuesta Inmediata</h4>
+                                    <p>Soporte vía WhatsApp y canales directos habilitados.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="simulator-box">
-                    <h3>Formulario de Cotización</h3>
-                    <form
-                        onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo a la brevedad.');">
-                        <div class="sim-group">
-                            <label for="nombre">Nombre Completo</label>
-                            <input type="text" id="nombre" required placeholder="Tu nombre o empresa">
+                    <!-- Formulario de Cotización Profesional -->
+                    <div class="contact-form-side">
+                        <div class="form-card-wrapper">
+                            <div class="form-header">
+                                <h3>Formulario de Cotización</h3>
+                                <p>Completa tus datos y un asesor se comunicará contigo de inmediato.</p>
+                            </div>
+                            <form id="contact-form"
+                                onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo a la brevedad.');">
+                                <div class="sim-group">
+                                    <label for="nombre">Nombre Completo o Empresa</label>
+                                    <input type="text" id="nombre" required
+                                        placeholder="Ej. Corporativo Comercial SCLC">
+                                </div>
+                                <div class="sim-group">
+                                    <label for="telefono">Teléfono / WhatsApp</label>
+                                    <input type="tel" id="telefono" required placeholder="967 000 0000">
+                                </div>
+                                <div class="sim-group">
+                                    <label for="servicio-interes">Servicio de Interés</label>
+                                    <select id="servicio-interes">
+                                        <option value="ejevial">Red de Paradas (Eje Vial 1)</option>
+                                        <option value="dooh">Pantallas LED DOOH</option>
+                                        <option value="granformato">Espectaculares / Gran Formato</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn--lime"
+                                    style="width: 100%; margin-top: 1rem; justify-content: center;">
+                                    Enviar Solicitud <i data-lucide="send"
+                                        style="width: 16px; height: 16px; margin-left: 6px;"></i>
+                                </button>
+                            </form>
                         </div>
-                        <div class="sim-group">
-                            <label for="telefono">Teléfono / WhatsApp</label>
-                            <input type="tel" id="telefono" required placeholder="967 000 0000">
-                        </div>
-                        <div class="sim-group">
-                            <label for="servicio-interes">Servicio de Interés</label>
-                            <select id="servicio-interes">
-                                <option value="ejevial">Red de Paradas (Eje Vial 1)</option>
-                                <option value="dooh">Pantallas LED DOOH</option>
-                                <option value="granformato">Espectaculares / Gran Formato</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn--lime" style="width: 100%; margin-top: 1rem;">Enviar
-                            Solicitud</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- ==========================================================================
-   03. SECCIÓN DE INFORMACIÓN Y FORMULARIO DE CONTACTO - FIN
-   ========================================================================== -->
     </main>
 
-    <!-- ==========================================================================
-   04. FOOTER - INICIO
-   ========================================================================== -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
@@ -195,11 +204,11 @@
         target="_blank" rel="noopener noreferrer" aria-label="Contacto de WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <!-- ==========================================================================
-   04. FOOTER - FIN
-   ========================================================================== -->
 
     <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
