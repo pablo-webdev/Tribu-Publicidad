@@ -321,4 +321,28 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .about-floating-card {
+    position: relative;
+    bottom: -15px;
+    background: #321c59;
+    color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    max-width: 100% !important;
+    right: 0px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #c7f200;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .link-arrow {
+    margin: auto;
+  }
+
+  .phil-icon-wrapper {
+    margin: auto;
+    margin-bottom: 25px;
+  }
 }
